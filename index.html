@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="oturi_3_button.js"></script>
+    <title>お釣りの概算ページver3.1</title>
+  </head>
+  <body>
+  <script type="module">
+    import init, * as wasm from './pkg/oturi_3.js'
+    async function run(){
+      await init();
+      wasm.calc();
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+       document.getElementById("calcButton").addEventListener('click',function () {
+      run();
+    } );
+} );
+  </script>
+  <h1>同人誌即売会で用意するお釣りの枚数概算ver3.1</h1>
+
+  <noscript>
+    <p>
+      ご利用のブラウザーではJavaScriptが無効なので、このページの機能を十全に利用出来ません。 </p>
+  </noscript>
+
+  <h2>動作確認ブラウザー</h2>
+  <ul>
+    <li>Firefox 108.0.2 for macOS</li>
+    <li>Google Chrome 108.0.5359.124 for macOS</li>
+    <li>Microsoft Edge 108.0.1462.76 for Windows10</li>
+    <li>Safari for iOS 15.7.1</li>
+  </ul>
+
+  <h2>仕様リスト</h2>
+  <p>
+    <a href="./oturi3_desc.html">仕様リスト</a>です。
+  </p>
+
+  <p>
+    頒布価格が10000円を超える場合の100円未満の計算に対応しませんでした。<br>
+    入力して計算ボタンを押下するとエラーを表示しますので、無駄入力になるので説明書きしときます。
+  </p>
+  
+  <form name="nyuuryoku" id="form">
+    <p id="inputarea">
+      <input type="button" value="+" onClick="addColumn(this.form)">
+      &nbsp;
+      <input type="button" value="&nbsp;-&nbsp;" onClick="delColumn(this.form)">  
+      <br>
+      新刊頒布価格&nbsp;新刊頒布冊数<br>
+      <input type="text" pattern="\d*" name="kakaku" id="kakaku0" size="7">
+      &nbsp;
+      &nbsp;
+      <input type="text" pattern="\d*" name="hanpusu" id="hanpusu0" size="5"> 
+    </p>
+    <p>
+      <input type="button" id="calcButton" value="計算">
+    </p>
+  </form>
+  <div class="result">
+    <p id="result_maisu"></p>
+  </div>  
+
+  <hr>
+
+  <p>
+    ご意見、バグ報告は青島司(<a href="https://twitter.com/aoshima256">@aoshima256</a>)までお願い致します。
+  </p>
+
+  <p>
+    <a href="./../index.html">[トップページ]</a>
+  </p>  
+
+  </body>
+</html>
