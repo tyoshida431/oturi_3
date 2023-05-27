@@ -14,14 +14,14 @@ struct MoneyNumber{
 // 同人誌に対して払う時の同人誌の価格と価格と、
 // その同人誌を買うシミュレーション上の人数。
 struct Pay{
-    kakaku: i32,
+    price: i32,
     ninzu: i32
 }
 
 // 同人誌一種。
 struct Hon{
     id: i32,
-    kakaku: i32,
+    price: i32,
     hanpusu: i32,
     hanpu_count: i32,
     hanpu_number_combination: i32,
@@ -31,7 +31,7 @@ struct Hon{
 // 複数冊の同人誌を組み合わせて計算する、
 // 計算用のデーター。
 struct HonForCalc{
-    kakaku: i32,
+    price: i32,
     hanpusu: i32,
     moto_list: Vec<i32>    
 }
@@ -26554,13 +26554,13 @@ pub fn calc(){
         let hon_tmp: Option<String>=hon_from_js.as_string();
         let hon_str: String=hon_tmp.unwrap();
         let hon_split_list: Vec<&str>=hon_str.split(":").collect();
-        let kakaku_str: &str=hon_split_list[0];
+        let price_str: &str=hon_split_list[0];
         let hanpusu_str: &str=hon_split_list[1];
-        let kakaku_int: i32=kakaku_str.parse().unwrap();
+        let price_int: i32=price_str.parse().unwrap();
         let hanpusu_int: i32=hanpusu_str.parse().unwrap();
         let hon = Hon{
             id: id,
-            kakaku: kakaku_int,
+            price: price_int,
             hanpusu: hanpusu_int,
             hanpu_count: 0,
             hanpu_number_combination: 0,
@@ -26608,38 +26608,38 @@ pub fn calc(){
         result_for_screen.gohyaku,result_for_screen.sen,result_for_screen.gosen);
 }
 
-pub fn test_ju_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_ju_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.ju;
 }
 
-pub fn test_goju_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_goju_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.goju;
 }
 
-pub fn test_hyaku_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_hyaku_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.hyaku;
 }
 
-pub fn test_gohyaku_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_gohyaku_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.gohyaku;
 }
 
-pub fn test_sen_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_sen_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.sen;
 }
 
-pub fn test_gosen_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_gosen_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.gosen;
 }
 
-pub fn test_ichiman_money_number(kakaku: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(kakaku,10);
+pub fn test_ichiman_money_number(price: i32)->i32{
+    let ret: MoneyNumber=calc_ikura(price,10);
     return ret.ichiman;
 }
 
@@ -26657,7 +26657,7 @@ pub fn test_combination_ju()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26665,7 +26665,7 @@ pub fn test_combination_ju()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 600,
+        price: 600,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26673,7 +26673,7 @@ pub fn test_combination_ju()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 400,
+        price: 400,
         hanpusu: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26681,7 +26681,7 @@ pub fn test_combination_ju()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26744,7 +26744,7 @@ pub fn test_combination_goju()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26752,7 +26752,7 @@ pub fn test_combination_goju()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 600,
+        price: 600,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26760,7 +26760,7 @@ pub fn test_combination_goju()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 400,
+        price: 400,
         hanpusu: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26768,7 +26768,7 @@ pub fn test_combination_goju()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26831,7 +26831,7 @@ pub fn test_combination_hyaku()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26839,7 +26839,7 @@ pub fn test_combination_hyaku()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 600,
+        price: 600,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26847,7 +26847,7 @@ pub fn test_combination_hyaku()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 400,
+        price: 400,
         hanpusu: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26855,7 +26855,7 @@ pub fn test_combination_hyaku()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26918,7 +26918,7 @@ pub fn test_combination_gohyaku()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26926,7 +26926,7 @@ pub fn test_combination_gohyaku()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 600,
+        price: 600,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26934,7 +26934,7 @@ pub fn test_combination_gohyaku()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 400,
+        price: 400,
         hanpusu: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -26942,7 +26942,7 @@ pub fn test_combination_gohyaku()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27005,7 +27005,7 @@ pub fn test_combination_sen()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27013,7 +27013,7 @@ pub fn test_combination_sen()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 600,
+        price: 600,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27021,7 +27021,7 @@ pub fn test_combination_sen()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 400,
+        price: 400,
         hanpusu: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27029,7 +27029,7 @@ pub fn test_combination_sen()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27092,7 +27092,7 @@ pub fn test_combination_gosen()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27100,7 +27100,7 @@ pub fn test_combination_gosen()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 600,
+        price: 600,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27108,7 +27108,7 @@ pub fn test_combination_gosen()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 400,
+        price: 400,
         hanpusu: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27116,7 +27116,7 @@ pub fn test_combination_gosen()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27168,7 +27168,7 @@ pub fn test_combination_gosen()->i32{
 pub fn test_combination_ju2()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 110,
+        price: 110,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27176,7 +27176,7 @@ pub fn test_combination_ju2()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 460,
+        price: 460,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27184,7 +27184,7 @@ pub fn test_combination_ju2()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 740,
+        price: 740,
         hanpusu: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27192,7 +27192,7 @@ pub fn test_combination_ju2()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 880,
+        price: 880,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27244,7 +27244,7 @@ pub fn test_combination_ju2()->i32{
 pub fn test_combination_goju2()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 110,
+        price: 110,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27252,7 +27252,7 @@ pub fn test_combination_goju2()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 460,
+        price: 460,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27260,7 +27260,7 @@ pub fn test_combination_goju2()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 740,
+        price: 740,
         hanpusu: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27268,7 +27268,7 @@ pub fn test_combination_goju2()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 880,
+        price: 880,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27320,7 +27320,7 @@ pub fn test_combination_goju2()->i32{
 pub fn test_combination_hyaku2()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 110,
+        price: 110,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27328,7 +27328,7 @@ pub fn test_combination_hyaku2()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 460,
+        price: 460,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27336,7 +27336,7 @@ pub fn test_combination_hyaku2()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 740,
+        price: 740,
         hanpusu: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27344,7 +27344,7 @@ pub fn test_combination_hyaku2()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 880,
+        price: 880,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27396,7 +27396,7 @@ pub fn test_combination_hyaku2()->i32{
 pub fn test_combination_gohyaku2()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 110,
+        price: 110,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27404,7 +27404,7 @@ pub fn test_combination_gohyaku2()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 460,
+        price: 460,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27412,7 +27412,7 @@ pub fn test_combination_gohyaku2()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 740,
+        price: 740,
         hanpusu: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27420,7 +27420,7 @@ pub fn test_combination_gohyaku2()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 880,
+        price: 880,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27472,7 +27472,7 @@ pub fn test_combination_gohyaku2()->i32{
 pub fn test_combination_sen2()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 110,
+        price: 110,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27480,7 +27480,7 @@ pub fn test_combination_sen2()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 460,
+        price: 460,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27488,7 +27488,7 @@ pub fn test_combination_sen2()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 740,
+        price: 740,
         hanpusu: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27496,7 +27496,7 @@ pub fn test_combination_sen2()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 880,
+        price: 880,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27558,7 +27558,7 @@ pub fn test_combination_gosen2()->i32{
     // 5000 : 0
     let hon1 = Hon{
         id: 1,
-        kakaku: 110,
+        price: 110,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27566,7 +27566,7 @@ pub fn test_combination_gosen2()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 460,
+        price: 460,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27574,7 +27574,7 @@ pub fn test_combination_gosen2()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 740,
+        price: 740,
         hanpusu: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27582,7 +27582,7 @@ pub fn test_combination_gosen2()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 880,
+        price: 880,
         hanpusu: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27634,7 +27634,7 @@ pub fn test_combination_gosen2()->i32{
 pub fn test_combination_ju3()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27642,7 +27642,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 500,
+        price: 500,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27650,7 +27650,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 600,
+        price: 600,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27658,7 +27658,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27666,7 +27666,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon5 = Hon{
         id: 5,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27674,7 +27674,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon6 = Hon{
         id: 6,
-        kakaku: 400,
+        price: 400,
         hanpusu: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27682,7 +27682,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon7 = Hon{
         id: 7,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27690,7 +27690,7 @@ pub fn test_combination_ju3()->i32{
     };
     let hon8 = Hon{
         id: 8,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27746,7 +27746,7 @@ pub fn test_combination_ju3()->i32{
 pub fn test_combination_goju3()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27754,7 +27754,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 500,
+        price: 500,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27762,7 +27762,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 600,
+        price: 600,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27770,7 +27770,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27778,7 +27778,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon5 = Hon{
         id: 5,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27786,7 +27786,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon6 = Hon{
         id: 6,
-        kakaku: 400,
+        price: 400,
         hanpusu: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27794,7 +27794,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon7 = Hon{
         id: 7,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27802,7 +27802,7 @@ pub fn test_combination_goju3()->i32{
     };
     let hon8 = Hon{
         id: 8,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27858,7 +27858,7 @@ pub fn test_combination_goju3()->i32{
 pub fn test_combination_hyaku3()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27866,7 +27866,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 500,
+        price: 500,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27874,7 +27874,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 600,
+        price: 600,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27882,7 +27882,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27890,7 +27890,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon5 = Hon{
         id: 5,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27898,7 +27898,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon6 = Hon{
         id: 6,
-        kakaku: 400,
+        price: 400,
         hanpusu: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27906,7 +27906,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon7 = Hon{
         id: 7,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27914,7 +27914,7 @@ pub fn test_combination_hyaku3()->i32{
     };
     let hon8 = Hon{
         id: 8,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27970,7 +27970,7 @@ pub fn test_combination_hyaku3()->i32{
 pub fn test_combination_gohyaku3()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27978,7 +27978,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 500,
+        price: 500,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27986,7 +27986,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 600,
+        price: 600,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -27994,7 +27994,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28002,7 +28002,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon5 = Hon{
         id: 5,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28010,7 +28010,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon6 = Hon{
         id: 6,
-        kakaku: 400,
+        price: 400,
         hanpusu: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28018,7 +28018,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon7 = Hon{
         id: 7,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28026,7 +28026,7 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let hon8 = Hon{
         id: 8,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28081,7 +28081,7 @@ pub fn test_combination_gohyaku3()->i32{
 pub fn test_combination_sen3()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28089,7 +28089,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 500,
+        price: 500,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28097,7 +28097,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 600,
+        price: 600,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28105,7 +28105,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28113,7 +28113,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon5 = Hon{
         id: 5,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28121,7 +28121,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon6 = Hon{
         id: 6,
-        kakaku: 400,
+        price: 400,
         hanpusu: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28129,7 +28129,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon7 = Hon{
         id: 7,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28137,7 +28137,7 @@ pub fn test_combination_sen3()->i32{
     };
     let hon8 = Hon{
         id: 8,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28192,7 +28192,7 @@ pub fn test_combination_sen3()->i32{
 pub fn test_combination_gosen3()->i32{
     let hon1 = Hon{
         id: 1,
-        kakaku: 1200,
+        price: 1200,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28200,7 +28200,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon2 = Hon{
         id: 2,
-        kakaku: 500,
+        price: 500,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28208,7 +28208,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon3 = Hon{
         id: 3,
-        kakaku: 600,
+        price: 600,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28216,7 +28216,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon4 = Hon{
         id: 4,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28224,7 +28224,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon5 = Hon{
         id: 5,
-        kakaku: 500,
+        price: 500,
         hanpusu: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28232,7 +28232,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon6 = Hon{
         id: 6,
-        kakaku: 400,
+        price: 400,
         hanpusu: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28240,7 +28240,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon7 = Hon{
         id: 7,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28248,7 +28248,7 @@ pub fn test_combination_gosen3()->i32{
     };
     let hon8 = Hon{
         id: 8,
-        kakaku: 1000,
+        price: 1000,
         hanpusu: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
@@ -28376,7 +28376,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
                         // 組み合わせで計算し、例えば200円5冊300円5冊の組み合わせなら、
                         // 500円10冊と計算する。
                         moto_list.push(hon_list[_index].id);
-                        sum+=hon_list[_index].kakaku;
+                        sum+=hon_list[_index].price;
                         hanpusu+=hon_list[_index].hanpu_number_combination;
                         amari+=hon_list[_index].amari;
                         shurui_su+=1;    
@@ -28392,7 +28392,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
                 if shurui_su < hon_list.len().try_into().unwrap() {
                     if 0<hanpusu {
                         let hon_for_calc=HonForCalc {
-                            kakaku: sum,
+                            price: sum,
                             hanpusu: hanpusu/shurui_su,
                             moto_list: moto_list
                         };
@@ -28402,7 +28402,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
                     // 種類数が本の種類を上回っている場合、余った冊数を寄せて計算する。
                     if 0<hanpusu {
                         let hon_for_calc=HonForCalc {
-                            kakaku: sum,
+                            price: sum,
                             hanpusu: (hanpusu+amari)/shurui_su,
                             moto_list: moto_list
                         };
@@ -28418,7 +28418,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
             let mut tansatsu_moto_list=Vec::new();
             tansatsu_moto_list.push(_hon.id);
             let hon_for_calc=HonForCalc {
-                kakaku: _hon.kakaku,
+                price: _hon.price,
                 hanpusu: _hon.hanpusu,
                 moto_list: tansatsu_moto_list
             };
@@ -28444,7 +28444,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
     // お釣りの枚数を数えます。
     for hon in combination_list.iter() {
         if 0<hon.hanpusu {
-            let ret_calc=calc_ikura(hon.kakaku,hanpusu_for_calc);
+            let ret_calc=calc_ikura(hon.price,hanpusu_for_calc);
             ret_money_number.ju+=ret_calc.ju;
             ret_money_number.goju+=ret_calc.goju;
             ret_money_number.hyaku+=ret_calc.hyaku;
@@ -28478,7 +28478,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
     return ret;
 }
 
-fn calc_ikura(kakaku: i32, hanpusu: i32)->MoneyNumber{
+fn calc_ikura(price: i32, hanpusu: i32)->MoneyNumber{
     let mut ret=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -28494,97 +28494,97 @@ fn calc_ikura(kakaku: i32, hanpusu: i32)->MoneyNumber{
         return ret;
     }
 
-    if kakaku < 100 {
-        ret=calc_ju(kakaku,hanpusu);
-    } else if 100 <= kakaku && kakaku < 1000 {
-        ret=calc_hyaku(kakaku,hanpusu);
-    } else if 1000 <= kakaku && kakaku < 3000 {
+    if price < 100 {
+        ret=calc_ju(price,hanpusu);
+    } else if 100 <= price && price < 1000 {
+        ret=calc_hyaku(price,hanpusu);
+    } else if 1000 <= price && price < 3000 {
         // 1000円から3000円までの場合、1万円の使用は想定せず、1000円台をなくして考える。
-        let sen_kakaku=kakaku%1000;
-        if sen_kakaku < 100 {
-            ret=calc_ju(sen_kakaku,hanpusu);
-        } else if 100<= sen_kakaku && sen_kakaku < 1000 {
-            ret=calc_hyaku(sen_kakaku,hanpusu);
+        let sen_price=price%1000;
+        if sen_price < 100 {
+            ret=calc_ju(sen_price,hanpusu);
+        } else if 100<= sen_price && sen_price < 1000 {
+            ret=calc_hyaku(sen_price,hanpusu);
         }
-    } else if 3000 <= kakaku && kakaku < 10000 {
-        ret=calc_sen(kakaku,hanpusu);
-    } else if 10000 <= kakaku {
-        ret=calc_man(kakaku,hanpusu);
+    } else if 3000 <= price && price < 10000 {
+        ret=calc_sen(price,hanpusu);
+    } else if 10000 <= price {
+        ret=calc_man(price,hanpusu);
     }
     return ret;
 }
 
-fn calc_ju(kakaku: i32, hanpusu: i32)->MoneyNumber{
-    let mut kakaku_list: Vec<i32>=Vec::new();
-    if kakaku < 50 {
-        kakaku_list.push(kakaku);
-        kakaku_list.push(50);
-        kakaku_list.push(100);
-    } else if kakaku == 50 {
-        kakaku_list.push(kakaku);
-        kakaku_list.push(100);
-    } else if 50 < kakaku {
-        kakaku_list.push(kakaku);
-        kakaku_list.push(100);
+fn calc_ju(price: i32, hanpusu: i32)->MoneyNumber{
+    let mut price_list: Vec<i32>=Vec::new();
+    if price < 50 {
+        price_list.push(price);
+        price_list.push(50);
+        price_list.push(100);
+    } else if price == 50 {
+        price_list.push(price);
+        price_list.push(100);
+    } else if 50 < price {
+        price_list.push(price);
+        price_list.push(100);
     }
-    return calc_oturi_money_number(kakaku_list, hanpusu);
+    return calc_oturi_money_number(price_list, hanpusu);
 }
 
-fn calc_hyaku(_kakaku: i32, hanpusu: i32)->MoneyNumber{
-    let mut kakaku_list: Vec<i32>=Vec::new();
-    let mut kakaku: i32 = 0;
+fn calc_hyaku(_price: i32, hanpusu: i32)->MoneyNumber{
+    let mut price_list: Vec<i32>=Vec::new();
+    let mut price: i32 = 0;
     // 1000円から3000円までも本メソッドで計算して、
     // 1000円から3000円までの場合1万円の使用を想定しない。
-    if kakaku <= 1000 {
-        kakaku=_kakaku%1000;
+    if price <= 1000 {
+        price=_price%1000;
     }else{
-        kakaku=_kakaku;
+        price=_price;
     }
 
-    let kakaku_judai: i32=kakaku%100;
-    let kakaku_hyakudai: i32=(kakaku-kakaku_judai)%1000;
-    if kakaku < 500 {
-        if kakaku_judai == 0 {
-            kakaku_list.push(kakaku);
-            kakaku_list.push(500);
-            kakaku_list.push(1000);
-        }else if kakaku_hyakudai != 400 {
-            kakaku_list.push(kakaku);
-            kakaku_list.push(kakaku+(100-kakaku_judai));
-            kakaku_list.push(500);
-            kakaku_list.push(1000);
-        }else if kakaku_hyakudai == 400 {
-            kakaku_list.push(kakaku);
-            kakaku_list.push(500);
-            kakaku_list.push(1000);
+    let price_judai: i32=price%100;
+    let price_hyakudai: i32=(price-price_judai)%1000;
+    if price < 500 {
+        if price_judai == 0 {
+            price_list.push(price);
+            price_list.push(500);
+            price_list.push(1000);
+        }else if price_hyakudai != 400 {
+            price_list.push(price);
+            price_list.push(price+(100-price_judai));
+            price_list.push(500);
+            price_list.push(1000);
+        }else if price_hyakudai == 400 {
+            price_list.push(price);
+            price_list.push(500);
+            price_list.push(1000);
         }
-    }else if kakaku == 500 {
-        kakaku_list.push(kakaku);
-        kakaku_list.push(1000);
-    }else if 500 < kakaku && kakaku < 1000 {
-        kakaku_list.push(kakaku);
-        kakaku_list.push(1000);
+    }else if price == 500 {
+        price_list.push(price);
+        price_list.push(1000);
+    }else if 500 < price && price < 1000 {
+        price_list.push(price);
+        price_list.push(1000);
     }
-    return calc_oturi_money_number(kakaku_list, hanpusu);
+    return calc_oturi_money_number(price_list, hanpusu);
 }
 
-fn calc_sen(kakaku: i32, hanpusu: i32)->MoneyNumber{
-    let mut kakaku_list: Vec<i32>=Vec::new();
-    if 3000 <= kakaku && kakaku < 4000 {
-        kakaku_list=calc_sen_under_yonsen(kakaku);
-    }else if 4000 <= kakaku && kakaku < 5000 {
-        kakaku_list=calc_sen_yonsen(kakaku);
-    }else if 5000 == kakaku {
-        kakaku_list=calc_sen_return_list_daisatu(5000,10000);
-    }else if 5000 < kakaku && kakaku < 9000 {
-        kakaku_list=calc_sen_under_kyusen(kakaku);
-    }else if 9000 <= kakaku {
-        kakaku_list=calc_sen_kyusen(kakaku);
+fn calc_sen(price: i32, hanpusu: i32)->MoneyNumber{
+    let mut price_list: Vec<i32>=Vec::new();
+    if 3000 <= price && price < 4000 {
+        price_list=calc_sen_under_yonsen(price);
+    }else if 4000 <= price && price < 5000 {
+        price_list=calc_sen_yonsen(price);
+    }else if 5000 == price {
+        price_list=calc_sen_return_list_daisatu(5000,10000);
+    }else if 5000 < price && price < 9000 {
+        price_list=calc_sen_under_kyusen(price);
+    }else if 9000 <= price {
+        price_list=calc_sen_kyusen(price);
     }
-    return calc_oturi_money_number(kakaku_list, hanpusu);
+    return calc_oturi_money_number(price_list, hanpusu);
 }
 
-fn calc_man(kakaku: i32, hanpusu: i32)->MoneyNumber{
+fn calc_man(price: i32, hanpusu: i32)->MoneyNumber{
     // 2万円より上の場合、1万円の枚数を引いて計算して、手元に残る枚数に足します。
 
     // 12000,15000,20000
@@ -28596,26 +28596,26 @@ fn calc_man(kakaku: i32, hanpusu: i32)->MoneyNumber{
     // 18500,19000,20000
     // 19000,20000
     // 19500,20000
-    let mut _kakaku_list: Vec<i32>=Vec::new();
+    let mut _price_list: Vec<i32>=Vec::new();
     // TODO : 揃えます。
-    let ichiman_money_number=calc_ichiman_money_number(kakaku);
-    let gosen_money_number=calc_gosen_money_number(kakaku);
-    let sen_money_number=calc_sen_money_number(kakaku);
-    let hyaku_money_number=calc_hyaku_money_number(kakaku);
-    let gohyaku_money_number=calc_gohyaku_money_number(kakaku);
+    let ichiman_money_number=calc_ichiman_money_number(price);
+    let gosen_money_number=calc_gosen_money_number(price);
+    let sen_money_number=calc_sen_money_number(price);
+    let hyaku_money_number=calc_hyaku_money_number(price);
+    let gohyaku_money_number=calc_gohyaku_money_number(price);
     // 20000円より上の場合、10000円台に落として計算する。
-    let kakaku_for_calc=10000+gosen_money_number*5000+sen_money_number*1000+gohyaku_money_number*500+hyaku_money_number*100;
+    let price_for_calc=10000+gosen_money_number*5000+sen_money_number*1000+gohyaku_money_number*500+hyaku_money_number*100;
     if hyaku_money_number==0 && gohyaku_money_number==0 {
-        _kakaku_list=calc_man_sen(kakaku_for_calc);
+        _price_list=calc_man_sen(price_for_calc);
     }else{
-        _kakaku_list=calc_man_hyaku(kakaku_for_calc);
+        _price_list=calc_man_hyaku(price_for_calc);
     }
-    let mut ret=calc_oturi_money_number(_kakaku_list,hanpusu);
+    let mut ret=calc_oturi_money_number(_price_list,hanpusu);
     ret.ichiman-=ichiman_money_number-1;
     return ret;
 }
 
-fn calc_man_hyaku(kakaku: i32)->Vec<i32>{
+fn calc_man_hyaku(price: i32)->Vec<i32>{
     // 12300,12500,13000,15000
     // 12500,13000,15000
     // 14500,15000
@@ -28624,420 +28624,420 @@ fn calc_man_hyaku(kakaku: i32)->Vec<i32>{
     // 18500,19000,20000
     // 19500,20000
     let mut ret: Vec<i32>=Vec::new();
-    let kakaku_hyakudai: i32=kakaku%1000;
-    let kakaku_sendai: i32=kakaku-10000-kakaku_hyakudai;
-    ret.push(kakaku);
-    if kakaku_hyakudai<500 {
-        ret.push(10000+kakaku_sendai+500);
+    let price_hyakudai: i32=price%1000;
+    let price_sendai: i32=price-10000-price_hyakudai;
+    ret.push(price);
+    if price_hyakudai<500 {
+        ret.push(10000+price_sendai+500);
     }
-    ret.push(10000+kakaku_sendai+1000);
-    if kakaku_sendai<5000 && kakaku_sendai+1000!=5000 {
+    ret.push(10000+price_sendai+1000);
+    if price_sendai<5000 && price_sendai+1000!=5000 {
         ret.push(15000);
     }
-    if 5000<=kakaku_sendai && kakaku_sendai+1000!=10000 {
+    if 5000<=price_sendai && price_sendai+1000!=10000 {
         ret.push(20000);
     }
     return ret;
 }
 
-fn calc_man_sen(kakaku: i32)->Vec<i32>{
+fn calc_man_sen(price: i32)->Vec<i32>{
     // 12000,15000
     // 15000,20000
     // 18000,20000
     // 19000,20000
     // 19500,20000
     let mut ret: Vec<i32>=Vec::new();
-    let kakaku_hyakudai: i32=kakaku%1000;
-    let kakaku_sendai: i32=kakaku-10000-kakaku_hyakudai;
-    ret.push(kakaku);
-    if kakaku_sendai<5000 {
+    let price_hyakudai: i32=price%1000;
+    let price_sendai: i32=price-10000-price_hyakudai;
+    ret.push(price);
+    if price_sendai<5000 {
         ret.push(15000);
     }
-    if 5000<=kakaku_sendai {
+    if 5000<=price_sendai {
         ret.push(20000);
     }
     return ret;
 }
 
-fn calc_sen_under_yonsen(kakaku: i32)->Vec<i32>{
+fn calc_sen_under_yonsen(price: i32)->Vec<i32>{
     // TODO : リファクタリングする。
-    let kakaku_judai: i32=kakaku%100;
-    let kakaku_hyakudai: i32=(kakaku-kakaku_judai)%1000;
-    let kakaku_sendai: i32=kakaku-kakaku_hyakudai-kakaku_judai;
+    let price_judai: i32=price%100;
+    let price_hyakudai: i32=(price-price_judai)%1000;
+    let price_sendai: i32=price-price_hyakudai-price_judai;
     let mut ret: Vec<i32>=Vec::new();
-    if kakaku_hyakudai==0 {
-        if kakaku_judai==0 {
+    if price_hyakudai==0 {
+        if price_judai==0 {
             // 3000,5000
-            ret=calc_sen_return_list_daisatu(kakaku,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50{
+            ret=calc_sen_return_list_daisatu(price,5000);
+        }else if 0<price_judai && price_judai<50{
             // 3010,3050,3100,3500,4000,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 3050,3100,3500,4000,5000
             // 3060,3100,3500,4000,5000
             // 3090,3100,3500,4000,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);
         }
-    }else if 0<kakaku_hyakudai && kakaku_hyakudai<400 {
-        if kakaku_judai==0 {
+    }else if 0<price_hyakudai && price_hyakudai<400 {
+        if price_judai==0 {
             // 3100,3500,4000,5000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 3110,3150,3200,3500,4000,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 3150,3200,3500,4000,5000
             // 3160,3200,3500,4000,5000
             // 3190,3200,3500,4000,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);
         }
-    }else if 400<=kakaku_hyakudai && kakaku_hyakudai<500 {
-        if kakaku_judai==0 {
+    }else if 400<=price_hyakudai && price_hyakudai<500 {
+        if price_judai==0 {
             // 3400,3500,4000,5000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 3410,3450,3500,4000,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 3450,3500,4000,5000
             // 3460,3500,4000,5000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,5000);
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,5000);
         }
-    }else if kakaku_hyakudai==500 {
-        if kakaku_judai==0 {
+    }else if price_hyakudai==500 {
+        if price_judai==0 {
             // 3500,4000,5000
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_sen(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 3510,3550,3600,4000,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 3550,3600,4000,5000
             // 3560,3600,4000,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);
         }
-    }else if 500<kakaku_hyakudai && kakaku_hyakudai<900 {
-        if kakaku_judai==0 {
+    }else if 500<price_hyakudai && price_hyakudai<900 {
+        if price_judai==0 {
             // 3600,4000,5000
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_sen(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 3610,3650,3700,4000,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 3660,3700,4000,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);            
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);            
         }
-    }else if 900<=kakaku_sendai {
-        if kakaku_judai==0 {
+    }else if 900<=price_sendai {
+        if price_judai==0 {
             // 3900,4000,5000
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_sen(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 3910,3950,4000,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 3950,4000,5000
             // 3960,4000,5000 
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,5000);
+            ret=calc_sen_return_list_sen(price,price_sendai,5000);
         }
     }
     return ret;
 }
 
-fn calc_sen_yonsen(kakaku: i32)->Vec<i32>{
+fn calc_sen_yonsen(price: i32)->Vec<i32>{
     // TODO : 揃える。
-    let kakaku_judai: i32=kakaku%100;
-    let kakaku_hyakudai: i32=(kakaku-kakaku_judai)%1000;
-    let kakaku_sendai: i32=kakaku-kakaku_hyakudai-kakaku_judai;
+    let price_judai: i32=price%100;
+    let price_hyakudai: i32=(price-price_judai)%1000;
+    let price_sendai: i32=price-price_hyakudai-price_judai;
     let mut ret: Vec<i32>=Vec::new();
-    if kakaku_hyakudai==0 {
-        if kakaku_judai==0{
+    if price_hyakudai==0 {
+        if price_judai==0{
             // 4000,5000
-            ret=calc_sen_return_list_daisatu(kakaku,5000);        
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,5000);        
+        }else if 0<price_judai && price_judai<50 {
             // 4010,4050,4100,4500,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 4050,4100,4500,5000
             // 4060,4100,4500,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);
         }
-    }else if 0<kakaku_hyakudai && kakaku_hyakudai<400 {
-        if kakaku_judai==0 {
+    }else if 0<price_hyakudai && price_hyakudai<400 {
+        if price_judai==0 {
             // 4100,4500,5000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 4110,4150,4200,4500,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 4150,4200,4500,5000
             // 4160,4200,4500,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);
         }
-    }else if 400<=kakaku_hyakudai && kakaku_hyakudai<500 {
-        if kakaku_judai==0 {
+    }else if 400<=price_hyakudai && price_hyakudai<500 {
+        if price_judai==0 {
             // 4400,4500,5000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 4410,4450,4500,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 4450,4500,5000
             // 4460,4500,5000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,5000);
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,5000);
         }
-    }else if 500<=kakaku_hyakudai && kakaku_hyakudai<900 {
-        if kakaku_judai==0 {
+    }else if 500<=price_hyakudai && price_hyakudai<900 {
+        if price_judai==0 {
             // 4500,5000
             // 4600,5000
-            ret=calc_sen_return_list_daisatu(kakaku,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 4510,4550,4600,5000
             // 4610,4650,4700,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 4550,4600,5000
             // 4560,4600,5000
             // 4650,4700,5000
             // 4660,4700,5000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,5000);
         }
-    }else if 900<=kakaku_hyakudai {
-        if kakaku_judai==0 {
+    }else if 900<=price_hyakudai {
+        if price_judai==0 {
             // 4900,5000
-            ret=calc_sen_return_list_daisatu(kakaku,5000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,5000);
+        }else if 0<price_judai && price_judai<50 {
             // 4910,4950,5000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,5000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,5000);
+        }else if 50<=price_judai {
             // 4950,5000
             // 4960,5000
-            ret=calc_sen_return_list_daisatu(kakaku,5000);
+            ret=calc_sen_return_list_daisatu(price,5000);
         }
     }
     return ret;
 }
 
-fn calc_sen_under_kyusen(kakaku: i32)->Vec<i32>{
-    let kakaku_judai: i32=kakaku%100;
-    let kakaku_hyakudai: i32=(kakaku-kakaku_judai)%1000;
-    let kakaku_sendai: i32=kakaku-kakaku_hyakudai-kakaku_judai;
+fn calc_sen_under_kyusen(price: i32)->Vec<i32>{
+    let price_judai: i32=price%100;
+    let price_hyakudai: i32=(price-price_judai)%1000;
+    let price_sendai: i32=price-price_hyakudai-price_judai;
     let mut ret: Vec<i32>=Vec::new();
 
-    if kakaku_hyakudai==0 {
-        if kakaku_judai==0 {
+    if price_hyakudai==0 {
+        if price_judai==0 {
             // 6000,10000
-            ret=calc_sen_return_list_daisatu(kakaku,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 5010,5050,5100,5500,6000,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 5050,5100,5500,6000,10000
             // 5060,5100,5500,6000,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if 0<kakaku_hyakudai && kakaku_hyakudai<400 {
-        if kakaku_judai==0 {
+    }else if 0<price_hyakudai && price_hyakudai<400 {
+        if price_judai==0 {
             // 5100,5500,6000,10000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 5110,5150,5200,5500,6000,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 5150,5200,5500,6000,10000
             // 5160,5200,5500,6000,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if 400<=kakaku_hyakudai && kakaku_hyakudai<500 {
-        if kakaku_judai==0 {
+    }else if 400<=price_hyakudai && price_hyakudai<500 {
+        if price_judai==0 {
             // 5400,5500,6000,10000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 5410,5450,5500,6000,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if kakaku_judai==50 {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if price_judai==50 {
             // 5450,5500,6000,10000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,10000);
+        }else if 50<=price_judai {
             // 5460,5500,6000,10000
             // 5490,5500,6000,10000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,10000);
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,10000);
         }
-    }else if 500<=kakaku_hyakudai && kakaku_hyakudai<900 {
-        if kakaku_judai==0 {
+    }else if 500<=price_hyakudai && price_hyakudai<900 {
+        if price_judai==0 {
             // 5500,6000,10000
             // 5600,6000,10000
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_sen(price,price_sendai,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 5510,5550,5600,6000,10000
             // 5610,5650,5700,6000,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 5560,5600,6000,10000
             // 5590,5600,6000,10000
             // 5660,5700,6000,10000
             // 5690,5700,6000,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if 900<=kakaku_hyakudai {
-        if kakaku_judai==0 {
+    }else if 900<=price_hyakudai {
+        if price_judai==0 {
             // 5900,6000,10000
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_sen(price,price_sendai,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 5910,5950,6000,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 5950,6000,10000
             // 5960,6000,10000
             // 5990,6000,10000
-            ret=calc_sen_return_list_sen(kakaku,kakaku_sendai,10000);
+            ret=calc_sen_return_list_sen(price,price_sendai,10000);
         }
     }
     return ret;
 }
 
-fn calc_sen_kyusen(kakaku: i32)->Vec<i32>{
-    let kakaku_judai: i32=kakaku%100;
-    let kakaku_hyakudai: i32=(kakaku-kakaku_judai)%1000;
-    let kakaku_sendai: i32=kakaku-kakaku_hyakudai-kakaku_judai;
+fn calc_sen_kyusen(price: i32)->Vec<i32>{
+    let price_judai: i32=price%100;
+    let price_hyakudai: i32=(price-price_judai)%1000;
+    let price_sendai: i32=price-price_hyakudai-price_judai;
     let mut ret: Vec<i32>=Vec::new();
 
-    if kakaku_hyakudai==0 {
-        if kakaku_judai==0 {
+    if price_hyakudai==0 {
+        if price_judai==0 {
             // 9000,10000
-            ret=calc_sen_return_list_daisatu(kakaku,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 9010,9050,9100,9500,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 9050,9100,9500,10000
             // 9060,9100,9500,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if 0<kakaku_hyakudai && kakaku_hyakudai<500 {
-        if kakaku_judai==0 {
+    }else if 0<price_hyakudai && price_hyakudai<500 {
+        if price_judai==0 {
             // 9100,9500,10000
-            ret=calc_sen_return_list_gohyaku(kakaku,kakaku_sendai,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_gohyaku(price,price_sendai,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 9110,9150,9200,9500,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 9150,9200,9500,10000
             // 9160,9200,9500,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if kakaku_hyakudai==500 {
-        if kakaku_judai==0 {
+    }else if price_hyakudai==500 {
+        if price_judai==0 {
             // 9500,10000
-            ret=calc_sen_return_list_daisatu(kakaku,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 9510,9550,9600,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 9550,9600,10000
             // 9560,9600,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if 500<kakaku_hyakudai && kakaku_hyakudai<900 {
-        if kakaku_judai==0 {
+    }else if 500<price_hyakudai && price_hyakudai<900 {
+        if price_judai==0 {
             // 9600,10000
-            ret=calc_sen_return_list_daisatu(kakaku,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 9610,9650,9700,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 9650,9700,10000
             // 9660,9700,10000
-            ret=calc_sen_return_list_hyaku(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
+            ret=calc_sen_return_list_hyaku(price,price_hyakudai,price_sendai,10000);
         }
-    }else if 900<=kakaku_hyakudai {
-        if kakaku_judai==0 {
+    }else if 900<=price_hyakudai {
+        if price_judai==0 {
             // 9900,10000
-            ret=calc_sen_return_list_daisatu(kakaku,10000);
-        }else if 0<kakaku_judai && kakaku_judai<50 {
+            ret=calc_sen_return_list_daisatu(price,10000);
+        }else if 0<price_judai && price_judai<50 {
             // 9910,9950,10000
-            ret=calc_sen_return_list_goju(kakaku,kakaku_hyakudai,kakaku_sendai,10000);
-        }else if 50<=kakaku_judai {
+            ret=calc_sen_return_list_goju(price,price_hyakudai,price_sendai,10000);
+        }else if 50<=price_judai {
             // 9950,10000
             // 9960,10000
-            ret=calc_sen_return_list_daisatu(kakaku,10000);
+            ret=calc_sen_return_list_daisatu(price,10000);
         }
     }
     return ret;
 }
 
-fn calc_sen_return_list_goju(kakaku:i32, kakaku_hyakudai: i32, kakaku_sendai: i32, daisatsu: i32)->Vec<i32>{
+fn calc_sen_return_list_goju(price:i32, price_hyakudai: i32, price_sendai: i32, daisatsu: i32)->Vec<i32>{
     let mut ret: Vec<i32>=Vec::new();
-    let next_goju=(kakaku_sendai+kakaku_hyakudai+50)-kakaku;
-    ret.push(kakaku);
-    ret.push(kakaku+next_goju);
-    if kakaku_hyakudai+100 != 500 || kakaku_hyakudai+100 != 1000 {
-        ret.push(kakaku_sendai+kakaku_hyakudai+100);
+    let next_goju=(price_sendai+price_hyakudai+50)-price;
+    ret.push(price);
+    ret.push(price+next_goju);
+    if price_hyakudai+100 != 500 || price_hyakudai+100 != 1000 {
+        ret.push(price_sendai+price_hyakudai+100);
     }
-    if kakaku_hyakudai<500 && kakaku_hyakudai+100!=500{
-        ret.push(kakaku_sendai+500);
+    if price_hyakudai<500 && price_hyakudai+100!=500{
+        ret.push(price_sendai+500);
     }
-    if kakaku_hyakudai+100!=1000{
-        ret.push(kakaku_sendai+1000);
+    if price_hyakudai+100!=1000{
+        ret.push(price_sendai+1000);
     }
-    if kakaku_sendai+1000!=daisatsu {
+    if price_sendai+1000!=daisatsu {
         ret.push(daisatsu);
     }
     return ret;
 }
 
-fn calc_sen_return_list_hyaku(kakaku: i32, kakaku_hyakudai: i32, kakaku_sendai: i32, daisatsu: i32)->Vec<i32>{
+fn calc_sen_return_list_hyaku(price: i32, price_hyakudai: i32, price_sendai: i32, daisatsu: i32)->Vec<i32>{
     let mut ret: Vec<i32>=Vec::new();
-    let next_hyaku=kakaku_sendai+kakaku_hyakudai+100;
-    ret.push(kakaku);
+    let next_hyaku=price_sendai+price_hyakudai+100;
+    ret.push(price);
     ret.push(next_hyaku);
-    if kakaku_hyakudai<500 && kakaku_hyakudai+100!=500 {
-       ret.push(kakaku_sendai+500);
+    if price_hyakudai<500 && price_hyakudai+100!=500 {
+       ret.push(price_sendai+500);
     }
-    ret.push(kakaku_sendai+1000);
-    if kakaku_sendai+1000!=daisatsu {
+    ret.push(price_sendai+1000);
+    if price_sendai+1000!=daisatsu {
         ret.push(daisatsu);
     }
     return ret;
 }
 
-fn calc_sen_return_list_gohyaku(kakaku: i32, kakaku_sendai: i32, daisatsu: i32)->Vec<i32>{
+fn calc_sen_return_list_gohyaku(price: i32, price_sendai: i32, daisatsu: i32)->Vec<i32>{
     let mut ret: Vec<i32>=Vec::new();
-    ret.push(kakaku);
-    ret.push(kakaku_sendai+500);
-    ret.push(kakaku_sendai+1000);
-    if kakaku_sendai+1000!=daisatsu {
+    ret.push(price);
+    ret.push(price_sendai+500);
+    ret.push(price_sendai+1000);
+    if price_sendai+1000!=daisatsu {
         ret.push(daisatsu);
     }
     return ret;
 }
 
-fn calc_sen_return_list_sen(kakaku: i32, kakaku_sendai: i32, daisatsu: i32)->Vec<i32>{
+fn calc_sen_return_list_sen(price: i32, price_sendai: i32, daisatsu: i32)->Vec<i32>{
     let mut ret: Vec<i32>=Vec::new();
-    ret.push(kakaku);
-    ret.push(kakaku_sendai+1000);
-    if kakaku_sendai+1000!=daisatsu {
+    ret.push(price);
+    ret.push(price_sendai+1000);
+    if price_sendai+1000!=daisatsu {
         ret.push(daisatsu);
     }    
     return ret;
 }
 
-fn calc_sen_return_list_daisatu(kakaku: i32, daisatsu: i32)->Vec<i32>{
+fn calc_sen_return_list_daisatu(price: i32, daisatsu: i32)->Vec<i32>{
     let mut ret: Vec<i32>=Vec::new();
-    ret.push(kakaku);
+    ret.push(price);
     ret.push(daisatsu);
     return ret;
 }
 
-fn calc_oturi_money_number(kakaku_list: Vec<i32>, hanpusu: i32)->MoneyNumber{
+fn calc_oturi_money_number(price_list: Vec<i32>, hanpusu: i32)->MoneyNumber{
 
     let mut ninzu_list: Vec<i32>=Vec::new();
-    let kakaku_shurui: i32=kakaku_list.len() as i32;
-    let ninzu: i32=hanpusu/kakaku_shurui;
-    let kakaku: i32=kakaku_list[0];
-    for _kakaku in kakaku_list.iter(){
+    let price_shurui: i32=price_list.len() as i32;
+    let ninzu: i32=hanpusu/price_shurui;
+    let price: i32=price_list[0];
+    for _price in price_list.iter(){
         ninzu_list.push(ninzu);
     }
     // 余りが出るなら、大きい札で辻褄を合わせる。
-    if hanpusu%kakaku_shurui != 0 {
+    if hanpusu%price_shurui != 0 {
         let mut amari: i32=0;
         for _ninzu in ninzu_list.iter(){
             amari+=_ninzu;
@@ -29053,20 +29053,20 @@ fn calc_oturi_money_number(kakaku_list: Vec<i32>, hanpusu: i32)->MoneyNumber{
     }
 
     let mut harau_list: Vec<Pay>=Vec::new();
-    for i in 0..kakaku_shurui {
+    for i in 0..price_shurui {
         let mut pay=Pay {
-            kakaku: 0,
+            price: 0,
             ninzu: 0        
         };
         let index: usize=i as usize;
-        pay.kakaku=kakaku_list[index];
+        pay.price=price_list[index];
         pay.ninzu=ninzu_list[index];
         harau_list.push(pay);
     }
-    return count_money_number(kakaku,harau_list);
+    return count_money_number(price,harau_list);
 }
 
-fn count_money_number(kakaku: i32,harau_list: Vec<Pay>)->MoneyNumber{
+fn count_money_number(price: i32,harau_list: Vec<Pay>)->MoneyNumber{
     let mut ret=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -29078,8 +29078,8 @@ fn count_money_number(kakaku: i32,harau_list: Vec<Pay>)->MoneyNumber{
     };
     // お釣りで払う枚数を計算します。
     for pay in harau_list.iter(){
-        if kakaku<pay.kakaku {
-            let oturi=pay.kakaku-kakaku;
+        if price<pay.price {
+            let oturi=pay.price-price;
             ret.ju+=calc_ju_money_number(oturi)*pay.ninzu;
             ret.goju+=calc_goju_money_number(oturi)*pay.ninzu;
             ret.hyaku+=calc_hyaku_money_number(oturi)*pay.ninzu;
@@ -29091,13 +29091,13 @@ fn count_money_number(kakaku: i32,harau_list: Vec<Pay>)->MoneyNumber{
 
     // 入ってくる枚数を計算します。
     for pay in harau_list.iter(){
-        ret.ju-=calc_ju_money_number(pay.kakaku)*pay.ninzu;
-        ret.goju-=calc_goju_money_number(pay.kakaku)*pay.ninzu;
-        ret.hyaku-=calc_hyaku_money_number(pay.kakaku)*pay.ninzu;
-        ret.gohyaku-=calc_gohyaku_money_number(pay.kakaku)*pay.ninzu;
-        ret.sen-=calc_sen_money_number(pay.kakaku)*pay.ninzu;
-        ret.gosen-=calc_gosen_money_number(pay.kakaku)*pay.ninzu;
-        ret.ichiman-=calc_ichiman_money_number(pay.kakaku)*pay.ninzu;
+        ret.ju-=calc_ju_money_number(pay.price)*pay.ninzu;
+        ret.goju-=calc_goju_money_number(pay.price)*pay.ninzu;
+        ret.hyaku-=calc_hyaku_money_number(pay.price)*pay.ninzu;
+        ret.gohyaku-=calc_gohyaku_money_number(pay.price)*pay.ninzu;
+        ret.sen-=calc_sen_money_number(pay.price)*pay.ninzu;
+        ret.gosen-=calc_gosen_money_number(pay.price)*pay.ninzu;
+        ret.ichiman-=calc_ichiman_money_number(pay.price)*pay.ninzu;
     }
     return ret;
 }
