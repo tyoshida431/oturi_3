@@ -26597,34 +26597,6 @@ pub fn calc(){
         result.ichiman+=ret.maisu.ichiman;
         hon_list=ret.hon_list;
     }
-    //let kakaku: i32=getKakakuValue().parse().unwrap();
-    //for kakaku in kakaku_list.iter(){
-    //    let kakaku_tmp: Option<String>=kakaku.as_string();
-    //    let kakaku_str: String=kakaku_tmp.unwrap();
-    //    let kakaku_int: i32=kakaku_str.parse().unwrap();
-    //    alert(&format!("価格 : {}", kakaku_int));
-    //}
-    //let hanpusu_list: Vec<JsValue>=getHanpusuValue().to_vec();
-    //for hanpusu in hanpusu_list.iter(){
-    //    let hanpusu_tmp: Option<String>=hanpusu.as_string();
-    //    let hanpusu_str: String=hanpusu_tmp.unwrap();
-    //    let hanpusu_int: i32=hanpusu_str.parse().unwrap();
-    //}
-    //let kakaku: Option<String>=kakaku_list[0].as_string();
-    //let k: String=kakaku.unwrap();
-    //let kk: i32=k.parse().unwrap();
-    //let hanpusu: i32=getHanpusuValue().parse().unwrap();
-    //alert(&format!("頒布数 : {}", hanpusu));
-    //let ans=kakaku*10;
-    //alert(&format!("価格*10 : {}", ans));
-    //alert(&format!("一万円枚数 : {}",calc_ichiman_maisu(kakaku)));
-    //alert(&format!("五千円枚数 : {}",calc_gosen_maisu(kakaku)));
-    //alert(&format!("千円枚数 : {}",calc_sen_maisu(kakaku)));
-    //alert(&format!("500円枚数 : {}",calc_gohyaku_maisu(kakaku)));
-    //alert(&format!("100円枚数 : {}",calc_hyaku_maisu(kakaku)));
-    //alert(&format!("50円枚数 : {}",calc_goju_maisu(kakaku)));
-    //alert(&format!("10円枚数 : {}",calc_ju_maisu(kakaku)));
-    //let ret: Maisu=calc_ikura(kakaku,hanpusu);
     setResult(result.ju,result.goju,result.hyaku,result.gohyaku,result.sen,result.gosen);
 }
 
@@ -28370,22 +28342,6 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
         hon.hanpusu_count=hanpusu_count;
         hon.amari=amari;
     }
-    //counter=0;
-    //_index=0;
-    //while counter<hon_list.len().try_into().unwrap() {
-    //    let hanpusu=hon_list[_index].hanpusu;
-    //    let hanpu_count=hon_list[_index].hanpu_count;
-    //    let hanpusu_count=hanpusu/hanpu_count;
-    //    let amari=hanpusu%hanpu_count;
-    //    hon_list[_index].hanpusu_count=hanpusu_count;
-    //    hon_list[_index].amari=amari;
-        //println!("kakaku : {}",hon_list[_index].kakaku);
-        //println!("hanpusu : {}",hon_list[_index].hanpusu);
-        //println!("hanpu_count : {}",hon_list[_index].hanpu_count);
-        //println!("hanpusu_count : {}",hon_list[_index].hanpusu_count);
-    //    counter+=1;
-    //    _index+=1;
-    //}
     // 最小頒布数を見つけます。
     let mut min_hanpusu: i32=i32::MAX;
     for _hon in hon_list.iter() {
@@ -28491,23 +28447,6 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
         }
     }
     // 元々のIDを参照して頒布数を引きます。
-//    counter=0;
-//    _index=0;
-//    while counter<hon_list.len().try_into().unwrap() {
-//        for hon_for_calc in combination_list.iter() {
-//            let moto_list=&hon_for_calc.moto_list;
-//            for hon_moto in moto_list.iter() {
-//                if hon_list[_index].id==*hon_moto {
-//                    if 0<hon_list[_index].hanpusu {
-//                        hon_list[_index].hanpusu-=hanpusu_for_calc;
-//                    }
-//                    hon_list[_index].hanpu_count=0;
-//                }
-//            }
-//        }
-//        counter+=1;
-//        _index+=1;
-//    }
     for _hon in &mut hon_list {
         for hon_for_calc in combination_list.iter() {
             let moto_list=&hon_for_calc.moto_list;
