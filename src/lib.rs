@@ -48,6 +48,11 @@ extern {
     pub fn alert(s: &str);
 }
 
+// "oturi"の名前でディレクトリーを作成して、
+// 最初に"oturi"の名前でファイル・関数・を作成し、
+// リファクタリングでoturi->changeに関数・変数を変更したので、
+// oturi_3_view.jsのJavaScriptファイル名は残しておく。
+// (2023/06/04 T.Yoshida)
 #[wasm_bindgen(module="/oturi_3_view.js")]
 extern "C"{
     pub fn getBookList() -> js_sys::Array;
@@ -28527,7 +28532,7 @@ fn calc_ju(price: i32, hanpu_number: i32)->MoneyNumber{
         price_list.push(price);
         price_list.push(100);
     }
-    return calc_oturi_money_number(price_list, hanpu_number);
+    return calc_change_money_number(price_list, hanpu_number);
 }
 
 fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
@@ -28565,7 +28570,7 @@ fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
         price_list.push(price);
         price_list.push(1000);
     }
-    return calc_oturi_money_number(price_list, hanpu_number);
+    return calc_change_money_number(price_list, hanpu_number);
 }
 
 fn calc_sen(price: i32, hanpu_number: i32)->MoneyNumber{
@@ -28581,7 +28586,7 @@ fn calc_sen(price: i32, hanpu_number: i32)->MoneyNumber{
     }else if 9000 <= price {
         price_list=calc_sen_kyusen(price);
     }
-    return calc_oturi_money_number(price_list, hanpu_number);
+    return calc_change_money_number(price_list, hanpu_number);
 }
 
 fn calc_man(price: i32, hanpu_number: i32)->MoneyNumber{
@@ -28610,7 +28615,7 @@ fn calc_man(price: i32, hanpu_number: i32)->MoneyNumber{
     }else{
         _price_list=calc_man_hyaku(price_for_calc);
     }
-    let mut ret=calc_oturi_money_number(_price_list,hanpu_number);
+    let mut ret=calc_change_money_number(_price_list,hanpu_number);
     ret.ichiman-=ichiman_money_number-1;
     return ret;
 }
@@ -29027,7 +29032,7 @@ fn calc_sen_return_list_daisatu(price: i32, daisatsu: i32)->Vec<i32>{
     return ret;
 }
 
-fn calc_oturi_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber{
+fn calc_change_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber{
 
     let mut person_number_list: Vec<i32>=Vec::new();
     let price_kind: i32=price_list.len() as i32;
@@ -29079,13 +29084,13 @@ fn count_money_number(price: i32,harau_list: Vec<Pay>)->MoneyNumber{
     // お釣りで払う枚数を計算します。
     for pay in harau_list.iter(){
         if price<pay.price {
-            let oturi=pay.price-price;
-            ret.ju+=calc_ju_money_number(oturi)*pay.person_number;
-            ret.goju+=calc_goju_money_number(oturi)*pay.person_number;
-            ret.hyaku+=calc_hyaku_money_number(oturi)*pay.person_number;
-            ret.gohyaku+=calc_gohyaku_money_number(oturi)*pay.person_number;
-            ret.sen+=calc_sen_money_number(oturi)*pay.person_number;
-            ret.gosen+=calc_gosen_money_number(oturi)*pay.person_number;
+            let change=pay.price-price;
+            ret.ju+=calc_ju_money_number(change)*pay.person_number;
+            ret.goju+=calc_goju_money_number(change)*pay.person_number;
+            ret.hyaku+=calc_hyaku_money_number(change)*pay.person_number;
+            ret.gohyaku+=calc_gohyaku_money_number(change)*pay.person_number;
+            ret.sen+=calc_sen_money_number(change)*pay.person_number;
+            ret.gosen+=calc_gosen_money_number(change)*pay.person_number;
         }
     }
 
