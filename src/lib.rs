@@ -33,7 +33,7 @@ struct Book{
     price: i32,
     // 頒布数。
     hanpu_number: i32,
-    // 組み合わせで計算した、この本の被頒布回数。
+    // 計算用に組み合わせで計算した時の、この本の被頒布回数。
     hanpu_count: i32,
     // 組み合わせで計算し、一回のお釣り計算のために算出した、
     // この本の頒布数。
@@ -44,8 +44,18 @@ struct Book{
 // 複数冊の同人誌を組み合わせて計算する、
 // 計算用のデーター。
 struct BookForCalc{
+    // 同人誌の価格。
+    // 計算用に、400円と500円の本なら、
+    // 900円、と組み合わせで足す。
+    // 400円
+    // 500円
+    // 900円
+    // と組み合わせてお釣りを計算する。
     price: i32,
+    // 計算用の頒布数。
     hanpu_number: i32,
+    // この計算用の価格が、どの本の価格の組み合わせか、
+    // idを保持する。
     source_list: Vec<i32>    
 }
 
@@ -28550,7 +28560,7 @@ fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
     let mut price_list: Vec<i32>=Vec::new();
     let mut price: i32 = 0;
     // 1000円から3000円までも本メソッドで計算して、
-    // 1000円から3000円までの場合1万円の使用を想定しない。
+    // 1000円から3000円までの場合5000円と1万円の使用を想定しない。
     if price <= 1000 {
         price=_price%1000;
     }else{
@@ -28627,6 +28637,7 @@ fn calc_man(price: i32, hanpu_number: i32)->MoneyNumber{
         _price_list=calc_man_hyaku(price_for_calc);
     }
     let mut ret=calc_change_money_number(_price_list,hanpu_number);
+    // TODO : 確認すること。
     ret.ichiman-=ichiman_money_number-1;
     return ret;
 }
