@@ -26549,18 +26549,18 @@ mod tests {
 
 #[wasm_bindgen]
 pub fn calc(){
-    let hon_from_js_list: Vec<JsValue>=getBookList().to_vec();
-    if hon_from_js_list.len()==0 {
+    let book_from_js_list: Vec<JsValue>=getBookList().to_vec();
+    if book_from_js_list.len()==0 {
         return;
     }
     let mut book_list: Vec<Book>=Vec::new();
     let mut id: i32=0;
-    for hon_from_js in hon_from_js_list.iter(){
-        let hon_tmp: Option<String>=hon_from_js.as_string();
-        let hon_str: String=hon_tmp.unwrap();
-        let hon_split_list: Vec<&str>=hon_str.split(":").collect();
-        let price_str: &str=hon_split_list[0];
-        let hanpu_number_str: &str=hon_split_list[1];
+    for book_from_js in book_from_js_list.iter(){
+        let book_tmp: Option<String>=book_from_js.as_string();
+        let book_str: String=book_tmp.unwrap();
+        let book_split_list: Vec<&str>=book_str.split(":").collect();
+        let price_str: &str=book_split_list[0];
+        let hanpu_number_str: &str=book_split_list[1];
         let price_int: i32=price_str.parse().unwrap();
         let hanpu_number_int: i32=hanpu_number_str.parse().unwrap();
         let hon = Book{
@@ -28317,7 +28317,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         ichiman: 0
     };
     // 本の種類数。
-    let hon_su: i32=book_list.len().try_into().unwrap();
+    let book_number: i32=book_list.len().try_into().unwrap();
     let mut combination_list: Vec<BookForCalc>=Vec::new();
     let mut _index: usize=0;
 
@@ -28325,7 +28325,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     // 一冊だけならループ数を増やさないのでループ数を2から始める。
     let mut loop_num: i32=2;
     let mut counter: i32=0;
-    while counter<hon_su-1 {
+    while counter<book_number-1 {
         loop_num*=2;
         counter+=1;
     }
@@ -28396,22 +28396,22 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                 // 頒布数を種類数で割る。余ったら次のループに持ち越すので、余りは無視する。
                 if kind_number < book_list.len().try_into().unwrap() {
                     if 0<hanpu_number {
-                        let hon_for_calc=BookForCalc {
+                        let book_for_calc=BookForCalc {
                             price: sum,
                             hanpu_number: hanpu_number/kind_number,
                             source_list: source_list
                         };
-                        combination_list.push(hon_for_calc);                        
+                        combination_list.push(book_for_calc);                        
                     }
                 }else{
                     // 種類数が本の種類を上回っている場合、余った冊数を寄せて計算する。
                     if 0<hanpu_number {
-                        let hon_for_calc=BookForCalc {
+                        let book_for_calc=BookForCalc {
                             price: sum,
                             hanpu_number: (hanpu_number+remainder)/kind_number,
                             source_list: source_list
                         };
-                        combination_list.push(hon_for_calc);
+                        combination_list.push(book_for_calc);
                     }
                 }
             }
@@ -28422,12 +28422,12 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         for _book in book_list.iter() {
             let mut tansatsu_source_list=Vec::new();
             tansatsu_source_list.push(_book.id);
-            let hon_for_calc=BookForCalc {
+            let book_for_calc=BookForCalc {
                 price: _book.price,
                 hanpu_number: _book.hanpu_number,
                 source_list: tansatsu_source_list
             };
-            combination_list.push(hon_for_calc);
+            combination_list.push(book_for_calc);
         }
     }
     // 最小頒布数を見つける。
@@ -28461,10 +28461,10 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     }
     // 元々のIDを参照して頒布数を引きます。
     for _book in &mut book_list {
-        for hon_for_calc in combination_list.iter() {
-            let source_list=&hon_for_calc.source_list;
-            for hon_moto in source_list.iter() {
-                if _book.id==*hon_moto {
+        for book_for_calc in combination_list.iter() {
+            let source_list=&book_for_calc.source_list;
+            for book_moto in source_list.iter() {
+                if _book.id==*book_moto {
                     // 計算した分の頒布数を引いて次の処理に持ち越す。
                     if 0<_book.hanpu_number {
                         _book.hanpu_number-=hanpu_number_for_calc;
