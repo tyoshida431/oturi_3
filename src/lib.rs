@@ -19,10 +19,16 @@ struct Pay{
 }
 
 // 同人誌一種。
+// 「頒布」の語を日本語で残しているのは、
+// 1970年代の日本マンガ同人誌界に、
+// 「販売でなく頒布と呼びなおそう」の経緯があったので、
+// 合わせて「hanpu」と変数を命名している。
 struct Book{
     id: i32,
     price: i32,
+    // 頒布冊数。
     hanpu_number: i32,
+    // 組み合わせで計算した時の、この本の被頒布回数。
     hanpu_count: i32,
     hanpu_number_combination: i32,
     remainder: i32
@@ -28349,10 +28355,10 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         let hanpu_number=book.hanpu_number;
         let hanpu_count=book.hanpu_count;
         // 入力された本の頒布数を、組み合わせでカウントした頒布回数で割って、
-        // 今回の処理の頒布数カウントを計算する。
-        let hanpu_number_count=hanpu_number/hanpu_count;
+        // 今回の処理の頒布数を計算する。
+        let hanpu_number_combination=hanpu_number/hanpu_count;
         let remainder=hanpu_number%hanpu_count;
-        book.hanpu_number_combination=hanpu_number_count;
+        book.hanpu_number_combination=hanpu_number_combination;
         book.remainder=remainder;
     }
     // 最小頒布数を見つけます。
@@ -29082,6 +29088,9 @@ fn count_money_number(price: i32,pay_list: Vec<Pay>)->MoneyNumber{
     // お釣りで払う枚数を計算します。
     for pay in pay_list.iter(){
         if price<pay.price {
+            // pay.priceは読者さんが払う、400円や500円や1000円。
+            // priceは同人誌の価格。
+            // なのでpay.price-priceがお釣り。
             let change=pay.price-price;
             ret.ju+=calc_ju_money_number(change)*pay.person_number;
             ret.goju+=calc_goju_money_number(change)*pay.person_number;
