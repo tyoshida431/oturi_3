@@ -39,7 +39,7 @@ struct BookForCalc{
 // 計算結果。
 struct CalcResult{
     money_number: MoneyNumber,
-    hon_list: Vec<Book>,
+    book_list: Vec<Book>,
     end_flag: bool
 }
 
@@ -26548,7 +26548,7 @@ pub fn calc(){
     if hon_from_js_list.len()==0 {
         return;
     }
-    let mut hon_list: Vec<Book>=Vec::new();
+    let mut book_list: Vec<Book>=Vec::new();
     let mut id: i32=0;
     for hon_from_js in hon_from_js_list.iter(){
         let hon_tmp: Option<String>=hon_from_js.as_string();
@@ -26566,7 +26566,7 @@ pub fn calc(){
             hanpu_number_combination: 0,
             amari: 0
         };
-        hon_list.push(hon);
+        book_list.push(hon);
         id+=1;
     }
     let mut result_for_screen=MoneyNumber{
@@ -26589,12 +26589,12 @@ pub fn calc(){
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     // 組み合わせを列挙してお釣りを計算します。
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result_for_screen.ju+=ret.money_number.ju;
         result_for_screen.goju+=ret.money_number.goju;
         result_for_screen.hyaku+=ret.money_number.hyaku;
@@ -26602,7 +26602,7 @@ pub fn calc(){
         result_for_screen.sen+=ret.money_number.sen;
         result_for_screen.gosen+=ret.money_number.gosen;
         result_for_screen.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     setResult(result_for_screen.ju,result_for_screen.goju,result_for_screen.hyaku,
         result_for_screen.gohyaku,result_for_screen.sen,result_for_screen.gosen);
@@ -26687,11 +26687,11 @@ pub fn test_combination_ju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -26713,11 +26713,11 @@ pub fn test_combination_ju()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -26725,7 +26725,7 @@ pub fn test_combination_ju()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.ju;
 }
@@ -26774,11 +26774,11 @@ pub fn test_combination_goju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -26800,11 +26800,11 @@ pub fn test_combination_goju()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -26812,7 +26812,7 @@ pub fn test_combination_goju()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.goju;
 }
@@ -26861,11 +26861,11 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -26887,11 +26887,11 @@ pub fn test_combination_hyaku()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -26899,7 +26899,7 @@ pub fn test_combination_hyaku()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.hyaku;
 }
@@ -26948,11 +26948,11 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -26974,11 +26974,11 @@ pub fn test_combination_gohyaku()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -26986,7 +26986,7 @@ pub fn test_combination_gohyaku()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.gohyaku;
 }
@@ -27035,11 +27035,11 @@ pub fn test_combination_sen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27061,11 +27061,11 @@ pub fn test_combination_sen()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27073,7 +27073,7 @@ pub fn test_combination_sen()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.sen;
 }
@@ -27122,11 +27122,11 @@ pub fn test_combination_gosen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27148,11 +27148,11 @@ pub fn test_combination_gosen()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27160,7 +27160,7 @@ pub fn test_combination_gosen()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.gosen;
 }
@@ -27198,11 +27198,11 @@ pub fn test_combination_ju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27224,11 +27224,11 @@ pub fn test_combination_ju2()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27236,7 +27236,7 @@ pub fn test_combination_ju2()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.ju;
 }
@@ -27274,11 +27274,11 @@ pub fn test_combination_goju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27300,11 +27300,11 @@ pub fn test_combination_goju2()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27312,7 +27312,7 @@ pub fn test_combination_goju2()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.goju;
 }
@@ -27350,11 +27350,11 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27376,11 +27376,11 @@ pub fn test_combination_hyaku2()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27388,7 +27388,7 @@ pub fn test_combination_hyaku2()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.hyaku;
 }
@@ -27426,11 +27426,11 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27452,11 +27452,11 @@ pub fn test_combination_gohyaku2()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27464,7 +27464,7 @@ pub fn test_combination_gohyaku2()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.gohyaku;
 }
@@ -27502,11 +27502,11 @@ pub fn test_combination_sen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27528,11 +27528,11 @@ pub fn test_combination_sen2()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27540,7 +27540,7 @@ pub fn test_combination_sen2()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.sen;
 }
@@ -27588,11 +27588,11 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27614,11 +27614,11 @@ pub fn test_combination_gosen2()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27626,7 +27626,7 @@ pub fn test_combination_gosen2()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.gosen;
 }
@@ -27696,15 +27696,15 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
-    hon_list.push(hon5);
-    hon_list.push(hon6);
-    hon_list.push(hon7);
-    hon_list.push(hon8);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
+    book_list.push(hon5);
+    book_list.push(hon6);
+    book_list.push(hon7);
+    book_list.push(hon8);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27726,11 +27726,11 @@ pub fn test_combination_ju3()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27738,7 +27738,7 @@ pub fn test_combination_ju3()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.ju;
 }
@@ -27808,15 +27808,15 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
-    hon_list.push(hon5);
-    hon_list.push(hon6);
-    hon_list.push(hon7);
-    hon_list.push(hon8);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
+    book_list.push(hon5);
+    book_list.push(hon6);
+    book_list.push(hon7);
+    book_list.push(hon8);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27838,11 +27838,11 @@ pub fn test_combination_goju3()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27850,7 +27850,7 @@ pub fn test_combination_goju3()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.goju;
 }
@@ -27920,15 +27920,15 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
-    hon_list.push(hon5);
-    hon_list.push(hon6);
-    hon_list.push(hon7);
-    hon_list.push(hon8);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
+    book_list.push(hon5);
+    book_list.push(hon6);
+    book_list.push(hon7);
+    book_list.push(hon8);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -27950,11 +27950,11 @@ pub fn test_combination_hyaku3()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -27962,7 +27962,7 @@ pub fn test_combination_hyaku3()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.hyaku;
 }
@@ -28032,15 +28032,15 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
-    hon_list.push(hon5);
-    hon_list.push(hon6);
-    hon_list.push(hon7);
-    hon_list.push(hon8);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
+    book_list.push(hon5);
+    book_list.push(hon6);
+    book_list.push(hon7);
+    book_list.push(hon8);
     let ret_money_number=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -28061,11 +28061,11 @@ pub fn test_combination_gohyaku3()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -28073,7 +28073,7 @@ pub fn test_combination_gohyaku3()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.gohyaku;
 }
@@ -28143,15 +28143,15 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
-    hon_list.push(hon5);
-    hon_list.push(hon6);
-    hon_list.push(hon7);
-    hon_list.push(hon8);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
+    book_list.push(hon5);
+    book_list.push(hon6);
+    book_list.push(hon7);
+    book_list.push(hon8);
     let ret_money_number=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -28172,11 +28172,11 @@ pub fn test_combination_sen3()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -28184,7 +28184,7 @@ pub fn test_combination_sen3()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.sen;
 }
@@ -28254,15 +28254,15 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let mut hon_list=Vec::new();
-    hon_list.push(hon1);
-    hon_list.push(hon2);
-    hon_list.push(hon3);
-    hon_list.push(hon4);
-    hon_list.push(hon5);
-    hon_list.push(hon6);
-    hon_list.push(hon7);
-    hon_list.push(hon8);
+    let mut book_list=Vec::new();
+    book_list.push(hon1);
+    book_list.push(hon2);
+    book_list.push(hon3);
+    book_list.push(hon4);
+    book_list.push(hon5);
+    book_list.push(hon6);
+    book_list.push(hon7);
+    book_list.push(hon8);
 
     let ret_money_number=MoneyNumber{
         ju: 0,
@@ -28284,11 +28284,11 @@ pub fn test_combination_gosen3()->i32{
     };
     let mut ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: Vec::new(),
+        book_list: Vec::new(),
         end_flag: false
     }; 
     while !ret.end_flag {
-        ret=calc_combination(hon_list);
+        ret=calc_combination(book_list);
         result.ju+=ret.money_number.ju;
         result.goju+=ret.money_number.goju;
         result.hyaku+=ret.money_number.hyaku;
@@ -28296,12 +28296,12 @@ pub fn test_combination_gosen3()->i32{
         result.sen+=ret.money_number.sen;
         result.gosen+=ret.money_number.gosen;
         result.ichiman+=ret.money_number.ichiman;
-        hon_list=ret.hon_list;
+        book_list=ret.book_list;
     }
     return result.gosen;
 }
 
-fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
+fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     let mut ret_money_number=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -28312,7 +28312,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
         ichiman: 0
     };
     // 本の種類数。
-    let hon_su: i32=hon_list.len().try_into().unwrap();
+    let hon_su: i32=book_list.len().try_into().unwrap();
     let mut combination_list: Vec<BookForCalc>=Vec::new();
     let mut _index: usize=0;
 
@@ -28332,7 +28332,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
         _index=0;
         while num!=0 {
             if (num & 0x0000000000000000000000000000001)==0x00000000000000000000000000000001 {
-                hon_list[_index].hanpu_count+=1;
+                book_list[_index].hanpu_count+=1;
             }
             _index+=1;
             num=num>>1;
@@ -28340,7 +28340,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
         counter+=1;
     }
     // 頒布回数から組み合わせ後の頒布数を計算します。
-    for hon in &mut hon_list {
+    for hon in &mut book_list {
         let hanpusu=hon.hanpusu;
         let hanpu_count=hon.hanpu_count;
         // 入力された本の頒布数を、組み合わせでカウントした頒布回数で割って、
@@ -28352,7 +28352,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
     }
     // 最小頒布数を見つけます。
     let mut min_hanpusu: i32=i32::MAX;
-    for _hon in hon_list.iter() {
+    for _hon in book_list.iter() {
         if _hon.hanpusu<min_hanpusu && 0<_hon.hanpusu {
             min_hanpusu=_hon.hanpusu;
         }
@@ -28372,13 +28372,13 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
             while num!=0 {
                 if (num & 0x00000000000000000000000000000001)==0x00000000000000000000000000000001 {
                     // 頒布数が0なら組み合わせに入れない。
-                    if 0<hon_list[_index].hanpusu {
+                    if 0<book_list[_index].hanpusu {
                         // 組み合わせで計算し、例えば200円5冊300円5冊の組み合わせなら、
                         // 500円10冊と計算する。
-                        moto_list.push(hon_list[_index].id);
-                        sum+=hon_list[_index].price;
-                        hanpusu+=hon_list[_index].hanpu_number_combination;
-                        amari+=hon_list[_index].amari;
+                        moto_list.push(book_list[_index].id);
+                        sum+=book_list[_index].price;
+                        hanpusu+=book_list[_index].hanpu_number_combination;
+                        amari+=book_list[_index].amari;
                         shurui_su+=1;    
                     }
                 }
@@ -28389,7 +28389,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
             //println!("hanpusu : {}",hanpusu);
             if sum!=0 {
                 // 頒布数を種類数で割る。余ったら次のループに持ち越すので、余りは無視する。
-                if shurui_su < hon_list.len().try_into().unwrap() {
+                if shurui_su < book_list.len().try_into().unwrap() {
                     if 0<hanpusu {
                         let hon_for_calc=BookForCalc {
                             price: sum,
@@ -28414,7 +28414,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
         }
     }else{
         // 最小頒布数が組み合わせの数に足りなかったら、組み合わせず単冊に分散させる。
-        for _hon in hon_list.iter() {
+        for _hon in book_list.iter() {
             let mut tansatsu_moto_list=Vec::new();
             tansatsu_moto_list.push(_hon.id);
             let hon_for_calc=BookForCalc {
@@ -28436,7 +28436,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
     if hanpusu_for_calc==i32::MAX {
         let ret=CalcResult{
             money_number: ret_money_number,
-            hon_list: hon_list,
+            book_list: book_list,
             end_flag: true
         };    
         return ret;
@@ -28455,7 +28455,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
         }
     }
     // 元々のIDを参照して頒布数を引きます。
-    for _hon in &mut hon_list {
+    for _hon in &mut book_list {
         for hon_for_calc in combination_list.iter() {
             let moto_list=&hon_for_calc.moto_list;
             for hon_moto in moto_list.iter() {
@@ -28472,7 +28472,7 @@ fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
     }
     let ret=CalcResult{
         money_number: ret_money_number,
-        hon_list: hon_list,
+        book_list: book_list,
         end_flag: false
     };
     return ret;
