@@ -29057,7 +29057,7 @@ fn calc_change_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumbe
         }
     }
 
-    let mut harau_list: Vec<Pay>=Vec::new();
+    let mut pay_list: Vec<Pay>=Vec::new();
     for i in 0..price_kind {
         let mut pay=Pay {
             price: 0,
@@ -29066,12 +29066,12 @@ fn calc_change_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumbe
         let index: usize=i as usize;
         pay.price=price_list[index];
         pay.person_number=person_number_list[index];
-        harau_list.push(pay);
+        pay_list.push(pay);
     }
-    return count_money_number(price,harau_list);
+    return count_money_number(price,pay_list);
 }
 
-fn count_money_number(price: i32,harau_list: Vec<Pay>)->MoneyNumber{
+fn count_money_number(price: i32,pay_list: Vec<Pay>)->MoneyNumber{
     let mut ret=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -29082,7 +29082,7 @@ fn count_money_number(price: i32,harau_list: Vec<Pay>)->MoneyNumber{
         ichiman: 0
     };
     // お釣りで払う枚数を計算します。
-    for pay in harau_list.iter(){
+    for pay in pay_list.iter(){
         if price<pay.price {
             let change=pay.price-price;
             ret.ju+=calc_ju_money_number(change)*pay.person_number;
@@ -29095,7 +29095,7 @@ fn count_money_number(price: i32,harau_list: Vec<Pay>)->MoneyNumber{
     }
 
     // 入ってくる枚数を計算します。
-    for pay in harau_list.iter(){
+    for pay in pay_list.iter(){
         ret.ju-=calc_ju_money_number(pay.price)*pay.person_number;
         ret.goju-=calc_goju_money_number(pay.price)*pay.person_number;
         ret.hyaku-=calc_hyaku_money_number(pay.price)*pay.person_number;
