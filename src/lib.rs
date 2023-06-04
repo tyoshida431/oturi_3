@@ -30,7 +30,9 @@ struct Book{
     hanpu_number: i32,
     // 組み合わせで計算した時の、この本の被頒布回数。
     hanpu_count: i32,
-    hanpu_number_combination: i32,
+    // 組み合わせで計算し、一回のお釣り計算のために算出した、
+    // この本の頒布数。
+    hanpu_number_for_calc: i32,
     remainder: i32
 }
 
@@ -26574,7 +26576,7 @@ pub fn calc(){
             price: price_int,
             hanpu_number: hanpu_number_int,
             hanpu_count: 0,
-            hanpu_number_combination: 0,
+            hanpu_number_for_calc: 0,
             remainder: 0
         };
         book_list.push(book);
@@ -26671,7 +26673,7 @@ pub fn test_combination_ju()->i32{
         price: 1200,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -26679,7 +26681,7 @@ pub fn test_combination_ju()->i32{
         price: 600,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -26687,7 +26689,7 @@ pub fn test_combination_ju()->i32{
         price: 400,
         hanpu_number: 5,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -26695,7 +26697,7 @@ pub fn test_combination_ju()->i32{
         price: 500,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -26758,7 +26760,7 @@ pub fn test_combination_goju()->i32{
         price: 1200,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -26766,7 +26768,7 @@ pub fn test_combination_goju()->i32{
         price: 600,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -26774,7 +26776,7 @@ pub fn test_combination_goju()->i32{
         price: 400,
         hanpu_number: 5,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -26782,7 +26784,7 @@ pub fn test_combination_goju()->i32{
         price: 500,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -26845,7 +26847,7 @@ pub fn test_combination_hyaku()->i32{
         price: 1200,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -26853,7 +26855,7 @@ pub fn test_combination_hyaku()->i32{
         price: 600,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -26861,7 +26863,7 @@ pub fn test_combination_hyaku()->i32{
         price: 400,
         hanpu_number: 5,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -26869,7 +26871,7 @@ pub fn test_combination_hyaku()->i32{
         price: 500,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -26932,7 +26934,7 @@ pub fn test_combination_gohyaku()->i32{
         price: 1200,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -26940,7 +26942,7 @@ pub fn test_combination_gohyaku()->i32{
         price: 600,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -26948,7 +26950,7 @@ pub fn test_combination_gohyaku()->i32{
         price: 400,
         hanpu_number: 5,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -26956,7 +26958,7 @@ pub fn test_combination_gohyaku()->i32{
         price: 500,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27019,7 +27021,7 @@ pub fn test_combination_sen()->i32{
         price: 1200,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27027,7 +27029,7 @@ pub fn test_combination_sen()->i32{
         price: 600,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27035,7 +27037,7 @@ pub fn test_combination_sen()->i32{
         price: 400,
         hanpu_number: 5,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27043,7 +27045,7 @@ pub fn test_combination_sen()->i32{
         price: 500,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27106,7 +27108,7 @@ pub fn test_combination_gosen()->i32{
         price: 1200,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27114,7 +27116,7 @@ pub fn test_combination_gosen()->i32{
         price: 600,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27122,7 +27124,7 @@ pub fn test_combination_gosen()->i32{
         price: 400,
         hanpu_number: 5,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27130,7 +27132,7 @@ pub fn test_combination_gosen()->i32{
         price: 500,
         hanpu_number: 10,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27182,7 +27184,7 @@ pub fn test_combination_ju2()->i32{
         price: 110,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27190,7 +27192,7 @@ pub fn test_combination_ju2()->i32{
         price: 460,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27198,7 +27200,7 @@ pub fn test_combination_ju2()->i32{
         price: 740,
         hanpu_number: 40,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27206,7 +27208,7 @@ pub fn test_combination_ju2()->i32{
         price: 880,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27258,7 +27260,7 @@ pub fn test_combination_goju2()->i32{
         price: 110,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27266,7 +27268,7 @@ pub fn test_combination_goju2()->i32{
         price: 460,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27274,7 +27276,7 @@ pub fn test_combination_goju2()->i32{
         price: 740,
         hanpu_number: 40,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27282,7 +27284,7 @@ pub fn test_combination_goju2()->i32{
         price: 880,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27334,7 +27336,7 @@ pub fn test_combination_hyaku2()->i32{
         price: 110,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27342,7 +27344,7 @@ pub fn test_combination_hyaku2()->i32{
         price: 460,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27350,7 +27352,7 @@ pub fn test_combination_hyaku2()->i32{
         price: 740,
         hanpu_number: 40,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27358,7 +27360,7 @@ pub fn test_combination_hyaku2()->i32{
         price: 880,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27410,7 +27412,7 @@ pub fn test_combination_gohyaku2()->i32{
         price: 110,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27418,7 +27420,7 @@ pub fn test_combination_gohyaku2()->i32{
         price: 460,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27426,7 +27428,7 @@ pub fn test_combination_gohyaku2()->i32{
         price: 740,
         hanpu_number: 40,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27434,7 +27436,7 @@ pub fn test_combination_gohyaku2()->i32{
         price: 880,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27486,7 +27488,7 @@ pub fn test_combination_sen2()->i32{
         price: 110,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27494,7 +27496,7 @@ pub fn test_combination_sen2()->i32{
         price: 460,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27502,7 +27504,7 @@ pub fn test_combination_sen2()->i32{
         price: 740,
         hanpu_number: 40,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27510,7 +27512,7 @@ pub fn test_combination_sen2()->i32{
         price: 880,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27572,7 +27574,7 @@ pub fn test_combination_gosen2()->i32{
         price: 110,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27580,7 +27582,7 @@ pub fn test_combination_gosen2()->i32{
         price: 460,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27588,7 +27590,7 @@ pub fn test_combination_gosen2()->i32{
         price: 740,
         hanpu_number: 40,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27596,7 +27598,7 @@ pub fn test_combination_gosen2()->i32{
         price: 880,
         hanpu_number: 100,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27648,7 +27650,7 @@ pub fn test_combination_ju3()->i32{
         price: 1200,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27656,7 +27658,7 @@ pub fn test_combination_ju3()->i32{
         price: 500,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27664,7 +27666,7 @@ pub fn test_combination_ju3()->i32{
         price: 600,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27672,7 +27674,7 @@ pub fn test_combination_ju3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book5 = Book{
@@ -27680,7 +27682,7 @@ pub fn test_combination_ju3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book6 = Book{
@@ -27688,7 +27690,7 @@ pub fn test_combination_ju3()->i32{
         price: 400,
         hanpu_number: 500,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book7 = Book{
@@ -27696,7 +27698,7 @@ pub fn test_combination_ju3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book8 = Book{
@@ -27704,7 +27706,7 @@ pub fn test_combination_ju3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27760,7 +27762,7 @@ pub fn test_combination_goju3()->i32{
         price: 1200,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27768,7 +27770,7 @@ pub fn test_combination_goju3()->i32{
         price: 500,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27776,7 +27778,7 @@ pub fn test_combination_goju3()->i32{
         price: 600,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27784,7 +27786,7 @@ pub fn test_combination_goju3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book5 = Book{
@@ -27792,7 +27794,7 @@ pub fn test_combination_goju3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book6 = Book{
@@ -27800,7 +27802,7 @@ pub fn test_combination_goju3()->i32{
         price: 400,
         hanpu_number: 500,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book7 = Book{
@@ -27808,7 +27810,7 @@ pub fn test_combination_goju3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book8 = Book{
@@ -27816,7 +27818,7 @@ pub fn test_combination_goju3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27872,7 +27874,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 1200,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27880,7 +27882,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 500,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -27888,7 +27890,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 600,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -27896,7 +27898,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book5 = Book{
@@ -27904,7 +27906,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book6 = Book{
@@ -27912,7 +27914,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 400,
         hanpu_number: 500,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book7 = Book{
@@ -27920,7 +27922,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book8 = Book{
@@ -27928,7 +27930,7 @@ pub fn test_combination_hyaku3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -27984,7 +27986,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 1200,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -27992,7 +27994,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 500,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -28000,7 +28002,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 600,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -28008,7 +28010,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book5 = Book{
@@ -28016,7 +28018,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book6 = Book{
@@ -28024,7 +28026,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 400,
         hanpu_number: 500,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book7 = Book{
@@ -28032,7 +28034,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book8 = Book{
@@ -28040,7 +28042,7 @@ pub fn test_combination_gohyaku3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -28095,7 +28097,7 @@ pub fn test_combination_sen3()->i32{
         price: 1200,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -28103,7 +28105,7 @@ pub fn test_combination_sen3()->i32{
         price: 500,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -28111,7 +28113,7 @@ pub fn test_combination_sen3()->i32{
         price: 600,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -28119,7 +28121,7 @@ pub fn test_combination_sen3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book5 = Book{
@@ -28127,7 +28129,7 @@ pub fn test_combination_sen3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book6 = Book{
@@ -28135,7 +28137,7 @@ pub fn test_combination_sen3()->i32{
         price: 400,
         hanpu_number: 500,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book7 = Book{
@@ -28143,7 +28145,7 @@ pub fn test_combination_sen3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book8 = Book{
@@ -28151,7 +28153,7 @@ pub fn test_combination_sen3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -28206,7 +28208,7 @@ pub fn test_combination_gosen3()->i32{
         price: 1200,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book2 = Book{
@@ -28214,7 +28216,7 @@ pub fn test_combination_gosen3()->i32{
         price: 500,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book3 = Book{
@@ -28222,7 +28224,7 @@ pub fn test_combination_gosen3()->i32{
         price: 600,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book4 = Book{
@@ -28230,7 +28232,7 @@ pub fn test_combination_gosen3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book5 = Book{
@@ -28238,7 +28240,7 @@ pub fn test_combination_gosen3()->i32{
         price: 500,
         hanpu_number: 1000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book6 = Book{
@@ -28246,7 +28248,7 @@ pub fn test_combination_gosen3()->i32{
         price: 400,
         hanpu_number: 500,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book7 = Book{
@@ -28254,7 +28256,7 @@ pub fn test_combination_gosen3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let book8 = Book{
@@ -28262,7 +28264,7 @@ pub fn test_combination_gosen3()->i32{
         price: 1000,
         hanpu_number: 2000,
         hanpu_count: 0,
-        hanpu_number_combination: 0,
+        hanpu_number_for_calc: 0,
         remainder: 0
     };
     let mut book_list=Vec::new();
@@ -28356,9 +28358,9 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         let hanpu_count=book.hanpu_count;
         // 入力された本の頒布数を、組み合わせでカウントした頒布回数で割って、
         // 今回の処理の頒布数を計算する。
-        let hanpu_number_combination=hanpu_number/hanpu_count;
+        let hanpu_number_for_calc=hanpu_number/hanpu_count;
         let remainder=hanpu_number%hanpu_count;
-        book.hanpu_number_combination=hanpu_number_combination;
+        book.hanpu_number_for_calc=hanpu_number_for_calc;
         book.remainder=remainder;
     }
     // 最小頒布数を見つけます。
@@ -28388,7 +28390,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                         // 500円10冊と計算する。
                         source_list.push(book_list[_index].id);
                         sum+=book_list[_index].price;
-                        hanpu_number+=book_list[_index].hanpu_number_combination;
+                        hanpu_number+=book_list[_index].hanpu_number_for_calc;
                         remainder+=book_list[_index].remainder;
                         kind_number+=1;    
                     }
