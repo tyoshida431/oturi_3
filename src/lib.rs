@@ -26614,37 +26614,37 @@ pub fn calc(){
 }
 
 pub fn test_ju_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.ju;
 }
 
 pub fn test_goju_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.goju;
 }
 
 pub fn test_hyaku_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.hyaku;
 }
 
 pub fn test_gohyaku_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.gohyaku;
 }
 
 pub fn test_sen_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.sen;
 }
 
 pub fn test_gosen_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.gosen;
 }
 
 pub fn test_ichiman_money_number(price: i32)->i32{
-    let ret: MoneyNumber=calc_ikura(price,10);
+    let ret: MoneyNumber=calc_change(price,10);
     return ret.ichiman;
 }
 
@@ -28449,7 +28449,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     // お釣りの枚数を数えます。
     for book in combination_list.iter() {
         if 0<book.hanpu_number {
-            let ret_calc=calc_ikura(book.price,hanpu_number_for_calc);
+            let ret_calc=calc_change(book.price,hanpu_number_for_calc);
             ret_money_number.ju+=ret_calc.ju;
             ret_money_number.goju+=ret_calc.goju;
             ret_money_number.hyaku+=ret_calc.hyaku;
@@ -28483,7 +28483,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     return ret;
 }
 
-fn calc_ikura(price: i32, hanpu_number: i32)->MoneyNumber{
+fn calc_change(price: i32, hanpu_number: i32)->MoneyNumber{
     let mut ret=MoneyNumber{
         ju: 0,
         goju: 0,
