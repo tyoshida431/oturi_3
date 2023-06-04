@@ -28352,9 +28352,9 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     }
     // 最小頒布数を見つけます。
     let mut min_hanpu_number: i32=i32::MAX;
-    for _hon in book_list.iter() {
-        if _hon.hanpu_number<min_hanpu_number && 0<_hon.hanpu_number {
-            min_hanpu_number=_hon.hanpu_number;
+    for _book in book_list.iter() {
+        if _book.hanpu_number<min_hanpu_number && 0<_book.hanpu_number {
+            min_hanpu_number=_book.hanpu_number;
         }
     }
     // 頒布数が組み合わせの数を下回っていたら組み合わせを作らない。
@@ -28414,12 +28414,12 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         }
     }else{
         // 最小頒布数が組み合わせの数に足りなかったら、組み合わせず単冊に分散させる。
-        for _hon in book_list.iter() {
+        for _book in book_list.iter() {
             let mut tansatsu_source_list=Vec::new();
-            tansatsu_source_list.push(_hon.id);
+            tansatsu_source_list.push(_book.id);
             let hon_for_calc=BookForCalc {
-                price: _hon.price,
-                hanpu_number: _hon.hanpu_number,
+                price: _book.price,
+                hanpu_number: _book.hanpu_number,
                 source_list: tansatsu_source_list
             };
             combination_list.push(hon_for_calc);
@@ -28455,17 +28455,17 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         }
     }
     // 元々のIDを参照して頒布数を引きます。
-    for _hon in &mut book_list {
+    for _book in &mut book_list {
         for hon_for_calc in combination_list.iter() {
             let source_list=&hon_for_calc.source_list;
             for hon_moto in source_list.iter() {
-                if _hon.id==*hon_moto {
+                if _book.id==*hon_moto {
                     // 計算した分の頒布数を引いて次の処理に持ち越す。
-                    if 0<_hon.hanpu_number {
-                        _hon.hanpu_number-=hanpu_number_for_calc;
+                    if 0<_book.hanpu_number {
+                        _book.hanpu_number-=hanpu_number_for_calc;
                     }
                     // 本の頒布回数をクリアーする。
-                    _hon.hanpu_count=0;
+                    _book.hanpu_count=0;
                 }
             }
         }
