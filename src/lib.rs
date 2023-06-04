@@ -28363,7 +28363,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         counter=0;
         while counter<loop_num {
             let mut num: i32=counter;
-            let mut shurui_su: i32=0;
+            let mut kind_number: i32=0;
             let mut sum: i32=0;
             let mut hanpu_number: i32=0;
             let mut remainder: i32=0;
@@ -28379,7 +28379,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                         sum+=book_list[_index].price;
                         hanpu_number+=book_list[_index].hanpu_number_combination;
                         remainder+=book_list[_index].remainder;
-                        shurui_su+=1;    
+                        kind_number+=1;    
                     }
                 }
                 _index+=1;
@@ -28389,11 +28389,11 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
             //println!("hanpu_number : {}",hanpu_number);
             if sum!=0 {
                 // 頒布数を種類数で割る。余ったら次のループに持ち越すので、余りは無視する。
-                if shurui_su < book_list.len().try_into().unwrap() {
+                if kind_number < book_list.len().try_into().unwrap() {
                     if 0<hanpu_number {
                         let hon_for_calc=BookForCalc {
                             price: sum,
-                            hanpu_number: hanpu_number/shurui_su,
+                            hanpu_number: hanpu_number/kind_number,
                             source_list: source_list
                         };
                         combination_list.push(hon_for_calc);                        
@@ -28403,7 +28403,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                     if 0<hanpu_number {
                         let hon_for_calc=BookForCalc {
                             price: sum,
-                            hanpu_number: (hanpu_number+remainder)/shurui_su,
+                            hanpu_number: (hanpu_number+remainder)/kind_number,
                             source_list: source_list
                         };
                         combination_list.push(hon_for_calc);
@@ -29030,14 +29030,14 @@ fn calc_sen_return_list_daisatu(price: i32, daisatsu: i32)->Vec<i32>{
 fn calc_oturi_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber{
 
     let mut person_number_list: Vec<i32>=Vec::new();
-    let price_shurui: i32=price_list.len() as i32;
-    let person_number: i32=hanpu_number/price_shurui;
+    let price_kind: i32=price_list.len() as i32;
+    let person_number: i32=hanpu_number/price_kind;
     let price: i32=price_list[0];
     for _price in price_list.iter(){
         person_number_list.push(person_number);
     }
     // 余りが出るなら、大きい札で辻褄を合わせる。
-    if hanpu_number%price_shurui != 0 {
+    if hanpu_number%price_kind != 0 {
         let mut remainder: i32=0;
         for _person_number in person_number_list.iter(){
             remainder+=_person_number;
@@ -29053,7 +29053,7 @@ fn calc_oturi_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber
     }
 
     let mut harau_list: Vec<Pay>=Vec::new();
-    for i in 0..price_shurui {
+    for i in 0..price_kind {
         let mut pay=Pay {
             price: 0,
             person_number: 0        
