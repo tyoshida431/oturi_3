@@ -28317,7 +28317,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         ichiman: 0
     };
     // 本の種類数。
-    let book_number: i32=book_list.len().try_into().unwrap();
+    let book_kind_number: i32=book_list.len().try_into().unwrap();
     let mut combination_list: Vec<BookForCalc>=Vec::new();
     let mut _index: usize=0;
 
@@ -28325,7 +28325,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     // 一冊だけならループ数を増やさないのでループ数を2から始める。
     let mut loop_num: i32=2;
     let mut counter: i32=0;
-    while counter<book_number-1 {
+    while counter<book_kind_number-1 {
         loop_num*=2;
         counter+=1;
     }
@@ -28390,8 +28390,6 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                 _index+=1;
                 num=num>>1;
             }
-            //println!("sum : {}",sum);
-            //println!("hanpu_number : {}",hanpu_number);
             if sum!=0 {
                 // 頒布数を種類数で割る。余ったら次のループに持ち越すので、余りは無視する。
                 if kind_number < book_list.len().try_into().unwrap() {
