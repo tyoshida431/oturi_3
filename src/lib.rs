@@ -25,7 +25,7 @@ struct Book{
     hanpu_number: i32,
     hanpu_count: i32,
     hanpu_number_combination: i32,
-    amari: i32
+    remainder: i32
 }
 
 // 複数冊の同人誌を組み合わせて計算する、
@@ -26564,7 +26564,7 @@ pub fn calc(){
             hanpu_number: hanpu_number_int,
             hanpu_count: 0,
             hanpu_number_combination: 0,
-            amari: 0
+            remainder: 0
         };
         book_list.push(hon);
         id+=1;
@@ -26661,7 +26661,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -26669,7 +26669,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -26677,7 +26677,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -26685,7 +26685,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -26748,7 +26748,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -26756,7 +26756,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -26764,7 +26764,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -26772,7 +26772,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -26835,7 +26835,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -26843,7 +26843,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -26851,7 +26851,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -26859,7 +26859,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -26922,7 +26922,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -26930,7 +26930,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -26938,7 +26938,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -26946,7 +26946,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27009,7 +27009,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27017,7 +27017,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27025,7 +27025,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27033,7 +27033,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27096,7 +27096,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27104,7 +27104,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27112,7 +27112,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number: 5,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27120,7 +27120,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number: 10,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27172,7 +27172,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27180,7 +27180,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27188,7 +27188,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27196,7 +27196,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27248,7 +27248,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27256,7 +27256,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27264,7 +27264,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27272,7 +27272,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27324,7 +27324,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27332,7 +27332,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27340,7 +27340,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27348,7 +27348,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27400,7 +27400,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27408,7 +27408,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27416,7 +27416,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27424,7 +27424,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27476,7 +27476,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27484,7 +27484,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27492,7 +27492,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27500,7 +27500,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27562,7 +27562,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27570,7 +27570,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27578,7 +27578,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number: 40,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27586,7 +27586,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number: 100,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27638,7 +27638,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27646,7 +27646,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27654,7 +27654,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27662,7 +27662,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon5 = Book{
         id: 5,
@@ -27670,7 +27670,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon6 = Book{
         id: 6,
@@ -27678,7 +27678,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon7 = Book{
         id: 7,
@@ -27686,7 +27686,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon8 = Book{
         id: 8,
@@ -27694,7 +27694,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27750,7 +27750,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27758,7 +27758,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27766,7 +27766,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27774,7 +27774,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon5 = Book{
         id: 5,
@@ -27782,7 +27782,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon6 = Book{
         id: 6,
@@ -27790,7 +27790,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon7 = Book{
         id: 7,
@@ -27798,7 +27798,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon8 = Book{
         id: 8,
@@ -27806,7 +27806,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27862,7 +27862,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27870,7 +27870,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27878,7 +27878,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27886,7 +27886,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon5 = Book{
         id: 5,
@@ -27894,7 +27894,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon6 = Book{
         id: 6,
@@ -27902,7 +27902,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon7 = Book{
         id: 7,
@@ -27910,7 +27910,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon8 = Book{
         id: 8,
@@ -27918,7 +27918,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -27974,7 +27974,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -27982,7 +27982,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -27990,7 +27990,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -27998,7 +27998,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon5 = Book{
         id: 5,
@@ -28006,7 +28006,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon6 = Book{
         id: 6,
@@ -28014,7 +28014,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon7 = Book{
         id: 7,
@@ -28022,7 +28022,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon8 = Book{
         id: 8,
@@ -28030,7 +28030,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -28085,7 +28085,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -28093,7 +28093,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -28101,7 +28101,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -28109,7 +28109,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon5 = Book{
         id: 5,
@@ -28117,7 +28117,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon6 = Book{
         id: 6,
@@ -28125,7 +28125,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon7 = Book{
         id: 7,
@@ -28133,7 +28133,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon8 = Book{
         id: 8,
@@ -28141,7 +28141,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -28196,7 +28196,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon2 = Book{
         id: 2,
@@ -28204,7 +28204,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon3 = Book{
         id: 3,
@@ -28212,7 +28212,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon4 = Book{
         id: 4,
@@ -28220,7 +28220,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon5 = Book{
         id: 5,
@@ -28228,7 +28228,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 1000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon6 = Book{
         id: 6,
@@ -28236,7 +28236,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 500,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon7 = Book{
         id: 7,
@@ -28244,7 +28244,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let hon8 = Book{
         id: 8,
@@ -28252,7 +28252,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number: 2000,
         hanpu_count: 0,
         hanpu_number_combination: 0,
-        amari: 0
+        remainder: 0
     };
     let mut book_list=Vec::new();
     book_list.push(hon1);
@@ -28346,9 +28346,9 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         // 入力された本の頒布数を、組み合わせでカウントした頒布回数で割って、
         // 今回の処理の頒布数カウントを計算する。
         let hanpu_number_count=hanpu_number/hanpu_count;
-        let amari=hanpu_number%hanpu_count;
+        let remainder=hanpu_number%hanpu_count;
         hon.hanpu_number_combination=hanpu_number_count;
-        hon.amari=amari;
+        hon.remainder=remainder;
     }
     // 最小頒布数を見つけます。
     let mut min_hanpu_number: i32=i32::MAX;
@@ -28366,7 +28366,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
             let mut shurui_su: i32=0;
             let mut sum: i32=0;
             let mut hanpu_number: i32=0;
-            let mut amari: i32=0;
+            let mut remainder: i32=0;
             let mut moto_list: Vec<i32>=Vec::new();
             _index=0;
             while num!=0 {
@@ -28378,7 +28378,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                         moto_list.push(book_list[_index].id);
                         sum+=book_list[_index].price;
                         hanpu_number+=book_list[_index].hanpu_number_combination;
-                        amari+=book_list[_index].amari;
+                        remainder+=book_list[_index].remainder;
                         shurui_su+=1;    
                     }
                 }
@@ -28403,7 +28403,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                     if 0<hanpu_number {
                         let hon_for_calc=BookForCalc {
                             price: sum,
-                            hanpu_number: (hanpu_number+amari)/shurui_su,
+                            hanpu_number: (hanpu_number+remainder)/shurui_su,
                             moto_list: moto_list
                         };
                         combination_list.push(hon_for_calc);
@@ -29038,12 +29038,12 @@ fn calc_oturi_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber
     }
     // 余りが出るなら、大きい札で辻褄を合わせる。
     if hanpu_number%price_shurui != 0 {
-        let mut amari: i32=0;
+        let mut remainder: i32=0;
         for _person_number in person_number_list.iter(){
-            amari+=_person_number;
+            remainder+=_person_number;
         }
         let person_number_size: usize=person_number_list.len()-1;
-        person_number_list[person_number_size]+=hanpu_number-amari;
+        person_number_list[person_number_size]+=hanpu_number-remainder;
     }
     // 頒布数が幾らの人数に足りない場合、0にする。
     for person_number in person_number_list.iter_mut(){
