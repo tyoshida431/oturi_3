@@ -33,7 +33,7 @@ struct Book{
 struct BookForCalc{
     price: i32,
     hanpu_number: i32,
-    moto_list: Vec<i32>    
+    source_list: Vec<i32>    
 }
 
 // 計算結果。
@@ -28367,7 +28367,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
             let mut sum: i32=0;
             let mut hanpu_number: i32=0;
             let mut remainder: i32=0;
-            let mut moto_list: Vec<i32>=Vec::new();
+            let mut source_list: Vec<i32>=Vec::new();
             _index=0;
             while num!=0 {
                 if (num & 0x00000000000000000000000000000001)==0x00000000000000000000000000000001 {
@@ -28375,7 +28375,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                     if 0<book_list[_index].hanpu_number {
                         // 組み合わせで計算し、例えば200円5冊300円5冊の組み合わせなら、
                         // 500円10冊と計算する。
-                        moto_list.push(book_list[_index].id);
+                        source_list.push(book_list[_index].id);
                         sum+=book_list[_index].price;
                         hanpu_number+=book_list[_index].hanpu_number_combination;
                         remainder+=book_list[_index].remainder;
@@ -28394,7 +28394,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                         let hon_for_calc=BookForCalc {
                             price: sum,
                             hanpu_number: hanpu_number/shurui_su,
-                            moto_list: moto_list
+                            source_list: source_list
                         };
                         combination_list.push(hon_for_calc);                        
                     }
@@ -28404,7 +28404,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                         let hon_for_calc=BookForCalc {
                             price: sum,
                             hanpu_number: (hanpu_number+remainder)/shurui_su,
-                            moto_list: moto_list
+                            source_list: source_list
                         };
                         combination_list.push(hon_for_calc);
                     }
@@ -28415,12 +28415,12 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     }else{
         // 最小頒布数が組み合わせの数に足りなかったら、組み合わせず単冊に分散させる。
         for _hon in book_list.iter() {
-            let mut tansatsu_moto_list=Vec::new();
-            tansatsu_moto_list.push(_hon.id);
+            let mut tansatsu_source_list=Vec::new();
+            tansatsu_source_list.push(_hon.id);
             let hon_for_calc=BookForCalc {
                 price: _hon.price,
                 hanpu_number: _hon.hanpu_number,
-                moto_list: tansatsu_moto_list
+                source_list: tansatsu_source_list
             };
             combination_list.push(hon_for_calc);
         }
@@ -28457,8 +28457,8 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     // 元々のIDを参照して頒布数を引きます。
     for _hon in &mut book_list {
         for hon_for_calc in combination_list.iter() {
-            let moto_list=&hon_for_calc.moto_list;
-            for hon_moto in moto_list.iter() {
+            let source_list=&hon_for_calc.source_list;
+            for hon_moto in source_list.iter() {
                 if _hon.id==*hon_moto {
                     // 計算した分の頒布数を引いて次の処理に持ち越す。
                     if 0<_hon.hanpu_number {
