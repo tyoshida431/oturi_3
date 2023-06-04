@@ -1,4 +1,4 @@
-export function getHonList(){
+export function getBookList(){
    var hon_list=new Array(childCount);
    var sum_kakaku=0;
    var ju_dai=0;

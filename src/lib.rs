@@ -19,7 +19,7 @@ struct Pay{
 }
 
 // 同人誌一種。
-struct Hon{
+struct Book{
     id: i32,
     price: i32,
     hanpusu: i32,
@@ -30,7 +30,7 @@ struct Hon{
 
 // 複数冊の同人誌を組み合わせて計算する、
 // 計算用のデーター。
-struct HonForCalc{
+struct BookForCalc{
     price: i32,
     hanpusu: i32,
     moto_list: Vec<i32>    
@@ -39,7 +39,7 @@ struct HonForCalc{
 // 計算結果。
 struct CalcResult{
     money_number: MoneyNumber,
-    hon_list: Vec<Hon>,
+    hon_list: Vec<Book>,
     end_flag: bool
 }
 
@@ -50,7 +50,7 @@ extern {
 
 #[wasm_bindgen(module="/oturi_3_view.js")]
 extern "C"{
-    pub fn getHonList() -> js_sys::Array;
+    pub fn getBookList() -> js_sys::Array;
     pub fn setResult(juCount: i32,gojuCount: i32,hyakuCount: i32,gohyakuCount: i32,senenCount: i32,gosenenCount: i32);
 }
 
@@ -26544,11 +26544,11 @@ mod tests {
 
 #[wasm_bindgen]
 pub fn calc(){
-    let hon_from_js_list: Vec<JsValue>=getHonList().to_vec();
+    let hon_from_js_list: Vec<JsValue>=getBookList().to_vec();
     if hon_from_js_list.len()==0 {
         return;
     }
-    let mut hon_list: Vec<Hon>=Vec::new();
+    let mut hon_list: Vec<Book>=Vec::new();
     let mut id: i32=0;
     for hon_from_js in hon_from_js_list.iter(){
         let hon_tmp: Option<String>=hon_from_js.as_string();
@@ -26558,7 +26558,7 @@ pub fn calc(){
         let hanpusu_str: &str=hon_split_list[1];
         let price_int: i32=price_str.parse().unwrap();
         let hanpusu_int: i32=hanpusu_str.parse().unwrap();
-        let hon = Hon{
+        let hon = Book{
             id: id,
             price: price_int,
             hanpusu: hanpusu_int,
@@ -26655,7 +26655,7 @@ pub fn test_combination_ju()->i32{
     // 500 : 4
     // 1000 : 0
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 10,
@@ -26663,7 +26663,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 600,
         hanpusu: 10,
@@ -26671,7 +26671,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 400,
         hanpusu: 5,
@@ -26679,7 +26679,7 @@ pub fn test_combination_ju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 10,
@@ -26742,7 +26742,7 @@ pub fn test_combination_goju()->i32{
     // 500 : 4
     // 1000 : 0
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 10,
@@ -26750,7 +26750,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 600,
         hanpusu: 10,
@@ -26758,7 +26758,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 400,
         hanpusu: 5,
@@ -26766,7 +26766,7 @@ pub fn test_combination_goju()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 10,
@@ -26829,7 +26829,7 @@ pub fn test_combination_hyaku()->i32{
     // 500 : 4
     // 1000 : 0
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 10,
@@ -26837,7 +26837,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 600,
         hanpusu: 10,
@@ -26845,7 +26845,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 400,
         hanpusu: 5,
@@ -26853,7 +26853,7 @@ pub fn test_combination_hyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 10,
@@ -26916,7 +26916,7 @@ pub fn test_combination_gohyaku()->i32{
     // 500 : 4
     // 1000 : 0
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 10,
@@ -26924,7 +26924,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 600,
         hanpusu: 10,
@@ -26932,7 +26932,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 400,
         hanpusu: 5,
@@ -26940,7 +26940,7 @@ pub fn test_combination_gohyaku()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 10,
@@ -27003,7 +27003,7 @@ pub fn test_combination_sen()->i32{
     // 500 : 4
     // 1000 : 0
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 10,
@@ -27011,7 +27011,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 600,
         hanpusu: 10,
@@ -27019,7 +27019,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 400,
         hanpusu: 5,
@@ -27027,7 +27027,7 @@ pub fn test_combination_sen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 10,
@@ -27090,7 +27090,7 @@ pub fn test_combination_gosen()->i32{
     // 500 : 4
     // 1000 : 0
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 10,
@@ -27098,7 +27098,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 600,
         hanpusu: 10,
@@ -27106,7 +27106,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 400,
         hanpusu: 5,
@@ -27114,7 +27114,7 @@ pub fn test_combination_gosen()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 10,
@@ -27166,7 +27166,7 @@ pub fn test_combination_gosen()->i32{
 }
 
 pub fn test_combination_ju2()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 110,
         hanpusu: 100,
@@ -27174,7 +27174,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 460,
         hanpusu: 100,
@@ -27182,7 +27182,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 740,
         hanpusu: 40,
@@ -27190,7 +27190,7 @@ pub fn test_combination_ju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 880,
         hanpusu: 100,
@@ -27242,7 +27242,7 @@ pub fn test_combination_ju2()->i32{
 }
 
 pub fn test_combination_goju2()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 110,
         hanpusu: 100,
@@ -27250,7 +27250,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 460,
         hanpusu: 100,
@@ -27258,7 +27258,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 740,
         hanpusu: 40,
@@ -27266,7 +27266,7 @@ pub fn test_combination_goju2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 880,
         hanpusu: 100,
@@ -27318,7 +27318,7 @@ pub fn test_combination_goju2()->i32{
 }
 
 pub fn test_combination_hyaku2()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 110,
         hanpusu: 100,
@@ -27326,7 +27326,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 460,
         hanpusu: 100,
@@ -27334,7 +27334,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 740,
         hanpusu: 40,
@@ -27342,7 +27342,7 @@ pub fn test_combination_hyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 880,
         hanpusu: 100,
@@ -27394,7 +27394,7 @@ pub fn test_combination_hyaku2()->i32{
 }
 
 pub fn test_combination_gohyaku2()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 110,
         hanpusu: 100,
@@ -27402,7 +27402,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 460,
         hanpusu: 100,
@@ -27410,7 +27410,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 740,
         hanpusu: 40,
@@ -27418,7 +27418,7 @@ pub fn test_combination_gohyaku2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 880,
         hanpusu: 100,
@@ -27470,7 +27470,7 @@ pub fn test_combination_gohyaku2()->i32{
 }
 
 pub fn test_combination_sen2()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 110,
         hanpusu: 100,
@@ -27478,7 +27478,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 460,
         hanpusu: 100,
@@ -27486,7 +27486,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 740,
         hanpusu: 40,
@@ -27494,7 +27494,7 @@ pub fn test_combination_sen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 880,
         hanpusu: 100,
@@ -27556,7 +27556,7 @@ pub fn test_combination_gosen2()->i32{
     // 500 : -7
     // 1000 : -95
     // 5000 : 0
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 110,
         hanpusu: 100,
@@ -27564,7 +27564,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 460,
         hanpusu: 100,
@@ -27572,7 +27572,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 740,
         hanpusu: 40,
@@ -27580,7 +27580,7 @@ pub fn test_combination_gosen2()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 880,
         hanpusu: 100,
@@ -27632,7 +27632,7 @@ pub fn test_combination_gosen2()->i32{
 }
 
 pub fn test_combination_ju3()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 2000,
@@ -27640,7 +27640,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 500,
         hanpusu: 2000,
@@ -27648,7 +27648,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 600,
         hanpusu: 2000,
@@ -27656,7 +27656,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 1000,
@@ -27664,7 +27664,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon5 = Hon{
+    let hon5 = Book{
         id: 5,
         price: 500,
         hanpusu: 1000,
@@ -27672,7 +27672,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon6 = Hon{
+    let hon6 = Book{
         id: 6,
         price: 400,
         hanpusu: 500,
@@ -27680,7 +27680,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon7 = Hon{
+    let hon7 = Book{
         id: 7,
         price: 1000,
         hanpusu: 2000,
@@ -27688,7 +27688,7 @@ pub fn test_combination_ju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon8 = Hon{
+    let hon8 = Book{
         id: 8,
         price: 1000,
         hanpusu: 2000,
@@ -27744,7 +27744,7 @@ pub fn test_combination_ju3()->i32{
 }
 
 pub fn test_combination_goju3()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 2000,
@@ -27752,7 +27752,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 500,
         hanpusu: 2000,
@@ -27760,7 +27760,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 600,
         hanpusu: 2000,
@@ -27768,7 +27768,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 1000,
@@ -27776,7 +27776,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon5 = Hon{
+    let hon5 = Book{
         id: 5,
         price: 500,
         hanpusu: 1000,
@@ -27784,7 +27784,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon6 = Hon{
+    let hon6 = Book{
         id: 6,
         price: 400,
         hanpusu: 500,
@@ -27792,7 +27792,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon7 = Hon{
+    let hon7 = Book{
         id: 7,
         price: 1000,
         hanpusu: 2000,
@@ -27800,7 +27800,7 @@ pub fn test_combination_goju3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon8 = Hon{
+    let hon8 = Book{
         id: 8,
         price: 1000,
         hanpusu: 2000,
@@ -27856,7 +27856,7 @@ pub fn test_combination_goju3()->i32{
 }
 
 pub fn test_combination_hyaku3()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 2000,
@@ -27864,7 +27864,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 500,
         hanpusu: 2000,
@@ -27872,7 +27872,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 600,
         hanpusu: 2000,
@@ -27880,7 +27880,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 1000,
@@ -27888,7 +27888,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon5 = Hon{
+    let hon5 = Book{
         id: 5,
         price: 500,
         hanpusu: 1000,
@@ -27896,7 +27896,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon6 = Hon{
+    let hon6 = Book{
         id: 6,
         price: 400,
         hanpusu: 500,
@@ -27904,7 +27904,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon7 = Hon{
+    let hon7 = Book{
         id: 7,
         price: 1000,
         hanpusu: 2000,
@@ -27912,7 +27912,7 @@ pub fn test_combination_hyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon8 = Hon{
+    let hon8 = Book{
         id: 8,
         price: 1000,
         hanpusu: 2000,
@@ -27968,7 +27968,7 @@ pub fn test_combination_hyaku3()->i32{
 }
 
 pub fn test_combination_gohyaku3()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 2000,
@@ -27976,7 +27976,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 500,
         hanpusu: 2000,
@@ -27984,7 +27984,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 600,
         hanpusu: 2000,
@@ -27992,7 +27992,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 1000,
@@ -28000,7 +28000,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon5 = Hon{
+    let hon5 = Book{
         id: 5,
         price: 500,
         hanpusu: 1000,
@@ -28008,7 +28008,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon6 = Hon{
+    let hon6 = Book{
         id: 6,
         price: 400,
         hanpusu: 500,
@@ -28016,7 +28016,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon7 = Hon{
+    let hon7 = Book{
         id: 7,
         price: 1000,
         hanpusu: 2000,
@@ -28024,7 +28024,7 @@ pub fn test_combination_gohyaku3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon8 = Hon{
+    let hon8 = Book{
         id: 8,
         price: 1000,
         hanpusu: 2000,
@@ -28079,7 +28079,7 @@ pub fn test_combination_gohyaku3()->i32{
 }
 
 pub fn test_combination_sen3()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 2000,
@@ -28087,7 +28087,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 500,
         hanpusu: 2000,
@@ -28095,7 +28095,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 600,
         hanpusu: 2000,
@@ -28103,7 +28103,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 1000,
@@ -28111,7 +28111,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon5 = Hon{
+    let hon5 = Book{
         id: 5,
         price: 500,
         hanpusu: 1000,
@@ -28119,7 +28119,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon6 = Hon{
+    let hon6 = Book{
         id: 6,
         price: 400,
         hanpusu: 500,
@@ -28127,7 +28127,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon7 = Hon{
+    let hon7 = Book{
         id: 7,
         price: 1000,
         hanpusu: 2000,
@@ -28135,7 +28135,7 @@ pub fn test_combination_sen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon8 = Hon{
+    let hon8 = Book{
         id: 8,
         price: 1000,
         hanpusu: 2000,
@@ -28190,7 +28190,7 @@ pub fn test_combination_sen3()->i32{
 }
 
 pub fn test_combination_gosen3()->i32{
-    let hon1 = Hon{
+    let hon1 = Book{
         id: 1,
         price: 1200,
         hanpusu: 2000,
@@ -28198,7 +28198,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon2 = Hon{
+    let hon2 = Book{
         id: 2,
         price: 500,
         hanpusu: 2000,
@@ -28206,7 +28206,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon3 = Hon{
+    let hon3 = Book{
         id: 3,
         price: 600,
         hanpusu: 2000,
@@ -28214,7 +28214,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon4 = Hon{
+    let hon4 = Book{
         id: 4,
         price: 500,
         hanpusu: 1000,
@@ -28222,7 +28222,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon5 = Hon{
+    let hon5 = Book{
         id: 5,
         price: 500,
         hanpusu: 1000,
@@ -28230,7 +28230,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon6 = Hon{
+    let hon6 = Book{
         id: 6,
         price: 400,
         hanpusu: 500,
@@ -28238,7 +28238,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon7 = Hon{
+    let hon7 = Book{
         id: 7,
         price: 1000,
         hanpusu: 2000,
@@ -28246,7 +28246,7 @@ pub fn test_combination_gosen3()->i32{
         hanpu_number_combination: 0,
         amari: 0
     };
-    let hon8 = Hon{
+    let hon8 = Book{
         id: 8,
         price: 1000,
         hanpusu: 2000,
@@ -28301,7 +28301,7 @@ pub fn test_combination_gosen3()->i32{
     return result.gosen;
 }
 
-fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
+fn calc_combination(mut hon_list: Vec<Book>)->CalcResult{
     let mut ret_money_number=MoneyNumber{
         ju: 0,
         goju: 0,
@@ -28313,7 +28313,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
     };
     // 本の種類数。
     let hon_su: i32=hon_list.len().try_into().unwrap();
-    let mut combination_list: Vec<HonForCalc>=Vec::new();
+    let mut combination_list: Vec<BookForCalc>=Vec::new();
     let mut _index: usize=0;
 
     // 部分集合をビット列で取ります。
@@ -28391,7 +28391,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
                 // 頒布数を種類数で割る。余ったら次のループに持ち越すので、余りは無視する。
                 if shurui_su < hon_list.len().try_into().unwrap() {
                     if 0<hanpusu {
-                        let hon_for_calc=HonForCalc {
+                        let hon_for_calc=BookForCalc {
                             price: sum,
                             hanpusu: hanpusu/shurui_su,
                             moto_list: moto_list
@@ -28401,7 +28401,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
                 }else{
                     // 種類数が本の種類を上回っている場合、余った冊数を寄せて計算する。
                     if 0<hanpusu {
-                        let hon_for_calc=HonForCalc {
+                        let hon_for_calc=BookForCalc {
                             price: sum,
                             hanpusu: (hanpusu+amari)/shurui_su,
                             moto_list: moto_list
@@ -28417,7 +28417,7 @@ fn calc_combination(mut hon_list: Vec<Hon>)->CalcResult{
         for _hon in hon_list.iter() {
             let mut tansatsu_moto_list=Vec::new();
             tansatsu_moto_list.push(_hon.id);
-            let hon_for_calc=HonForCalc {
+            let hon_for_calc=BookForCalc {
                 price: _hon.price,
                 hanpusu: _hon.hanpusu,
                 moto_list: tansatsu_moto_list
