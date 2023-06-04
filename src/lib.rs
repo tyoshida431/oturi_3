@@ -15,7 +15,7 @@ struct MoneyNumber{
 // その同人誌を買うシミュレーション上の人数。
 struct Pay{
     price: i32,
-    ninzu: i32
+    person_number: i32
 }
 
 // 同人誌一種。
@@ -29029,26 +29029,26 @@ fn calc_sen_return_list_daisatu(price: i32, daisatsu: i32)->Vec<i32>{
 
 fn calc_oturi_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber{
 
-    let mut ninzu_list: Vec<i32>=Vec::new();
+    let mut person_number_list: Vec<i32>=Vec::new();
     let price_shurui: i32=price_list.len() as i32;
-    let ninzu: i32=hanpu_number/price_shurui;
+    let person_number: i32=hanpu_number/price_shurui;
     let price: i32=price_list[0];
     for _price in price_list.iter(){
-        ninzu_list.push(ninzu);
+        person_number_list.push(person_number);
     }
     // 余りが出るなら、大きい札で辻褄を合わせる。
     if hanpu_number%price_shurui != 0 {
         let mut amari: i32=0;
-        for _ninzu in ninzu_list.iter(){
-            amari+=_ninzu;
+        for _person_number in person_number_list.iter(){
+            amari+=_person_number;
         }
-        let ninzu_size: usize=ninzu_list.len()-1;
-        ninzu_list[ninzu_size]+=hanpu_number-amari;
+        let person_number_size: usize=person_number_list.len()-1;
+        person_number_list[person_number_size]+=hanpu_number-amari;
     }
     // 頒布数が幾らの人数に足りない場合、0にする。
-    for ninzu in ninzu_list.iter_mut(){
-        if *ninzu < 0 {
-            *ninzu=0;
+    for person_number in person_number_list.iter_mut(){
+        if *person_number < 0 {
+            *person_number=0;
         }
     }
 
@@ -29056,11 +29056,11 @@ fn calc_oturi_money_number(price_list: Vec<i32>, hanpu_number: i32)->MoneyNumber
     for i in 0..price_shurui {
         let mut pay=Pay {
             price: 0,
-            ninzu: 0        
+            person_number: 0        
         };
         let index: usize=i as usize;
         pay.price=price_list[index];
-        pay.ninzu=ninzu_list[index];
+        pay.person_number=person_number_list[index];
         harau_list.push(pay);
     }
     return count_money_number(price,harau_list);
@@ -29080,24 +29080,24 @@ fn count_money_number(price: i32,harau_list: Vec<Pay>)->MoneyNumber{
     for pay in harau_list.iter(){
         if price<pay.price {
             let oturi=pay.price-price;
-            ret.ju+=calc_ju_money_number(oturi)*pay.ninzu;
-            ret.goju+=calc_goju_money_number(oturi)*pay.ninzu;
-            ret.hyaku+=calc_hyaku_money_number(oturi)*pay.ninzu;
-            ret.gohyaku+=calc_gohyaku_money_number(oturi)*pay.ninzu;
-            ret.sen+=calc_sen_money_number(oturi)*pay.ninzu;
-            ret.gosen+=calc_gosen_money_number(oturi)*pay.ninzu;
+            ret.ju+=calc_ju_money_number(oturi)*pay.person_number;
+            ret.goju+=calc_goju_money_number(oturi)*pay.person_number;
+            ret.hyaku+=calc_hyaku_money_number(oturi)*pay.person_number;
+            ret.gohyaku+=calc_gohyaku_money_number(oturi)*pay.person_number;
+            ret.sen+=calc_sen_money_number(oturi)*pay.person_number;
+            ret.gosen+=calc_gosen_money_number(oturi)*pay.person_number;
         }
     }
 
     // 入ってくる枚数を計算します。
     for pay in harau_list.iter(){
-        ret.ju-=calc_ju_money_number(pay.price)*pay.ninzu;
-        ret.goju-=calc_goju_money_number(pay.price)*pay.ninzu;
-        ret.hyaku-=calc_hyaku_money_number(pay.price)*pay.ninzu;
-        ret.gohyaku-=calc_gohyaku_money_number(pay.price)*pay.ninzu;
-        ret.sen-=calc_sen_money_number(pay.price)*pay.ninzu;
-        ret.gosen-=calc_gosen_money_number(pay.price)*pay.ninzu;
-        ret.ichiman-=calc_ichiman_money_number(pay.price)*pay.ninzu;
+        ret.ju-=calc_ju_money_number(pay.price)*pay.person_number;
+        ret.goju-=calc_goju_money_number(pay.price)*pay.person_number;
+        ret.hyaku-=calc_hyaku_money_number(pay.price)*pay.person_number;
+        ret.gohyaku-=calc_gohyaku_money_number(pay.price)*pay.person_number;
+        ret.sen-=calc_sen_money_number(pay.price)*pay.person_number;
+        ret.gosen-=calc_gosen_money_number(pay.price)*pay.person_number;
+        ret.ichiman-=calc_ichiman_money_number(pay.price)*pay.person_number;
     }
     return ret;
 }
