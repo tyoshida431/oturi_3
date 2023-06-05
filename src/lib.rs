@@ -28372,7 +28372,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         let hanpu_number=book.hanpu_number;
         let hanpu_count=book.hanpu_count;
         // 入力された本の頒布数を、組み合わせでカウントした頒布回数で割って、
-        // 今回の処理の頒布数を計算する。
+        // 今回の処理の頒布数を準備する。
         let hanpu_number_for_calc=hanpu_number/hanpu_count;
         let remainder=hanpu_number%hanpu_count;
         book.hanpu_number_for_calc=hanpu_number_for_calc;
@@ -28402,7 +28402,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                     // 頒布数が0なら組み合わせに入れない。
                     if 0<book_list[_index].hanpu_number {
                         // 組み合わせで計算し、例えば200円5冊300円5冊の組み合わせなら、
-                        // 500円10冊と計算する。
+                        // 500円10冊と途中計算する。
                         source_list.push(book_list[_index].id);
                         sum+=book_list[_index].price;
                         hanpu_number+=book_list[_index].hanpu_number_for_calc;
@@ -28414,7 +28414,17 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                 num=num>>1;
             }
             if sum!=0 {
-                // 頒布数を種類数で割る。余ったら次のループに持ち越すので、余りは無視する。
+                // 組み合わせで足した頒布数を、
+                // このループの本は元々何種類の本の組み合わせで作られたかの種類数で割って、
+                // 計算用の頒布数を計算する。
+                // 余ったら次の本関数の呼び出しに持ち越すので、余りは無視する。
+                // 
+                // 1. hanpu_number_for_calc = 画面で入力された頒布数 / 組み合わせの回数
+                //    (組み合わせのそれぞれに頒布数を分散させる。)
+                // 2. hanpu_number_for_calcを組み合わせで足す
+                // 3. hanpu_number_for_calcを、何種類の本の組み合わせから作られているかで割って、
+                //    今回の処理の頒布数を算出する。
+                // TODO : 改善できるかも知れない。
                 if kind_number < book_list.len().try_into().unwrap() {
                     if 0<hanpu_number {
                         let book_for_calc=BookForCalc {
@@ -28425,7 +28435,9 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                         combination_list.push(book_for_calc);                        
                     }
                 }else{
-                    // 種類数が本の種類を上回っている場合、余った冊数を寄せて計算する。
+                    // 何回か本処理が呼ばれ、シミュレーション上頒布しきった本がある場合、
+                    // 計算用の頒布種類が元の本の種類を上回る局面に入るので、
+                    // 余った冊数を次の処理に持ち越さず、寄せて計算する。
                     if 0<hanpu_number {
                         let book_for_calc=BookForCalc {
                             price: sum,
@@ -28525,7 +28537,7 @@ fn calc_change(price: i32, hanpu_number: i32)->MoneyNumber{
     } else if 100 <= price && price < 1000 {
         ret=calc_hyaku(price,hanpu_number);
     } else if 1000 <= price && price < 3000 {
-        // 1000円から3000円までの場合、1万円の使用は想定せず、1000円台をなくして考える。
+        // 1000円から3000円までの場合、5000円と1万円の使用は想定せず、1000円台をなくして考える。
         let sen_price=price%1000;
         if sen_price < 100 {
             ret=calc_ju(sen_price,hanpu_number);
