@@ -266,15 +266,15 @@ mod tests {
     }
     #[test]
     fn t_110_goju_test(){
-        assert_eq!(test_goju_money_number(110),8);
+        assert_eq!(test_goju_money_number(110),4);
     }
     #[test]
     fn t_110_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(110),12);
+        assert_eq!(test_hyaku_money_number(110),4);
     }
     #[test]
     fn t_110_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(110),2);
+        assert_eq!(test_gohyaku_money_number(110),0);
     }
     // 120
     #[test]
@@ -283,15 +283,15 @@ mod tests {
     }
     #[test]
     fn t_120_goju_test(){
-        assert_eq!(test_goju_money_number(120),8);
+        assert_eq!(test_goju_money_number(120),4);
     }
     #[test]
     fn t_120_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(120),12);
+        assert_eq!(test_hyaku_money_number(120),4);
     }
     #[test]
     fn t_120_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(120),2);
+        assert_eq!(test_gohyaku_money_number(120),0);
     }
     // 130
     #[test]
@@ -300,15 +300,15 @@ mod tests {
     }
     #[test]
     fn t_130_goju_test(){
-        assert_eq!(test_goju_money_number(130),8);
+        assert_eq!(test_goju_money_number(130),4);
     }
     #[test]
     fn t_130_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(130),12);
+        assert_eq!(test_hyaku_money_number(130),4);
     }
     #[test]
     fn t_130_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(130),2);
+        assert_eq!(test_gohyaku_money_number(130),0);
     }
     // 140
     #[test]
@@ -317,15 +317,15 @@ mod tests {
     }
     #[test]
     fn t_140_goju_test(){
-        assert_eq!(test_goju_money_number(140),8);
+        assert_eq!(test_goju_money_number(140),4);
     }
     #[test]
     fn t_140_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(140),12);
+        assert_eq!(test_hyaku_money_number(140),4);
     }
     #[test]
     fn t_140_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(140),2);
+        assert_eq!(test_gohyaku_money_number(140),0);
     }
     // 150
     #[test]
@@ -28558,10 +28558,7 @@ fn calc_ju(price: i32, hanpu_number: i32)->MoneyNumber{
         price_list.push(price);
         price_list.push(50);
         price_list.push(100);
-    } else if price == 50 {
-        price_list.push(price);
-        price_list.push(100);
-    } else if 50 < price {
+    } else if 50 <= price {
         price_list.push(price);
         price_list.push(100);
     }
@@ -28584,24 +28581,76 @@ fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
     let gohyaku_money_number: i32=calc_gohyaku_money_number(price);
     let price_judai: i32=goju_money_number*50+ju_money_number*10;
     let price_hyakudai: i32=gohyaku_money_number*500+hyaku_money_number*100;
-    if price < 500 {
+    if price < 400 {
+        // 100,500,1000
+        // 110,150,200,500,1000
+        // 160,200,500,1000
         if price_judai == 0 {
             price_list.push(price);
             price_list.push(500);
             price_list.push(1000);
-        }else if price_hyakudai != 400 {
+        }else if price_judai < 50 {
             price_list.push(price);
-            price_list.push(price+(100-price_judai));
+            price_list.push(price_hyakudai+50);
+            price_list.push(price_hyakudai+100);
             price_list.push(500);
             price_list.push(1000);
-        }else if price_hyakudai == 400 {
+        }else if 50 <= price_judai {
+            price_list.push(price);
+            price_list.push(price_hyakudai+100);
+            price_list.push(500);
+            price_list.push(1000);
+        }
+    }else if 400 <= price && price < 500 {
+        // 400,500,1000
+        // 410,450,500,1000
+        // 460,500,1000
+        if price_judai == 0 {
+            price_list.push(price);
+            price_list.push(500);
+            price_list.push(1000);
+        }else if price_judai < 50 {
+            price_list.push(price);
+            price_list.push(price_hyakudai+50);
+            price_list.push(500);
+            price_list.push(1000);
+        }else if 50 <= price_judai {
             price_list.push(price);
             price_list.push(500);
             price_list.push(1000);
         }
-    }else if 500 <= price && price < 1000 {
-        price_list.push(price);
-        price_list.push(1000);
+    }else if 500 <= price && price < 900 {
+        // 500,1000
+        // 510,550,600,1000
+        // 560,600,1000
+        if price_judai == 0 {
+            price_list.push(price);
+            price_list.push(1000);
+        }else if price_judai < 50 {
+            price_list.push(price);
+            price_list.push(price_hyakudai+50);
+            price_list.push(price_hyakudai+100);
+            price_list.push(1000);
+        }else if 50 <= price_judai {
+            price_list.push(price);
+            price_list.push(price_hyakudai+100);
+            price_list.push(1000);
+        }
+    }else if 900 <= price {
+        // 900,1000
+        // 910,950,1000
+        // 960,1000
+        if price_judai == 0 {
+            price_list.push(price);
+            price_list.push(1000);
+        }else if price_judai < 50 {
+            price_list.push(price);
+            price_list.push(price_hyakudai+50);
+            price_list.push(1000);
+        }else if 50 <= price_judai {
+            price_list.push(price);
+            price_list.push(1000);
+        }
     }
     return calc_change_money_number(price_list, hanpu_number);
 }
