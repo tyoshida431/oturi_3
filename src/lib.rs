@@ -28581,8 +28581,9 @@ fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
     let ju_money_number: i32=calc_ju_money_number(price);
     let goju_money_number: i32=calc_goju_money_number(price);
     let hyaku_money_number: i32=calc_hyaku_money_number(price);
+    let gohyaku_money_number: i32=calc_gohyaku_money_number(price);
     let price_judai: i32=goju_money_number*50+ju_money_number*10;
-    let price_hyakudai: i32=hyaku_money_number*100;
+    let price_hyakudai: i32=gohyaku_money_number*500+hyaku_money_number*100;
     if price < 500 {
         if price_judai == 0 {
             price_list.push(price);
@@ -28598,10 +28599,7 @@ fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
             price_list.push(500);
             price_list.push(1000);
         }
-    }else if price == 500 {
-        price_list.push(price);
-        price_list.push(1000);
-    }else if 500 < price && price < 1000 {
+    }else if 500 <= price && price < 1000 {
         price_list.push(price);
         price_list.push(1000);
     }
@@ -28665,17 +28663,27 @@ fn calc_man_hyaku(price: i32)->Vec<i32>{
     // 18500,19000,20000
     // 19500,20000
     let mut ret: Vec<i32>=Vec::new();
-    let price_hyakudai: i32=price%1000;
-    let price_sendai: i32=price-10000-price_hyakudai;
+    let hyaku_money_number: i32=calc_hyaku_money_number(price);
+    let gohyaku_money_number: i32=calc_gohyaku_money_number(price);
+    let sen_money_number: i32=calc_sen_money_number(price);
+    let gosen_money_number: i32=calc_gosen_money_number(price);
+    let price_hyakudai: i32=gohyaku_money_number*500+hyaku_money_number*100;
+    let price_sendai: i32=gosen_money_number*5000+sen_money_number*1000;
     ret.push(price);
+    // 百円台が500円未満なら次は500円プラスが出される。
+    // 百円台が500円以上なら次は1000円プラスがだされるので、
+    // 500円プラスはしない。
     if price_hyakudai<500 {
         ret.push(10000+price_sendai+500);
     }
+    // TODO : リファクタリングする。
+    // 次は1000円プラス。
+    // 15000になる場合もあれば20000になる場合もある。
     ret.push(10000+price_sendai+1000);
+    // 一行上のロジックで15000,20000でなければ15000,20000を追加する。
     if price_sendai<5000 && price_sendai+1000!=5000 {
         ret.push(15000);
-    }
-    if 5000<=price_sendai && price_sendai+1000!=10000 {
+    }else if 5000<=price_sendai && price_sendai+1000!=10000 {
         ret.push(20000);
     }
     return ret;
@@ -28688,13 +28696,13 @@ fn calc_man_sen(price: i32)->Vec<i32>{
     // 19000,20000
     // 19500,20000
     let mut ret: Vec<i32>=Vec::new();
+    // TODO : リファクタリングする。
     let price_hyakudai: i32=price%1000;
     let price_sendai: i32=price-10000-price_hyakudai;
     ret.push(price);
     if price_sendai<5000 {
         ret.push(15000);
-    }
-    if 5000<=price_sendai {
+    }else if 5000<=price_sendai {
         ret.push(20000);
     }
     return ret;
