@@ -28341,7 +28341,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     };
     // 本の種類数。
     let book_kind_number: i32=book_list.len().try_into().unwrap();
-    let mut combination_list: Vec<BookForCalc>=Vec::new();
+    let mut book_list_for_calc: Vec<BookForCalc>=Vec::new();
     let mut _index: usize=0;
 
     // 部分集合をビット列で取ります。
@@ -28432,7 +28432,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                             hanpu_number: hanpu_number/kind_number,
                             source_list: source_list
                         };
-                        combination_list.push(book_for_calc);                        
+                        book_list_for_calc.push(book_for_calc);                        
                     }
                 }else{
                     // 何回か本処理が呼ばれ、シミュレーション上頒布しきった本がある場合、
@@ -28444,7 +28444,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                             hanpu_number: (hanpu_number+remainder)/kind_number,
                             source_list: source_list
                         };
-                        combination_list.push(book_for_calc);
+                        book_list_for_calc.push(book_for_calc);
                     }
                 }
             }
@@ -28460,12 +28460,12 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
                 hanpu_number: _book.hanpu_number,
                 source_list: tansatsu_source_list
             };
-            combination_list.push(book_for_calc);
+            book_list_for_calc.push(book_for_calc);
         }
     }
     // 最小頒布数を見つける。
     let mut hanpu_number_for_calc: i32=i32::MAX;
-    for book in combination_list.iter() {
+    for book in book_list_for_calc.iter() {
         if book.hanpu_number<hanpu_number_for_calc && 0<book.hanpu_number {
             hanpu_number_for_calc=book.hanpu_number;
         }
@@ -28480,7 +28480,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
         return ret;
     }
     // お釣りの枚数を数えます。
-    for book in combination_list.iter() {
+    for book in book_list_for_calc.iter() {
         if 0<book.hanpu_number {
             let ret_calc=calc_change(book.price,hanpu_number_for_calc);
             ret_money_number.ju+=ret_calc.ju;
@@ -28494,7 +28494,7 @@ fn calc_combination(mut book_list: Vec<Book>)->CalcResult{
     }
     // 元々のIDを参照して頒布数を引きます。
     for _book in &mut book_list {
-        for book_for_calc in combination_list.iter() {
+        for book_for_calc in book_list_for_calc.iter() {
             let source_list=&book_for_calc.source_list;
             for book_moto in source_list.iter() {
                 if _book.id==*book_moto {
@@ -28578,9 +28578,11 @@ fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
     }else{
         price=_price;
     }
-
-    let price_judai: i32=price%100;
-    let price_hyakudai: i32=(price-price_judai)%1000;
+    let ju_money_number: i32=calc_ju_money_number(price);
+    let goju_money_number: i32=calc_goju_money_number(price);
+    let hyaku_money_number: i32=calc_hyaku_money_number(price);
+    let price_judai: i32=goju_money_number*50+ju_money_number*10;
+    let price_hyakudai: i32=hyaku_money_number*100;
     if price < 500 {
         if price_judai == 0 {
             price_list.push(price);
