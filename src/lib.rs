@@ -26572,14 +26572,14 @@ mod tests {
 
 #[wasm_bindgen]
 pub fn calc(){
-    let book_from_js_list: Vec<JsValue>=getBookList().to_vec();
-    if book_from_js_list.len()==0 {
+    let book_from_screen_list: Vec<JsValue>=getBookList().to_vec();
+    if book_from_screen_list.len()==0 {
         return;
     }
     let mut book_list: Vec<Book>=Vec::new();
     let mut id: i32=0;
-    for book_from_js in book_from_js_list.iter(){
-        let book_tmp: Option<String>=book_from_js.as_string();
+    for book_from_screen in book_from_screen_list.iter(){
+        let book_tmp: Option<String>=book_from_screen.as_string();
         let book_str: String=book_tmp.unwrap();
         let book_split_list: Vec<&str>=book_str.split(":").collect();
         let price_str: &str=book_split_list[0];
