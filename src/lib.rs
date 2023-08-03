@@ -993,19 +993,19 @@ mod tests {
     // 540
     #[test]
     fn t_540_ju_test(){
-        assert_eq!(test_ju_money_number(540),-15);
+        assert_eq!(test_ju_money_number(540),0);
     }
     #[test]
     fn t_540_goju_test(){
-        assert_eq!(test_goju_money_number(540),5);
+        assert_eq!(test_goju_money_number(540),4);
     }
     #[test]
     fn t_540_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(540),20);
+        assert_eq!(test_hyaku_money_number(540),14);
     }
     #[test]
     fn t_540_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(540),-5);
+        assert_eq!(test_gohyaku_money_number(540),-6);
     }
     // 550
     #[test]
@@ -1014,83 +1014,83 @@ mod tests {
     }
     #[test]
     fn t_550_goju_test(){
-        assert_eq!(test_goju_money_number(550),0);
+        assert_eq!(test_goju_money_number(550),4);
     }
     #[test]
     fn t_550_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(550),20);
+        assert_eq!(test_hyaku_money_number(550),13);
     }
     #[test]
     fn t_550_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(550),-5);
+        assert_eq!(test_gohyaku_money_number(550),-6);
     }
     // 560
     #[test]
     fn t_560_ju_test(){
-        assert_eq!(test_ju_money_number(560),15);
+        assert_eq!(test_ju_money_number(560),25);
     }
     #[test]
     fn t_560_goju_test(){
-        assert_eq!(test_goju_money_number(560),-5);
+        assert_eq!(test_goju_money_number(560),-3);
     }
     #[test]
     fn t_560_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(560),20);
+        assert_eq!(test_hyaku_money_number(560),13);
     }
     #[test]
     fn t_560_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(560),-5);
+        assert_eq!(test_gohyaku_money_number(560),-6);
     }
     // 570
     #[test]
     fn t_570_ju_test(){
-        assert_eq!(test_ju_money_number(570),5);
+        assert_eq!(test_ju_money_number(570),15);
     }
     #[test]
     fn t_570_goju_test(){
-        assert_eq!(test_goju_money_number(570),-5);
+        assert_eq!(test_goju_money_number(570),-3);
     }
     #[test]
     fn t_570_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(570),20);
+        assert_eq!(test_hyaku_money_number(570),13);
     }
     #[test]
     fn t_570_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(570),-5);
+        assert_eq!(test_gohyaku_money_number(570),-6);
     }
     // 580
     #[test]
     fn t_580_ju_test(){
-        assert_eq!(test_ju_money_number(580),-5);
+        assert_eq!(test_ju_money_number(580),5);
     }
     #[test]
     fn t_580_goju_test(){
-        assert_eq!(test_goju_money_number(580),-5);
+        assert_eq!(test_goju_money_number(580),-3);
     }
     #[test]
     fn t_580_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(580),20);
+        assert_eq!(test_hyaku_money_number(580),13);
     }
     #[test]
     fn t_580_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(580),-5);
+        assert_eq!(test_gohyaku_money_number(580),-6);
     }
     // 590
     #[test]
     fn t_590_ju_test(){
-        assert_eq!(test_ju_money_number(590),-15);
+        assert_eq!(test_ju_money_number(590),-5);
     }
     #[test]
     fn t_590_goju_test(){
-        assert_eq!(test_goju_money_number(590),-5);
+        assert_eq!(test_goju_money_number(590),-3);
     }
     #[test]
     fn t_590_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(590),20);
+        assert_eq!(test_hyaku_money_number(590),13);
     }
     #[test]
     fn t_590_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(590),-5);
+        assert_eq!(test_gohyaku_money_number(590),-6);
     }
     // 600
     #[test]
@@ -1112,70 +1112,70 @@ mod tests {
     // 610
     #[test]
     fn t_610_ju_test(){
-        assert_eq!(test_ju_money_number(610),15);
+        assert_eq!(test_ju_money_number(610),30);
     }
     #[test]
     fn t_610_goju_test(){
-        assert_eq!(test_goju_money_number(610),5);
+        assert_eq!(test_goju_money_number(610),4);
     }
     #[test]
     fn t_610_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(610),10);
+        assert_eq!(test_hyaku_money_number(610),4);
     }
     #[test]
     fn t_610_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(610),-5);
+        assert_eq!(test_gohyaku_money_number(610),-6);
     }
     // 620
     #[test]
     fn t_620_ju_test(){
-        assert_eq!(test_ju_money_number(620),5);
+        assert_eq!(test_ju_money_number(620),20);
     }
     #[test]
     fn t_620_goju_test(){
-        assert_eq!(test_goju_money_number(620),5);
+        assert_eq!(test_goju_money_number(620),4);
     }
     #[test]
     fn t_620_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(620),10);
+        assert_eq!(test_hyaku_money_number(620),4);
     }
     #[test]
     fn t_620_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(620),-5);
+        assert_eq!(test_gohyaku_money_number(620),-6);
     }
     // 630
     #[test]
     fn t_630_ju_test(){
-        assert_eq!(test_ju_money_number(630),-5);
+        assert_eq!(test_ju_money_number(630),10);
     }
     #[test]
     fn t_630_goju_test(){
-        assert_eq!(test_goju_money_number(630),5);
+        assert_eq!(test_goju_money_number(630),4);
     }
     #[test]
     fn t_630_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(630),10);
+        assert_eq!(test_hyaku_money_number(630),4);
     }
     #[test]
     fn t_630_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(630),-5);
+        assert_eq!(test_gohyaku_money_number(630),-6);
     }
     // 640
     #[test]
     fn t_640_ju_test(){
-        assert_eq!(test_ju_money_number(640),-15);
+        assert_eq!(test_ju_money_number(640),0);
     }
     #[test]
     fn t_640_goju_test(){
-        assert_eq!(test_goju_money_number(640),5);
+        assert_eq!(test_goju_money_number(640),4);
     }
     #[test]
     fn t_640_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(640),10);
+        assert_eq!(test_hyaku_money_number(640),4);
     }
     #[test]
     fn t_640_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(640),-5);
+        assert_eq!(test_gohyaku_money_number(640),-6);
     }
     // 650
     #[test]
@@ -28538,11 +28538,11 @@ fn calc_change(price: i32, hanpu_number: i32)->MoneyNumber{
         ret=calc_hyaku(price,hanpu_number);
     } else if 1000 <= price && price < 3000 {
         // 1000円から3000円までの場合、5000円と1万円の使用は想定せず、1000円台をなくして考える。
-        let sen_price=price%1000;
-        if sen_price < 100 {
-            ret=calc_ju(sen_price,hanpu_number);
-        } else if 100<= sen_price && sen_price < 1000 {
-            ret=calc_hyaku(sen_price,hanpu_number);
+        let price_under_sen=price%1000;
+        if price_under_sen < 100 {
+            ret=calc_ju(price_under_sen,hanpu_number);
+        } else if 100<= price_under_sen && price_under_sen < 1000 {
+            ret=calc_hyaku(price_under_sen,hanpu_number);
         }
     } else if 3000 <= price && price < 10000 {
         ret=calc_sen(price,hanpu_number);
@@ -28565,16 +28565,10 @@ fn calc_ju(price: i32, hanpu_number: i32)->MoneyNumber{
     return calc_change_money_number(price_list, hanpu_number);
 }
 
-fn calc_hyaku(_price: i32, hanpu_number: i32)->MoneyNumber{
+fn calc_hyaku(price: i32, hanpu_number: i32)->MoneyNumber{
     let mut price_list: Vec<i32>=Vec::new();
-    let mut price: i32 = 0;
     // 1000円から3000円までも本メソッドで計算して、
     // 1000円から3000円までの場合5000円と1万円の使用を想定しない。
-    if price <= 1000 {
-        price=_price%1000;
-    }else{
-        price=_price;
-    }
     let ju_money_number: i32=calc_ju_money_number(price);
     let goju_money_number: i32=calc_goju_money_number(price);
     let hyaku_money_number: i32=calc_hyaku_money_number(price);
