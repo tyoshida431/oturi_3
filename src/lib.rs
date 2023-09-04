@@ -1184,83 +1184,83 @@ mod tests {
     }
     #[test]
     fn t_650_goju_test(){
-        assert_eq!(test_goju_money_number(650),0);
+        assert_eq!(test_goju_money_number(650),4);
     }
     #[test]
     fn t_650_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(650),10);
+        assert_eq!(test_hyaku_money_number(650),3);
     }
     #[test]
     fn t_650_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(650),-5);
+        assert_eq!(test_gohyaku_money_number(650),-6);
     }
     // 660
     #[test]
     fn t_660_ju_test(){
-        assert_eq!(test_ju_money_number(660),15);
+        assert_eq!(test_ju_money_number(660),25);
     }
     #[test]
     fn t_660_goju_test(){
-        assert_eq!(test_goju_money_number(660),-5);
+        assert_eq!(test_goju_money_number(660),-3);
     }
     #[test]
     fn t_660_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(660),10);
+        assert_eq!(test_hyaku_money_number(660),3);
     }
     #[test]
     fn t_660_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(660),-5);
+        assert_eq!(test_gohyaku_money_number(660),-6);
     }
     // 670
     #[test]
     fn t_670_ju_test(){
-        assert_eq!(test_ju_money_number(670),5);
+        assert_eq!(test_ju_money_number(670),15);
     }
     #[test]
     fn t_670_goju_test(){
-        assert_eq!(test_goju_money_number(670),-5);
+        assert_eq!(test_goju_money_number(670),-3);
     }
     #[test]
     fn t_670_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(670),10);
+        assert_eq!(test_hyaku_money_number(670),3);
     }
     #[test]
     fn t_670_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(670),-5);
+        assert_eq!(test_gohyaku_money_number(670),-6);
     }
     // 680
     #[test]
     fn t_680_ju_test(){
-        assert_eq!(test_ju_money_number(680),-5);
+        assert_eq!(test_ju_money_number(680),5);
     }
     #[test]
     fn t_680_goju_test(){
-        assert_eq!(test_goju_money_number(680),-5);
+        assert_eq!(test_goju_money_number(680),-3);
     }
     #[test]
     fn t_680_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(680),10);
+        assert_eq!(test_hyaku_money_number(680),3);
     }
     #[test]
     fn t_680_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(680),-5);
+        assert_eq!(test_gohyaku_money_number(680),-6);
     }
     // 690
     #[test]
     fn t_690_ju_test(){
-        assert_eq!(test_ju_money_number(690),-15);
+        assert_eq!(test_ju_money_number(690),-5);
     }
     #[test]
     fn t_690_goju_test(){
-        assert_eq!(test_goju_money_number(690),-5);
+        assert_eq!(test_goju_money_number(690),-3);
     }
     #[test]
     fn t_690_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(690),10);
+        assert_eq!(test_hyaku_money_number(690),3);
     }
     #[test]
     fn t_690_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(690),-5);
+        assert_eq!(test_gohyaku_money_number(690),-6);
     }
     // 700
     #[test]
@@ -1282,70 +1282,70 @@ mod tests {
     // 710
     #[test]
     fn t_710_ju_test(){
-        assert_eq!(test_ju_money_number(710),15);
+        assert_eq!(test_ju_money_number(710),30);
     }
     #[test]
     fn t_710_goju_test(){
-        assert_eq!(test_goju_money_number(710),5);
+        assert_eq!(test_goju_money_number(710),4);
     }
     #[test]
     fn t_710_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(710),0);
+        assert_eq!(test_hyaku_money_number(710),-6);
     }
     #[test]
     fn t_710_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(710),-5);
+        assert_eq!(test_gohyaku_money_number(710),-6);
     }
     // 720
     #[test]
     fn t_720_ju_test(){
-        assert_eq!(test_ju_money_number(720),5);
+        assert_eq!(test_ju_money_number(720),20);
     }
     #[test]
     fn t_720_goju_test(){
-        assert_eq!(test_goju_money_number(720),5);
+        assert_eq!(test_goju_money_number(720),4);
     }
     #[test]
     fn t_720_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(720),0);
+        assert_eq!(test_hyaku_money_number(720),-6);
     }
     #[test]
     fn t_720_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(720),-5);
+        assert_eq!(test_gohyaku_money_number(720),-6);
     }
     // 730
     #[test]
     fn t_730_ju_test(){
-        assert_eq!(test_ju_money_number(730),-5);
+        assert_eq!(test_ju_money_number(730),10);
     }
     #[test]
     fn t_730_goju_test(){
-        assert_eq!(test_goju_money_number(730),5);
+        assert_eq!(test_goju_money_number(730),4);
     }
     #[test]
     fn t_730_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(730),0);
+        assert_eq!(test_hyaku_money_number(730),-6);
     }
     #[test]
     fn t_730_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(730),-5);
+        assert_eq!(test_gohyaku_money_number(730),-6);
     }
     // 740
     #[test]
     fn t_740_ju_test(){
-        assert_eq!(test_ju_money_number(740),-15);
+        assert_eq!(test_ju_money_number(740),0);
     }
     #[test]
     fn t_740_goju_test(){
-        assert_eq!(test_goju_money_number(740),5);
+        assert_eq!(test_goju_money_number(740),4);
     }
     #[test]
     fn t_740_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(740),0);
+        assert_eq!(test_hyaku_money_number(740),-6);
     }
     #[test]
     fn t_740_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(740),-5);
+        assert_eq!(test_gohyaku_money_number(740),-6);
     }
     // 750
     #[test]
@@ -1354,83 +1354,83 @@ mod tests {
     }
     #[test]
     fn t_750_goju_test(){
-        assert_eq!(test_goju_money_number(750),0);
+        assert_eq!(test_goju_money_number(750),4);
     }
     #[test]
     fn t_750_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(750),0);
+        assert_eq!(test_hyaku_money_number(750),-7);
     }
     #[test]
     fn t_750_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(750),-5);
+        assert_eq!(test_gohyaku_money_number(750),-6);
     }
     // 760
     #[test]
     fn t_760_ju_test(){
-        assert_eq!(test_ju_money_number(760),15);
+        assert_eq!(test_ju_money_number(760),25);
     }
     #[test]
     fn t_760_goju_test(){
-        assert_eq!(test_goju_money_number(760),-5);
+        assert_eq!(test_goju_money_number(760),-3);
     }
     #[test]
     fn t_760_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(760),0);
+        assert_eq!(test_hyaku_money_number(760),-7);
     }
     #[test]
     fn t_760_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(760),-5);
+        assert_eq!(test_gohyaku_money_number(760),-6);
     }
     // 770
     #[test]
     fn t_770_ju_test(){
-        assert_eq!(test_ju_money_number(770),5);
+        assert_eq!(test_ju_money_number(770),15);
     }
     #[test]
     fn t_770_goju_test(){
-        assert_eq!(test_goju_money_number(770),-5);
+        assert_eq!(test_goju_money_number(770),-3);
     }
     #[test]
     fn t_770_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(770),0);
+        assert_eq!(test_hyaku_money_number(770),-7);
     }
     #[test]
     fn t_770_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(770),-5);
+        assert_eq!(test_gohyaku_money_number(770),-6);
     }
     // 780
     #[test]
     fn t_780_ju_test(){
-        assert_eq!(test_ju_money_number(780),-5);
+        assert_eq!(test_ju_money_number(780),5);
     }
     #[test]
     fn t_780_goju_test(){
-        assert_eq!(test_goju_money_number(780),-5);
+        assert_eq!(test_goju_money_number(780),-3);
     }
     #[test]
     fn t_780_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(780),0);
+        assert_eq!(test_hyaku_money_number(780),-7);
     }
     #[test]
     fn t_780_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(780),-5);
+        assert_eq!(test_gohyaku_money_number(780),-6);
     }
     // 790
     #[test]
     fn t_790_ju_test(){
-        assert_eq!(test_ju_money_number(790),-15);
+        assert_eq!(test_ju_money_number(790),-5);
     }
     #[test]
     fn t_790_goju_test(){
-        assert_eq!(test_goju_money_number(790),-5);
+        assert_eq!(test_goju_money_number(790),-3);
     }
     #[test]
     fn t_790_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(790),0);
+        assert_eq!(test_hyaku_money_number(790),-7);
     }
     #[test]
     fn t_790_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(790),-5);
+        assert_eq!(test_gohyaku_money_number(790),-6);
     }
     // 800
     #[test]
@@ -1452,70 +1452,70 @@ mod tests {
     // 810
     #[test]
     fn t_810_ju_test(){
-        assert_eq!(test_ju_money_number(810),15);
+        assert_eq!(test_ju_money_number(810),30);
     }
     #[test]
     fn t_810_goju_test(){
-        assert_eq!(test_goju_money_number(810),5);
+        assert_eq!(test_goju_money_number(810),4);
     }
     #[test]
     fn t_810_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(810),-10);
+        assert_eq!(test_hyaku_money_number(810),-16);
     }
     #[test]
     fn t_810_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(810),-5);
+        assert_eq!(test_gohyaku_money_number(810),-6);
     }
     // 820
     #[test]
     fn t_820_ju_test(){
-        assert_eq!(test_ju_money_number(820),5);
+        assert_eq!(test_ju_money_number(820),20);
     }
     #[test]
     fn t_820_goju_test(){
-        assert_eq!(test_goju_money_number(820),5);
+        assert_eq!(test_goju_money_number(820),4);
     }
     #[test]
     fn t_820_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(820),-10);
+        assert_eq!(test_hyaku_money_number(820),-16);
     }
     #[test]
     fn t_820_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(820),-5);
+        assert_eq!(test_gohyaku_money_number(820),-6);
     }
     // 830
     #[test]
     fn t_830_ju_test(){
-        assert_eq!(test_ju_money_number(830),-5);
+        assert_eq!(test_ju_money_number(830),10);
     }
     #[test]
     fn t_830_goju_test(){
-        assert_eq!(test_goju_money_number(830),5);
+        assert_eq!(test_goju_money_number(830),4);
     }
     #[test]
     fn t_830_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(830),-10);
+        assert_eq!(test_hyaku_money_number(830),-16);
     }
     #[test]
     fn t_830_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(830),-5);
+        assert_eq!(test_gohyaku_money_number(830),-6);
     }
     // 840
     #[test]
     fn t_840_ju_test(){
-        assert_eq!(test_ju_money_number(840),-15);
+        assert_eq!(test_ju_money_number(840),0);
     }
     #[test]
     fn t_840_goju_test(){
-        assert_eq!(test_goju_money_number(840),5);
+        assert_eq!(test_goju_money_number(840),4);
     }
     #[test]
     fn t_840_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(840),-10);
+        assert_eq!(test_hyaku_money_number(840),-16);
     }
     #[test]
     fn t_840_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(840),-5);
+        assert_eq!(test_gohyaku_money_number(840),-6);
     }
     // 850
     #[test]
@@ -1524,83 +1524,83 @@ mod tests {
     }
     #[test]
     fn t_850_goju_test(){
-        assert_eq!(test_goju_money_number(850),0);
+        assert_eq!(test_goju_money_number(850),4);
     }
     #[test]
     fn t_850_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(850),-10);
+        assert_eq!(test_hyaku_money_number(850),-17);
     }
     #[test]
     fn t_850_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(850),-5);
+        assert_eq!(test_gohyaku_money_number(850),-6);
     }
     // 860
     #[test]
     fn t_860_ju_test(){
-        assert_eq!(test_ju_money_number(860),15);
+        assert_eq!(test_ju_money_number(860),25);
     }
     #[test]
     fn t_860_goju_test(){
-        assert_eq!(test_goju_money_number(860),-5);
+        assert_eq!(test_goju_money_number(860),-3);
     }
     #[test]
     fn t_860_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(860),-10);
+        assert_eq!(test_hyaku_money_number(860),-17);
     }
     #[test]
     fn t_860_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(860),-5);
+        assert_eq!(test_gohyaku_money_number(860),-6);
     }
     // 870
     #[test]
     fn t_870_ju_test(){
-        assert_eq!(test_ju_money_number(870),5);
+        assert_eq!(test_ju_money_number(870),15);
     }
     #[test]
     fn t_870_goju_test(){
-        assert_eq!(test_goju_money_number(870),-5);
+        assert_eq!(test_goju_money_number(870),-3);
     }
     #[test]
     fn t_870_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(870),-10);
+        assert_eq!(test_hyaku_money_number(870),-17);
     }
     #[test]
     fn t_870_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(870),-5);
+        assert_eq!(test_gohyaku_money_number(870),-6);
     }
     // 880
     #[test]
     fn t_880_ju_test(){
-        assert_eq!(test_ju_money_number(880),-5);
+        assert_eq!(test_ju_money_number(880),5);
     }
     #[test]
     fn t_880_goju_test(){
-        assert_eq!(test_goju_money_number(880),-5);
+        assert_eq!(test_goju_money_number(880),-3);
     }
     #[test]
     fn t_880_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(880),-10);
+        assert_eq!(test_hyaku_money_number(880),-17);
     }
     #[test]
     fn t_880_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(880),-5);
+        assert_eq!(test_gohyaku_money_number(880),-6);
     }
     // 890
     #[test]
     fn t_890_ju_test(){
-        assert_eq!(test_ju_money_number(890),-15);
+        assert_eq!(test_ju_money_number(890),-5);
     }
     #[test]
     fn t_890_goju_test(){
-        assert_eq!(test_goju_money_number(890),-5);
+        assert_eq!(test_goju_money_number(890),-3);
     }
     #[test]
     fn t_890_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(890),-10);
+        assert_eq!(test_hyaku_money_number(890),-17);
     }
     #[test]
     fn t_890_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(890),-5);
+        assert_eq!(test_gohyaku_money_number(890),-6);
     }
     // 900
     #[test]
@@ -1622,70 +1622,70 @@ mod tests {
     // 910
     #[test]
     fn t_910_ju_test(){
-        assert_eq!(test_ju_money_number(910),15);
+        assert_eq!(test_ju_money_number(910),25);
     }
     #[test]
     fn t_910_goju_test(){
-        assert_eq!(test_goju_money_number(910),5);
+        assert_eq!(test_goju_money_number(910),1);
     }
     #[test]
     fn t_910_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(910),-20);
+        assert_eq!(test_hyaku_money_number(910),-24);
     }
     #[test]
     fn t_910_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(910),-5);
+        assert_eq!(test_gohyaku_money_number(910),-6);
     }
     // 920
     #[test]
     fn t_920_ju_test(){
-        assert_eq!(test_ju_money_number(920),5);
+        assert_eq!(test_ju_money_number(920),15);
     }
     #[test]
     fn t_920_goju_test(){
-        assert_eq!(test_goju_money_number(920),5);
+        assert_eq!(test_goju_money_number(920),1);
     }
     #[test]
     fn t_920_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(920),-20);
+        assert_eq!(test_hyaku_money_number(920),-24);
     }
     #[test]
     fn t_920_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(920),-5);
+        assert_eq!(test_gohyaku_money_number(920),-6);
     }
     // 930
     #[test]
     fn t_930_ju_test(){
-        assert_eq!(test_ju_money_number(930),-5);
+        assert_eq!(test_ju_money_number(930),5);
     }
     #[test]
     fn t_930_goju_test(){
-        assert_eq!(test_goju_money_number(930),5);
+        assert_eq!(test_goju_money_number(930),1);
     }
     #[test]
     fn t_930_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(930),-20);
+        assert_eq!(test_hyaku_money_number(930),-24);
     }
     #[test]
     fn t_930_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(930),-5);
+        assert_eq!(test_gohyaku_money_number(930),-6);
     }
     // 940
     #[test]
     fn t_940_ju_test(){
-        assert_eq!(test_ju_money_number(940),-15);
+        assert_eq!(test_ju_money_number(940),-5);
     }
     #[test]
     fn t_940_goju_test(){
-        assert_eq!(test_goju_money_number(940),5);
+        assert_eq!(test_goju_money_number(940),1);
     }
     #[test]
     fn t_940_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(940),-20);
+        assert_eq!(test_hyaku_money_number(940),-24);
     }
     #[test]
     fn t_940_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(940),-5);
+        assert_eq!(test_gohyaku_money_number(940),-6);
     }
     // 950
     #[test]
@@ -1949,15 +1949,15 @@ mod tests {
     }
     #[test]
     fn t_1110_goju_test(){
-        assert_eq!(test_goju_money_number(1110),8);
+        assert_eq!(test_goju_money_number(1110),4);
     }
     #[test]
     fn t_1110_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1110),12);
+        assert_eq!(test_hyaku_money_number(1110),4);
     }
     #[test]
     fn t_1110_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1110),2);
+        assert_eq!(test_gohyaku_money_number(1110),0);
     }
     // 1120
     #[test]
@@ -1966,15 +1966,15 @@ mod tests {
     }
     #[test]
     fn t_1120_goju_test(){
-        assert_eq!(test_goju_money_number(1120),8);
+        assert_eq!(test_goju_money_number(1120),4);
     }
     #[test]
     fn t_1120_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1120),12);
+        assert_eq!(test_hyaku_money_number(1120),4);
     }
     #[test]
     fn t_1120_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1120),2);
+        assert_eq!(test_gohyaku_money_number(1120),0);
     }
     // 1130
     #[test]
@@ -1983,15 +1983,15 @@ mod tests {
     }
     #[test]
     fn t_1130_goju_test(){
-        assert_eq!(test_goju_money_number(1130),8);
+        assert_eq!(test_goju_money_number(1130),4);
     }
     #[test]
     fn t_1130_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1130),12);
+        assert_eq!(test_hyaku_money_number(1130),4);
     }
     #[test]
     fn t_1130_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1130),2);
+        assert_eq!(test_gohyaku_money_number(1130),0);
     }
     // 1140
     #[test]
@@ -2000,15 +2000,15 @@ mod tests {
     }
     #[test]
     fn t_1140_goju_test(){
-        assert_eq!(test_goju_money_number(1140),8);
+        assert_eq!(test_goju_money_number(1140),4);
     }
     #[test]
     fn t_1140_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1140),12);
+        assert_eq!(test_hyaku_money_number(1140),4);
     }
     #[test]
     fn t_1140_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1140),2);
+        assert_eq!(test_gohyaku_money_number(1140),0);
     }
     // 1150
     #[test]
@@ -2119,15 +2119,15 @@ mod tests {
     }
     #[test]
     fn t_1210_goju_test(){
-        assert_eq!(test_goju_money_number(1210),8);
+        assert_eq!(test_goju_money_number(1210),4);
     }
     #[test]
     fn t_1210_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1210),2);
+        assert_eq!(test_hyaku_money_number(1210),-6);
     }
     #[test]
     fn t_1210_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1210),2);
+        assert_eq!(test_gohyaku_money_number(1210),0);
     }
     // 1220
     #[test]
@@ -2136,15 +2136,15 @@ mod tests {
     }
     #[test]
     fn t_1220_goju_test(){
-        assert_eq!(test_goju_money_number(1220),8);
+        assert_eq!(test_goju_money_number(1220),4);
     }
     #[test]
     fn t_1220_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1220),2);
+        assert_eq!(test_hyaku_money_number(1220),-6);
     }
     #[test]
     fn t_1220_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1220),2);
+        assert_eq!(test_gohyaku_money_number(1220),0);
     }
     // 1230
     #[test]
@@ -2153,15 +2153,15 @@ mod tests {
     }
     #[test]
     fn t_1230_goju_test(){
-        assert_eq!(test_goju_money_number(1230),8);
+        assert_eq!(test_goju_money_number(1230),4);
     }
     #[test]
     fn t_1230_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1230),2);
+        assert_eq!(test_hyaku_money_number(1230),-6);
     }
     #[test]
     fn t_1230_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1230),2);
+        assert_eq!(test_gohyaku_money_number(1230),0);
     }
     // 1240
     #[test]
@@ -2170,15 +2170,15 @@ mod tests {
     }
     #[test]
     fn t_1240_goju_test(){
-        assert_eq!(test_goju_money_number(1240),8);
+        assert_eq!(test_goju_money_number(1240),4);
     }
     #[test]
     fn t_1240_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1240),2);
+        assert_eq!(test_hyaku_money_number(1240),-6);
     }
     #[test]
     fn t_1240_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1240),2);
+        assert_eq!(test_gohyaku_money_number(1240),0);
     }
     // 1250
     #[test]
@@ -2204,7 +2204,7 @@ mod tests {
     }
     #[test]
     fn t_1260_goju_test(){
-        assert_eq!(test_goju_money_number(1260),-2);
+        assert_eq!(test_goju_money_number(2160),-2);
     }
     #[test]
     fn t_1260_hyaku_test(){
@@ -2221,7 +2221,7 @@ mod tests {
     }
     #[test]
     fn t_1270_goju_test(){
-        assert_eq!(test_goju_money_number(1270),-2);
+        assert_eq!(test_goju_money_number(2170),-2);
     }
     #[test]
     fn t_1270_hyaku_test(){
@@ -2238,7 +2238,7 @@ mod tests {
     }
     #[test]
     fn t_1280_goju_test(){
-        assert_eq!(test_goju_money_number(1280),-2);
+        assert_eq!(test_goju_money_number(2180),-2);
     }
     #[test]
     fn t_1280_hyaku_test(){
@@ -2255,7 +2255,7 @@ mod tests {
     }
     #[test]
     fn t_1290_goju_test(){
-        assert_eq!(test_goju_money_number(1290),-2);
+        assert_eq!(test_goju_money_number(2190),-2);
     }
     #[test]
     fn t_1290_hyaku_test(){
@@ -2289,15 +2289,15 @@ mod tests {
     }
     #[test]
     fn t_1310_goju_test(){
-        assert_eq!(test_goju_money_number(1310),8);
+        assert_eq!(test_goju_money_number(1310),4);
     }
     #[test]
     fn t_1310_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1310),-8);
+        assert_eq!(test_hyaku_money_number(1310),-16);
     }
     #[test]
     fn t_1310_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1310),2);
+        assert_eq!(test_gohyaku_money_number(1310),0);
     }
     // 1320
     #[test]
@@ -2306,15 +2306,15 @@ mod tests {
     }
     #[test]
     fn t_1320_goju_test(){
-        assert_eq!(test_goju_money_number(1320),8);
+        assert_eq!(test_goju_money_number(1320),4);
     }
     #[test]
     fn t_1320_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1320),-8);
+        assert_eq!(test_hyaku_money_number(1320),-16);
     }
     #[test]
     fn t_1320_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1320),2);
+        assert_eq!(test_gohyaku_money_number(1320),0);
     }
     // 1330
     #[test]
@@ -2323,15 +2323,15 @@ mod tests {
     }
     #[test]
     fn t_1330_goju_test(){
-        assert_eq!(test_goju_money_number(1330),8);
+        assert_eq!(test_goju_money_number(1330),4);
     }
     #[test]
     fn t_1330_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1330),-8);
+        assert_eq!(test_hyaku_money_number(1330),-16);
     }
     #[test]
     fn t_1330_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1330),2);
+        assert_eq!(test_gohyaku_money_number(1330),0);
     }
     // 1340
     #[test]
@@ -2340,15 +2340,15 @@ mod tests {
     }
     #[test]
     fn t_1340_goju_test(){
-        assert_eq!(test_goju_money_number(1340),8);
+        assert_eq!(test_goju_money_number(1340),4);
     }
     #[test]
     fn t_1340_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1340),-8);
+        assert_eq!(test_hyaku_money_number(1340),-16);
     }
     #[test]
     fn t_1340_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1340),2);
+        assert_eq!(test_gohyaku_money_number(1340),0);
     }
     // 1350
     #[test]
@@ -2455,70 +2455,70 @@ mod tests {
     // 1410
     #[test]
     fn t_1410_ju_test(){
-        assert_eq!(test_ju_money_number(1410),25);
+        assert_eq!(test_ju_money_number(1410),30);
     }
     #[test]
     fn t_1410_goju_test(){
-        assert_eq!(test_goju_money_number(1410),7);
+        assert_eq!(test_goju_money_number(1410),4);
     }
     #[test]
     fn t_1410_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1410),-12);
+        assert_eq!(test_hyaku_money_number(1410),-16);
     }
     #[test]
     fn t_1410_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1410),1);
+        assert_eq!(test_gohyaku_money_number(1410),2);
     }
     // 1420
     #[test]
     fn t_1420_ju_test(){
-        assert_eq!(test_ju_money_number(1420),15);
+        assert_eq!(test_ju_money_number(1420),20);
     }
     #[test]
     fn t_1420_goju_test(){
-        assert_eq!(test_goju_money_number(1420),7);
+        assert_eq!(test_goju_money_number(1420),4);
     }
     #[test]
     fn t_1420_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1420),-12);
+        assert_eq!(test_hyaku_money_number(1420),-16);
     }
     #[test]
     fn t_1420_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1420),1);
+        assert_eq!(test_gohyaku_money_number(1420),2);
     }
     // 1430
     #[test]
     fn t_1430_ju_test(){
-        assert_eq!(test_ju_money_number(1430),5);
+        assert_eq!(test_ju_money_number(1430),10);
     }
     #[test]
     fn t_1430_goju_test(){
-        assert_eq!(test_goju_money_number(1430),7);
+        assert_eq!(test_goju_money_number(1430),4);
     }
     #[test]
     fn t_1430_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1430),-12);
+        assert_eq!(test_hyaku_money_number(1430),-16);
     }
     #[test]
     fn t_1430_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1430),1);
+        assert_eq!(test_gohyaku_money_number(1430),2);
     }
     // 1440
     #[test]
     fn t_1440_ju_test(){
-        assert_eq!(test_ju_money_number(1440),-5);
+        assert_eq!(test_ju_money_number(1440),0);
     }
     #[test]
     fn t_1440_goju_test(){
-        assert_eq!(test_goju_money_number(1440),7);
+        assert_eq!(test_goju_money_number(1440),4);
     }
     #[test]
     fn t_1440_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1440),-12);
+        assert_eq!(test_hyaku_money_number(1440),-16);
     }
     #[test]
     fn t_1440_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1440),1);
+        assert_eq!(test_gohyaku_money_number(1440),2);
     }
     // 1450
     #[test]
@@ -2625,70 +2625,70 @@ mod tests {
     // 1510
     #[test]
     fn t_1510_ju_test(){
-        assert_eq!(test_ju_money_number(1510),15);
+        assert_eq!(test_ju_money_number(1510),30);
     }
     #[test]
     fn t_1510_goju_test(){
-        assert_eq!(test_goju_money_number(1510),5);
+        assert_eq!(test_goju_money_number(1510),4);
     }
     #[test]
     fn t_1510_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1510),20);
+        assert_eq!(test_hyaku_money_number(1510),14);
     }
     #[test]
     fn t_1510_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1510),-5);
+        assert_eq!(test_gohyaku_money_number(1510),-6);
     }
     // 1520
     #[test]
     fn t_1520_ju_test(){
-        assert_eq!(test_ju_money_number(1520),5);
+        assert_eq!(test_ju_money_number(1520),20);
     }
     #[test]
     fn t_1520_goju_test(){
-        assert_eq!(test_goju_money_number(1520),5);
+        assert_eq!(test_goju_money_number(1520),4);
     }
     #[test]
     fn t_1520_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1520),20);
+        assert_eq!(test_hyaku_money_number(1520),14);
     }
     #[test]
     fn t_1520_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1520),-5);
+        assert_eq!(test_gohyaku_money_number(1520),-6);
     }
     // 1530
     #[test]
     fn t_1530_ju_test(){
-        assert_eq!(test_ju_money_number(1530),-5);
+        assert_eq!(test_ju_money_number(1530),10);
     }
     #[test]
     fn t_1530_goju_test(){
-        assert_eq!(test_goju_money_number(1530),5);
+        assert_eq!(test_goju_money_number(1530),4);
     }
     #[test]
     fn t_1530_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1530),20);
+        assert_eq!(test_hyaku_money_number(1530),14);
     }
     #[test]
     fn t_1530_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1530),-5);
+        assert_eq!(test_gohyaku_money_number(1530),-6);
     }
     // 1540
     #[test]
     fn t_1540_ju_test(){
-        assert_eq!(test_ju_money_number(1540),-15);
+        assert_eq!(test_ju_money_number(1540),0);
     }
     #[test]
     fn t_1540_goju_test(){
-        assert_eq!(test_goju_money_number(1540),5);
+        assert_eq!(test_goju_money_number(1540),4);
     }
     #[test]
     fn t_1540_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1540),20);
+        assert_eq!(test_hyaku_money_number(1540),14);
     }
     #[test]
     fn t_1540_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1540),-5);
+        assert_eq!(test_gohyaku_money_number(1540),-6);
     }
     // 1550
     #[test]
@@ -2697,83 +2697,83 @@ mod tests {
     }
     #[test]
     fn t_1550_goju_test(){
-        assert_eq!(test_goju_money_number(1550),0);
+        assert_eq!(test_goju_money_number(1550),4);
     }
     #[test]
     fn t_1550_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1550),20);
+        assert_eq!(test_hyaku_money_number(1550),13);
     }
     #[test]
     fn t_1550_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1550),-5);
+        assert_eq!(test_gohyaku_money_number(1550),-6);
     }
     // 1560
     #[test]
     fn t_1560_ju_test(){
-        assert_eq!(test_ju_money_number(1560),15);
+        assert_eq!(test_ju_money_number(1560),25);
     }
     #[test]
     fn t_1560_goju_test(){
-        assert_eq!(test_goju_money_number(1560),-5);
+        assert_eq!(test_goju_money_number(1560),-3);
     }
     #[test]
     fn t_1560_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1560),20);
+        assert_eq!(test_hyaku_money_number(1560),13);
     }
     #[test]
     fn t_1560_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1560),-5);
+        assert_eq!(test_gohyaku_money_number(1560),-6);
     }
     // 1570
     #[test]
     fn t_1570_ju_test(){
-        assert_eq!(test_ju_money_number(1570),5);
+        assert_eq!(test_ju_money_number(1570),15);
     }
     #[test]
     fn t_1570_goju_test(){
-        assert_eq!(test_goju_money_number(1570),-5);
+        assert_eq!(test_goju_money_number(1570),-3);
     }
     #[test]
     fn t_1570_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1570),20);
+        assert_eq!(test_hyaku_money_number(1570),13);
     }
     #[test]
     fn t_1570_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1570),-5);
+        assert_eq!(test_gohyaku_money_number(1570),-6);
     }
     // 1580
     #[test]
     fn t_1580_ju_test(){
-        assert_eq!(test_ju_money_number(1580),-5);
+        assert_eq!(test_ju_money_number(1580),5);
     }
     #[test]
     fn t_1580_goju_test(){
-        assert_eq!(test_goju_money_number(1580),-5);
+        assert_eq!(test_goju_money_number(1580),-3);
     }
     #[test]
     fn t_1580_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1580),20);
+        assert_eq!(test_hyaku_money_number(1580),13);
     }
     #[test]
     fn t_1580_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1580),-5);
+        assert_eq!(test_gohyaku_money_number(1580),-6);
     }
     // 1590
     #[test]
     fn t_1590_ju_test(){
-        assert_eq!(test_ju_money_number(1590),-15);
+        assert_eq!(test_ju_money_number(1590),-5);
     }
     #[test]
     fn t_1590_goju_test(){
-        assert_eq!(test_goju_money_number(1590),-5);
+        assert_eq!(test_goju_money_number(1590),-3);
     }
     #[test]
     fn t_1590_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1590),20);
+        assert_eq!(test_hyaku_money_number(1590),13);
     }
     #[test]
     fn t_1590_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1590),-5);
+        assert_eq!(test_gohyaku_money_number(1590),-6);
     }
     // 1600
     #[test]
@@ -2795,70 +2795,70 @@ mod tests {
     // 1610
     #[test]
     fn t_1610_ju_test(){
-        assert_eq!(test_ju_money_number(1610),15);
+        assert_eq!(test_ju_money_number(1610),30);
     }
     #[test]
     fn t_1610_goju_test(){
-        assert_eq!(test_goju_money_number(1610),5);
+        assert_eq!(test_goju_money_number(1610),4);
     }
     #[test]
     fn t_1610_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1610),10);
+        assert_eq!(test_hyaku_money_number(1610),4);
     }
     #[test]
     fn t_1610_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1610),-5);
+        assert_eq!(test_gohyaku_money_number(1610),-6);
     }
     // 1620
     #[test]
     fn t_1620_ju_test(){
-        assert_eq!(test_ju_money_number(1620),5);
+        assert_eq!(test_ju_money_number(1620),20);
     }
     #[test]
     fn t_1620_goju_test(){
-        assert_eq!(test_goju_money_number(1620),5);
+        assert_eq!(test_goju_money_number(1620),4);
     }
     #[test]
     fn t_1620_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1620),10);
+        assert_eq!(test_hyaku_money_number(1620),4);
     }
     #[test]
     fn t_1620_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1620),-5);
+        assert_eq!(test_gohyaku_money_number(1620),-6);
     }
     // 1630
     #[test]
     fn t_1630_ju_test(){
-        assert_eq!(test_ju_money_number(1630),-5);
+        assert_eq!(test_ju_money_number(1630),10);
     }
     #[test]
     fn t_1630_goju_test(){
-        assert_eq!(test_goju_money_number(1630),5);
+        assert_eq!(test_goju_money_number(1630),4);
     }
     #[test]
     fn t_1630_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1630),10);
+        assert_eq!(test_hyaku_money_number(1630),4);
     }
     #[test]
     fn t_1630_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1630),-5);
+        assert_eq!(test_gohyaku_money_number(1630),-6);
     }
     // 1640
     #[test]
     fn t_1640_ju_test(){
-        assert_eq!(test_ju_money_number(1640),-15);
+        assert_eq!(test_ju_money_number(1640),0);
     }
     #[test]
     fn t_1640_goju_test(){
-        assert_eq!(test_goju_money_number(1640),5);
+        assert_eq!(test_goju_money_number(1640),4);
     }
     #[test]
     fn t_1640_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1640),10);
+        assert_eq!(test_hyaku_money_number(1640),4);
     }
     #[test]
     fn t_1640_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1640),-5);
+        assert_eq!(test_gohyaku_money_number(1640),-6);
     }
     // 1650
     #[test]
@@ -2867,83 +2867,83 @@ mod tests {
     }
     #[test]
     fn t_1650_goju_test(){
-        assert_eq!(test_goju_money_number(1650),0);
+        assert_eq!(test_goju_money_number(1650),4);
     }
     #[test]
     fn t_1650_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1650),10);
+        assert_eq!(test_hyaku_money_number(1650),3);
     }
     #[test]
     fn t_1650_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1650),-5);
+        assert_eq!(test_gohyaku_money_number(1650),-6);
     }
     // 1660
     #[test]
     fn t_1660_ju_test(){
-        assert_eq!(test_ju_money_number(1660),15);
+        assert_eq!(test_ju_money_number(1660),25);
     }
     #[test]
     fn t_1660_goju_test(){
-        assert_eq!(test_goju_money_number(1660),-5);
+        assert_eq!(test_goju_money_number(1660),-3);
     }
     #[test]
     fn t_1660_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1660),10);
+        assert_eq!(test_hyaku_money_number(1660),3);
     }
     #[test]
     fn t_1660_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1660),-5);
+        assert_eq!(test_gohyaku_money_number(1660),-6);
     }
     // 1670
     #[test]
     fn t_1670_ju_test(){
-        assert_eq!(test_ju_money_number(1670),5);
+        assert_eq!(test_ju_money_number(1670),15);
     }
     #[test]
     fn t_1670_goju_test(){
-        assert_eq!(test_goju_money_number(1670),-5);
+        assert_eq!(test_goju_money_number(1670),-3);
     }
     #[test]
     fn t_1670_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1670),10);
+        assert_eq!(test_hyaku_money_number(1670),3);
     }
     #[test]
     fn t_1670_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1670),-5);
+        assert_eq!(test_gohyaku_money_number(1670),-6);
     }
     // 1680
     #[test]
     fn t_1680_ju_test(){
-        assert_eq!(test_ju_money_number(1680),-5);
+        assert_eq!(test_ju_money_number(1680),5);
     }
     #[test]
     fn t_1680_goju_test(){
-        assert_eq!(test_goju_money_number(1680),-5);
+        assert_eq!(test_goju_money_number(1680),-3);
     }
     #[test]
     fn t_1680_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1680),10);
+        assert_eq!(test_hyaku_money_number(1680),3);
     }
     #[test]
     fn t_1680_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1680),-5);
+        assert_eq!(test_gohyaku_money_number(1680),-6);
     }
     // 1690
     #[test]
     fn t_1690_ju_test(){
-        assert_eq!(test_ju_money_number(1690),-15);
+        assert_eq!(test_ju_money_number(1690),-5);
     }
     #[test]
     fn t_1690_goju_test(){
-        assert_eq!(test_goju_money_number(1690),-5);
+        assert_eq!(test_goju_money_number(1690),-3);
     }
     #[test]
     fn t_1690_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1690),10);
+        assert_eq!(test_hyaku_money_number(1690),3);
     }
     #[test]
     fn t_1690_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1690),-5);
+        assert_eq!(test_gohyaku_money_number(1690),-6);
     }
     // 1700
     #[test]
@@ -2965,70 +2965,70 @@ mod tests {
     // 1710
     #[test]
     fn t_1710_ju_test(){
-        assert_eq!(test_ju_money_number(1710),15);
+        assert_eq!(test_ju_money_number(1710),30);
     }
     #[test]
     fn t_1710_goju_test(){
-        assert_eq!(test_goju_money_number(1710),5);
+        assert_eq!(test_goju_money_number(1710),4);
     }
     #[test]
     fn t_1710_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1710),0);
+        assert_eq!(test_hyaku_money_number(1710),-6);
     }
     #[test]
     fn t_1710_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1710),-5);
+        assert_eq!(test_gohyaku_money_number(1710),-6);
     }
     // 1720
     #[test]
     fn t_1720_ju_test(){
-        assert_eq!(test_ju_money_number(1720),5);
+        assert_eq!(test_ju_money_number(1720),20);
     }
     #[test]
     fn t_1720_goju_test(){
-        assert_eq!(test_goju_money_number(1720),5);
+        assert_eq!(test_goju_money_number(1720),4);
     }
     #[test]
     fn t_1720_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1720),0);
+        assert_eq!(test_hyaku_money_number(1720),-6);
     }
     #[test]
     fn t_1720_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1720),-5);
+        assert_eq!(test_gohyaku_money_number(1720),-6);
     }
     // 1730
     #[test]
     fn t_1730_ju_test(){
-        assert_eq!(test_ju_money_number(1730),-5);
+        assert_eq!(test_ju_money_number(1730),10);
     }
     #[test]
     fn t_1730_goju_test(){
-        assert_eq!(test_goju_money_number(1730),5);
+        assert_eq!(test_goju_money_number(1730),4);
     }
     #[test]
     fn t_1730_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1730),0);
+        assert_eq!(test_hyaku_money_number(1730),-6);
     }
     #[test]
     fn t_1730_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1730),-5);
+        assert_eq!(test_gohyaku_money_number(1730),-6);
     }
     // 1740
     #[test]
     fn t_1740_ju_test(){
-        assert_eq!(test_ju_money_number(1740),-15);
+        assert_eq!(test_ju_money_number(1740),0);
     }
     #[test]
     fn t_1740_goju_test(){
-        assert_eq!(test_goju_money_number(1740),5);
+        assert_eq!(test_goju_money_number(1740),4);
     }
     #[test]
     fn t_1740_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1740),0);
+        assert_eq!(test_hyaku_money_number(1740),-6);
     }
     #[test]
     fn t_1740_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1740),-5);
+        assert_eq!(test_gohyaku_money_number(1740),-6);
     }
     // 1750
     #[test]
@@ -3037,83 +3037,83 @@ mod tests {
     }
     #[test]
     fn t_1750_goju_test(){
-        assert_eq!(test_goju_money_number(1750),0);
+        assert_eq!(test_goju_money_number(1750),4);
     }
     #[test]
     fn t_1750_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1750),0);
+        assert_eq!(test_hyaku_money_number(1750),-7);
     }
     #[test]
     fn t_1750_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1750),-5);
+        assert_eq!(test_gohyaku_money_number(1750),-6);
     }
     // 1760
     #[test]
     fn t_1760_ju_test(){
-        assert_eq!(test_ju_money_number(1760),15);
+        assert_eq!(test_ju_money_number(1760),25);
     }
     #[test]
     fn t_1760_goju_test(){
-        assert_eq!(test_goju_money_number(1760),-5);
+        assert_eq!(test_goju_money_number(1760),-3);
     }
     #[test]
     fn t_1760_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1760),0);
+        assert_eq!(test_hyaku_money_number(1760),-7);
     }
     #[test]
     fn t_1760_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1760),-5);
+        assert_eq!(test_gohyaku_money_number(1760),-6);
     }
     // 1770
     #[test]
     fn t_1770_ju_test(){
-        assert_eq!(test_ju_money_number(1770),5);
+        assert_eq!(test_ju_money_number(1770),15);
     }
     #[test]
     fn t_1770_goju_test(){
-        assert_eq!(test_goju_money_number(1770),-5);
+        assert_eq!(test_goju_money_number(1770),-3);
     }
     #[test]
     fn t_1770_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1770),0);
+        assert_eq!(test_hyaku_money_number(1770),-7);
     }
     #[test]
     fn t_1770_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1770),-5);
+        assert_eq!(test_gohyaku_money_number(1770),-6);
     }
     // 1780
     #[test]
     fn t_1780_ju_test(){
-        assert_eq!(test_ju_money_number(1780),-5);
+        assert_eq!(test_ju_money_number(1780),5);
     }
     #[test]
     fn t_1780_goju_test(){
-        assert_eq!(test_goju_money_number(1780),-5);
+        assert_eq!(test_goju_money_number(1780),-3);
     }
     #[test]
     fn t_1780_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1780),0);
+        assert_eq!(test_hyaku_money_number(1780),-7);
     }
     #[test]
     fn t_1780_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1780),-5);
+        assert_eq!(test_gohyaku_money_number(1780),-6);
     }
     // 1790
     #[test]
     fn t_1790_ju_test(){
-        assert_eq!(test_ju_money_number(1790),-15);
+        assert_eq!(test_ju_money_number(1790),-5);
     }
     #[test]
     fn t_1790_goju_test(){
-        assert_eq!(test_goju_money_number(1790),-5);
+        assert_eq!(test_goju_money_number(1790),-3);
     }
     #[test]
     fn t_1790_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1790),0);
+        assert_eq!(test_hyaku_money_number(1790),-7);
     }
     #[test]
     fn t_1790_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1790),-5);
+        assert_eq!(test_gohyaku_money_number(1790),-6);
     }
     // 1800
     #[test]
@@ -3135,70 +3135,70 @@ mod tests {
     // 1810
     #[test]
     fn t_1810_ju_test(){
-        assert_eq!(test_ju_money_number(1810),15);
+        assert_eq!(test_ju_money_number(1810),30);
     }
     #[test]
     fn t_1810_goju_test(){
-        assert_eq!(test_goju_money_number(1810),5);
+        assert_eq!(test_goju_money_number(1810),4);
     }
     #[test]
     fn t_1810_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1810),-10);
+        assert_eq!(test_hyaku_money_number(1810),-16);
     }
     #[test]
     fn t_1810_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1810),-5);
+        assert_eq!(test_gohyaku_money_number(1810),-6);
     }
     // 1820
     #[test]
     fn t_1820_ju_test(){
-        assert_eq!(test_ju_money_number(1820),5);
+        assert_eq!(test_ju_money_number(1820),20);
     }
     #[test]
     fn t_1820_goju_test(){
-        assert_eq!(test_goju_money_number(1820),5);
+        assert_eq!(test_goju_money_number(1820),4);
     }
     #[test]
     fn t_1820_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1820),-10);
+        assert_eq!(test_hyaku_money_number(1820),-16);
     }
     #[test]
     fn t_1820_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1820),-5);
+        assert_eq!(test_gohyaku_money_number(1820),-6);
     }
     // 1830
     #[test]
     fn t_1830_ju_test(){
-        assert_eq!(test_ju_money_number(1830),-5);
+        assert_eq!(test_ju_money_number(1830),10);
     }
     #[test]
     fn t_1830_goju_test(){
-        assert_eq!(test_goju_money_number(1830),5);
+        assert_eq!(test_goju_money_number(1830),4);
     }
     #[test]
     fn t_1830_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1830),-10);
+        assert_eq!(test_hyaku_money_number(1830),-16);
     }
     #[test]
     fn t_1830_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1830),-5);
+        assert_eq!(test_gohyaku_money_number(1830),-6);
     }
     // 1840
     #[test]
     fn t_1840_ju_test(){
-        assert_eq!(test_ju_money_number(1840),-15);
+        assert_eq!(test_ju_money_number(1840),0);
     }
     #[test]
     fn t_1840_goju_test(){
-        assert_eq!(test_goju_money_number(1840),5);
+        assert_eq!(test_goju_money_number(1840),4);
     }
     #[test]
     fn t_1840_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1840),-10);
+        assert_eq!(test_hyaku_money_number(1840),-16);
     }
     #[test]
     fn t_1840_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1840),-5);
+        assert_eq!(test_gohyaku_money_number(1840),-6);
     }
     // 1850
     #[test]
@@ -3207,83 +3207,83 @@ mod tests {
     }
     #[test]
     fn t_1850_goju_test(){
-        assert_eq!(test_goju_money_number(1850),0);
+        assert_eq!(test_goju_money_number(1850),4);
     }
     #[test]
     fn t_1850_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1850),-10);
+        assert_eq!(test_hyaku_money_number(1850),-17);
     }
     #[test]
     fn t_1850_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1850),-5);
+        assert_eq!(test_gohyaku_money_number(1850),-6);
     }
     // 1860
     #[test]
     fn t_1860_ju_test(){
-        assert_eq!(test_ju_money_number(1860),15);
+        assert_eq!(test_ju_money_number(1860),25);
     }
     #[test]
     fn t_1860_goju_test(){
-        assert_eq!(test_goju_money_number(1860),-5);
+        assert_eq!(test_goju_money_number(1860),-3);
     }
     #[test]
     fn t_1860_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1860),-10);
+        assert_eq!(test_hyaku_money_number(1860),-17);
     }
     #[test]
     fn t_1860_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1860),-5);
+        assert_eq!(test_gohyaku_money_number(1860),-6);
     }
     // 1870
     #[test]
     fn t_1870_ju_test(){
-        assert_eq!(test_ju_money_number(1870),5);
+        assert_eq!(test_ju_money_number(1870),15);
     }
     #[test]
     fn t_1870_goju_test(){
-        assert_eq!(test_goju_money_number(1870),-5);
+        assert_eq!(test_goju_money_number(1870),-3);
     }
     #[test]
     fn t_1870_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1870),-10);
+        assert_eq!(test_hyaku_money_number(1870),-17);
     }
     #[test]
     fn t_1870_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1870),-5);
+        assert_eq!(test_gohyaku_money_number(1870),-6);
     }
     // 1880
     #[test]
     fn t_1880_ju_test(){
-        assert_eq!(test_ju_money_number(1880),-5);
+        assert_eq!(test_ju_money_number(1880),5);
     }
     #[test]
     fn t_1880_goju_test(){
-        assert_eq!(test_goju_money_number(1880),-5);
+        assert_eq!(test_goju_money_number(1880),-3);
     }
     #[test]
     fn t_1880_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1880),-10);
+        assert_eq!(test_hyaku_money_number(1880),-17);
     }
     #[test]
     fn t_1880_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1880),-5);
+        assert_eq!(test_gohyaku_money_number(1880),-6);
     }
     // 1890
     #[test]
     fn t_1890_ju_test(){
-        assert_eq!(test_ju_money_number(1890),-15);
+        assert_eq!(test_ju_money_number(1890),-5);
     }
     #[test]
     fn t_1890_goju_test(){
-        assert_eq!(test_goju_money_number(1890),-5);
+        assert_eq!(test_goju_money_number(1890),-3);
     }
     #[test]
     fn t_1890_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1890),-10);
+        assert_eq!(test_hyaku_money_number(1890),-17);
     }
     #[test]
     fn t_1890_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1890),-5);
+        assert_eq!(test_gohyaku_money_number(1890),-6);
     }
     // 1900
     #[test]
@@ -3305,70 +3305,70 @@ mod tests {
     // 1910
     #[test]
     fn t_1910_ju_test(){
-        assert_eq!(test_ju_money_number(1910),15);
+        assert_eq!(test_ju_money_number(1910),25);
     }
     #[test]
     fn t_1910_goju_test(){
-        assert_eq!(test_goju_money_number(1910),5);
+        assert_eq!(test_goju_money_number(1910),1);
     }
     #[test]
     fn t_1910_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1910),-20);
+        assert_eq!(test_hyaku_money_number(1910),-24);
     }
     #[test]
     fn t_1910_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1910),-5);
+        assert_eq!(test_gohyaku_money_number(1910),-6);
     }
     // 1920
     #[test]
     fn t_1920_ju_test(){
-        assert_eq!(test_ju_money_number(1920),5);
+        assert_eq!(test_ju_money_number(1920),15);
     }
     #[test]
     fn t_1920_goju_test(){
-        assert_eq!(test_goju_money_number(1920),5);
+        assert_eq!(test_goju_money_number(1920),1);
     }
     #[test]
     fn t_1920_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1920),-20);
+        assert_eq!(test_hyaku_money_number(1920),-24);
     }
     #[test]
     fn t_1920_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1920),-5);
+        assert_eq!(test_gohyaku_money_number(1920),-6);
     }
     // 1930
     #[test]
     fn t_1930_ju_test(){
-        assert_eq!(test_ju_money_number(1930),-5);
+        assert_eq!(test_ju_money_number(1930),5);
     }
     #[test]
     fn t_1930_goju_test(){
-        assert_eq!(test_goju_money_number(1930),5);
+        assert_eq!(test_goju_money_number(1930),1);
     }
     #[test]
     fn t_1930_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1930),-20);
+        assert_eq!(test_hyaku_money_number(1930),-24);
     }
     #[test]
     fn t_1930_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1930),-5);
+        assert_eq!(test_gohyaku_money_number(1930),-6);
     }
     // 1940
     #[test]
     fn t_1940_ju_test(){
-        assert_eq!(test_ju_money_number(1940),-15);
+        assert_eq!(test_ju_money_number(1940),-5);
     }
     #[test]
     fn t_1940_goju_test(){
-        assert_eq!(test_goju_money_number(1940),5);
+        assert_eq!(test_goju_money_number(1940),1);
     }
     #[test]
     fn t_1940_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(1940),-20);
+        assert_eq!(test_hyaku_money_number(1940),-24);
     }
     #[test]
     fn t_1940_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(1940),-5);
+        assert_eq!(test_gohyaku_money_number(1940),-6);
     }
     // 1950
     #[test]
@@ -3632,15 +3632,15 @@ mod tests {
     }
     #[test]
     fn t_2110_goju_test(){
-        assert_eq!(test_goju_money_number(2110),8);
+        assert_eq!(test_goju_money_number(2110),4);
     }
     #[test]
     fn t_2110_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2110),12);
+        assert_eq!(test_hyaku_money_number(2110),4);
     }
     #[test]
     fn t_2110_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2110),2);
+        assert_eq!(test_gohyaku_money_number(2110),0);
     }
     // 2120
     #[test]
@@ -3649,15 +3649,15 @@ mod tests {
     }
     #[test]
     fn t_2120_goju_test(){
-        assert_eq!(test_goju_money_number(2120),8);
+        assert_eq!(test_goju_money_number(2120),4);
     }
     #[test]
     fn t_2120_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2120),12);
+        assert_eq!(test_hyaku_money_number(2120),4);
     }
     #[test]
     fn t_2120_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2120),2);
+        assert_eq!(test_gohyaku_money_number(2120),0);
     }
     // 2130
     #[test]
@@ -3666,15 +3666,15 @@ mod tests {
     }
     #[test]
     fn t_2130_goju_test(){
-        assert_eq!(test_goju_money_number(2130),8);
+        assert_eq!(test_goju_money_number(2130),4);
     }
     #[test]
     fn t_2130_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2130),12);
+        assert_eq!(test_hyaku_money_number(2130),4);
     }
     #[test]
     fn t_2130_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2130),2);
+        assert_eq!(test_gohyaku_money_number(2130),0);
     }
     // 2140
     #[test]
@@ -3683,15 +3683,15 @@ mod tests {
     }
     #[test]
     fn t_2140_goju_test(){
-        assert_eq!(test_goju_money_number(2140),8);
+        assert_eq!(test_goju_money_number(2140),4);
     }
     #[test]
     fn t_2140_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2140),12);
+        assert_eq!(test_hyaku_money_number(2140),4);
     }
     #[test]
     fn t_2140_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2140),2);
+        assert_eq!(test_gohyaku_money_number(2140),0);
     }
     // 2150
     #[test]
@@ -3802,15 +3802,15 @@ mod tests {
     }
     #[test]
     fn t_2210_goju_test(){
-        assert_eq!(test_goju_money_number(2210),8);
+        assert_eq!(test_goju_money_number(2210),4);
     }
     #[test]
     fn t_2210_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2210),2);
+        assert_eq!(test_hyaku_money_number(2210),-6);
     }
     #[test]
     fn t_2210_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2210),2);
+        assert_eq!(test_gohyaku_money_number(2210),0);
     }
     // 2220
     #[test]
@@ -3819,15 +3819,15 @@ mod tests {
     }
     #[test]
     fn t_2220_goju_test(){
-        assert_eq!(test_goju_money_number(2220),8);
+        assert_eq!(test_goju_money_number(2220),4);
     }
     #[test]
     fn t_2220_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2220),2);
+        assert_eq!(test_hyaku_money_number(2220),-6);
     }
     #[test]
     fn t_2220_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2220),2);
+        assert_eq!(test_gohyaku_money_number(2220),0);
     }
     // 2230
     #[test]
@@ -3836,15 +3836,15 @@ mod tests {
     }
     #[test]
     fn t_2230_goju_test(){
-        assert_eq!(test_goju_money_number(2230),8);
+        assert_eq!(test_goju_money_number(2230),4);
     }
     #[test]
     fn t_2230_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2230),2);
+        assert_eq!(test_hyaku_money_number(2230),-6);
     }
     #[test]
     fn t_2230_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2230),2);
+        assert_eq!(test_gohyaku_money_number(2230),0);
     }
     // 2240
     #[test]
@@ -3853,15 +3853,15 @@ mod tests {
     }
     #[test]
     fn t_2240_goju_test(){
-        assert_eq!(test_goju_money_number(2240),8);
+        assert_eq!(test_goju_money_number(2240),4);
     }
     #[test]
     fn t_2240_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2240),2);
+        assert_eq!(test_hyaku_money_number(2240),-6);
     }
     #[test]
     fn t_2240_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2240),2);
+        assert_eq!(test_gohyaku_money_number(2240),0);
     }
     // 2250
     #[test]
@@ -3887,7 +3887,7 @@ mod tests {
     }
     #[test]
     fn t_2260_goju_test(){
-        assert_eq!(test_goju_money_number(2260),-2);
+        assert_eq!(test_goju_money_number(2160),-2);
     }
     #[test]
     fn t_2260_hyaku_test(){
@@ -3904,7 +3904,7 @@ mod tests {
     }
     #[test]
     fn t_2270_goju_test(){
-        assert_eq!(test_goju_money_number(2270),-2);
+        assert_eq!(test_goju_money_number(2170),-2);
     }
     #[test]
     fn t_2270_hyaku_test(){
@@ -3921,7 +3921,7 @@ mod tests {
     }
     #[test]
     fn t_2280_goju_test(){
-        assert_eq!(test_goju_money_number(2280),-2);
+        assert_eq!(test_goju_money_number(2180),-2);
     }
     #[test]
     fn t_2280_hyaku_test(){
@@ -3938,7 +3938,7 @@ mod tests {
     }
     #[test]
     fn t_2290_goju_test(){
-        assert_eq!(test_goju_money_number(2290),-2);
+        assert_eq!(test_goju_money_number(2190),-2);
     }
     #[test]
     fn t_2290_hyaku_test(){
@@ -3972,15 +3972,15 @@ mod tests {
     }
     #[test]
     fn t_2310_goju_test(){
-        assert_eq!(test_goju_money_number(2310),8);
+        assert_eq!(test_goju_money_number(2310),4);
     }
     #[test]
     fn t_2310_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2310),-8);
+        assert_eq!(test_hyaku_money_number(2310),-16);
     }
     #[test]
     fn t_2310_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2310),2);
+        assert_eq!(test_gohyaku_money_number(2310),0);
     }
     // 2320
     #[test]
@@ -3989,15 +3989,15 @@ mod tests {
     }
     #[test]
     fn t_2320_goju_test(){
-        assert_eq!(test_goju_money_number(2320),8);
+        assert_eq!(test_goju_money_number(2320),4);
     }
     #[test]
     fn t_2320_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2320),-8);
+        assert_eq!(test_hyaku_money_number(2320),-16);
     }
     #[test]
     fn t_2320_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2320),2);
+        assert_eq!(test_gohyaku_money_number(2320),0);
     }
     // 2330
     #[test]
@@ -4006,15 +4006,15 @@ mod tests {
     }
     #[test]
     fn t_2330_goju_test(){
-        assert_eq!(test_goju_money_number(2330),8);
+        assert_eq!(test_goju_money_number(2330),4);
     }
     #[test]
     fn t_2330_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2330),-8);
+        assert_eq!(test_hyaku_money_number(2330),-16);
     }
     #[test]
     fn t_2330_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2330),2);
+        assert_eq!(test_gohyaku_money_number(2330),0);
     }
     // 2340
     #[test]
@@ -4023,15 +4023,15 @@ mod tests {
     }
     #[test]
     fn t_2340_goju_test(){
-        assert_eq!(test_goju_money_number(2340),8);
+        assert_eq!(test_goju_money_number(2340),4);
     }
     #[test]
     fn t_2340_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2340),-8);
+        assert_eq!(test_hyaku_money_number(2340),-16);
     }
     #[test]
     fn t_2340_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2340),2);
+        assert_eq!(test_gohyaku_money_number(2340),0);
     }
     // 2350
     #[test]
@@ -4138,70 +4138,70 @@ mod tests {
     // 2410
     #[test]
     fn t_2410_ju_test(){
-        assert_eq!(test_ju_money_number(2410),25);
+        assert_eq!(test_ju_money_number(2410),30);
     }
     #[test]
     fn t_2410_goju_test(){
-        assert_eq!(test_goju_money_number(2410),7);
+        assert_eq!(test_goju_money_number(2410),4);
     }
     #[test]
     fn t_2410_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2410),-12);
+        assert_eq!(test_hyaku_money_number(2410),-16);
     }
     #[test]
     fn t_2410_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2410),1);
+        assert_eq!(test_gohyaku_money_number(2410),2);
     }
     // 2420
     #[test]
     fn t_2420_ju_test(){
-        assert_eq!(test_ju_money_number(2420),15);
+        assert_eq!(test_ju_money_number(2420),20);
     }
     #[test]
     fn t_2420_goju_test(){
-        assert_eq!(test_goju_money_number(2420),7);
+        assert_eq!(test_goju_money_number(2420),4);
     }
     #[test]
     fn t_2420_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2420),-12);
+        assert_eq!(test_hyaku_money_number(2420),-16);
     }
     #[test]
     fn t_2420_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2420),1);
+        assert_eq!(test_gohyaku_money_number(2420),2);
     }
     // 2430
     #[test]
     fn t_2430_ju_test(){
-        assert_eq!(test_ju_money_number(2430),5);
+        assert_eq!(test_ju_money_number(2430),10);
     }
     #[test]
     fn t_2430_goju_test(){
-        assert_eq!(test_goju_money_number(2430),7);
+        assert_eq!(test_goju_money_number(2430),4);
     }
     #[test]
     fn t_2430_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2430),-12);
+        assert_eq!(test_hyaku_money_number(2430),-16);
     }
     #[test]
     fn t_2430_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2430),1);
+        assert_eq!(test_gohyaku_money_number(2430),2);
     }
     // 2440
     #[test]
     fn t_2440_ju_test(){
-        assert_eq!(test_ju_money_number(2440),-5);
+        assert_eq!(test_ju_money_number(2440),0);
     }
     #[test]
     fn t_2440_goju_test(){
-        assert_eq!(test_goju_money_number(2440),7);
+        assert_eq!(test_goju_money_number(2440),4);
     }
     #[test]
     fn t_2440_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2440),-12);
+        assert_eq!(test_hyaku_money_number(2440),-16);
     }
     #[test]
     fn t_2440_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2440),1);
+        assert_eq!(test_gohyaku_money_number(2440),2);
     }
     // 2450
     #[test]
@@ -4308,70 +4308,70 @@ mod tests {
     // 2510
     #[test]
     fn t_2510_ju_test(){
-        assert_eq!(test_ju_money_number(2510),15);
+        assert_eq!(test_ju_money_number(2510),30);
     }
     #[test]
     fn t_2510_goju_test(){
-        assert_eq!(test_goju_money_number(2510),5);
+        assert_eq!(test_goju_money_number(2510),4);
     }
     #[test]
     fn t_2510_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2510),20);
+        assert_eq!(test_hyaku_money_number(2510),14);
     }
     #[test]
     fn t_2510_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2510),-5);
+        assert_eq!(test_gohyaku_money_number(2510),-6);
     }
     // 2520
     #[test]
     fn t_2520_ju_test(){
-        assert_eq!(test_ju_money_number(2520),5);
+        assert_eq!(test_ju_money_number(2520),20);
     }
     #[test]
     fn t_2520_goju_test(){
-        assert_eq!(test_goju_money_number(2520),5);
+        assert_eq!(test_goju_money_number(2520),4);
     }
     #[test]
     fn t_2520_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2520),20);
+        assert_eq!(test_hyaku_money_number(2520),14);
     }
     #[test]
     fn t_2520_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2520),-5);
+        assert_eq!(test_gohyaku_money_number(2520),-6);
     }
     // 2530
     #[test]
     fn t_2530_ju_test(){
-        assert_eq!(test_ju_money_number(2530),-5);
+        assert_eq!(test_ju_money_number(2530),10);
     }
     #[test]
     fn t_2530_goju_test(){
-        assert_eq!(test_goju_money_number(2530),5);
+        assert_eq!(test_goju_money_number(2530),4);
     }
     #[test]
     fn t_2530_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2530),20);
+        assert_eq!(test_hyaku_money_number(2530),14);
     }
     #[test]
     fn t_2530_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2530),-5);
+        assert_eq!(test_gohyaku_money_number(2530),-6);
     }
     // 2540
     #[test]
     fn t_2540_ju_test(){
-        assert_eq!(test_ju_money_number(2540),-15);
+        assert_eq!(test_ju_money_number(2540),0);
     }
     #[test]
     fn t_2540_goju_test(){
-        assert_eq!(test_goju_money_number(2540),5);
+        assert_eq!(test_goju_money_number(2540),4);
     }
     #[test]
     fn t_2540_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2540),20);
+        assert_eq!(test_hyaku_money_number(2540),14);
     }
     #[test]
     fn t_2540_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2540),-5);
+        assert_eq!(test_gohyaku_money_number(2540),-6);
     }
     // 2550
     #[test]
@@ -4380,83 +4380,83 @@ mod tests {
     }
     #[test]
     fn t_2550_goju_test(){
-        assert_eq!(test_goju_money_number(2550),0);
+        assert_eq!(test_goju_money_number(2550),4);
     }
     #[test]
     fn t_2550_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2550),20);
+        assert_eq!(test_hyaku_money_number(2550),13);
     }
     #[test]
     fn t_2550_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2550),-5);
+        assert_eq!(test_gohyaku_money_number(2550),-6);
     }
     // 2560
     #[test]
     fn t_2560_ju_test(){
-        assert_eq!(test_ju_money_number(2560),15);
+        assert_eq!(test_ju_money_number(2560),25);
     }
     #[test]
     fn t_2560_goju_test(){
-        assert_eq!(test_goju_money_number(2560),-5);
+        assert_eq!(test_goju_money_number(2560),-3);
     }
     #[test]
     fn t_2560_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2560),20);
+        assert_eq!(test_hyaku_money_number(2560),13);
     }
     #[test]
     fn t_2560_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2560),-5);
+        assert_eq!(test_gohyaku_money_number(2560),-6);
     }
     // 2570
     #[test]
     fn t_2570_ju_test(){
-        assert_eq!(test_ju_money_number(2570),5);
+        assert_eq!(test_ju_money_number(2570),15);
     }
     #[test]
     fn t_2570_goju_test(){
-        assert_eq!(test_goju_money_number(2570),-5);
+        assert_eq!(test_goju_money_number(2570),-3);
     }
     #[test]
     fn t_2570_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2570),20);
+        assert_eq!(test_hyaku_money_number(2570),13);
     }
     #[test]
     fn t_2570_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2570),-5);
+        assert_eq!(test_gohyaku_money_number(2570),-6);
     }
     // 2580
     #[test]
     fn t_2580_ju_test(){
-        assert_eq!(test_ju_money_number(2580),-5);
+        assert_eq!(test_ju_money_number(2580),5);
     }
     #[test]
     fn t_2580_goju_test(){
-        assert_eq!(test_goju_money_number(2580),-5);
+        assert_eq!(test_goju_money_number(2580),-3);
     }
     #[test]
     fn t_2580_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2580),20);
+        assert_eq!(test_hyaku_money_number(2580),13);
     }
     #[test]
     fn t_2580_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2580),-5);
+        assert_eq!(test_gohyaku_money_number(2580),-6);
     }
     // 2590
     #[test]
     fn t_2590_ju_test(){
-        assert_eq!(test_ju_money_number(2590),-15);
+        assert_eq!(test_ju_money_number(2590),-5);
     }
     #[test]
     fn t_2590_goju_test(){
-        assert_eq!(test_goju_money_number(2590),-5);
+        assert_eq!(test_goju_money_number(2590),-3);
     }
     #[test]
     fn t_2590_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2590),20);
+        assert_eq!(test_hyaku_money_number(2590),13);
     }
     #[test]
     fn t_2590_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2590),-5);
+        assert_eq!(test_gohyaku_money_number(2590),-6);
     }
     // 2600
     #[test]
@@ -4478,70 +4478,70 @@ mod tests {
     // 2610
     #[test]
     fn t_2610_ju_test(){
-        assert_eq!(test_ju_money_number(2610),15);
+        assert_eq!(test_ju_money_number(2610),30);
     }
     #[test]
     fn t_2610_goju_test(){
-        assert_eq!(test_goju_money_number(2610),5);
+        assert_eq!(test_goju_money_number(2610),4);
     }
     #[test]
     fn t_2610_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2610),10);
+        assert_eq!(test_hyaku_money_number(2610),4);
     }
     #[test]
     fn t_2610_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2610),-5);
+        assert_eq!(test_gohyaku_money_number(2610),-6);
     }
     // 2620
     #[test]
     fn t_2620_ju_test(){
-        assert_eq!(test_ju_money_number(2620),5);
+        assert_eq!(test_ju_money_number(2620),20);
     }
     #[test]
     fn t_2620_goju_test(){
-        assert_eq!(test_goju_money_number(2620),5);
+        assert_eq!(test_goju_money_number(2620),4);
     }
     #[test]
     fn t_2620_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2620),10);
+        assert_eq!(test_hyaku_money_number(2620),4);
     }
     #[test]
     fn t_2620_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2620),-5);
+        assert_eq!(test_gohyaku_money_number(2620),-6);
     }
     // 2630
     #[test]
     fn t_2630_ju_test(){
-        assert_eq!(test_ju_money_number(2630),-5);
+        assert_eq!(test_ju_money_number(2630),10);
     }
     #[test]
     fn t_2630_goju_test(){
-        assert_eq!(test_goju_money_number(2630),5);
+        assert_eq!(test_goju_money_number(2630),4);
     }
     #[test]
     fn t_2630_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2630),10);
+        assert_eq!(test_hyaku_money_number(2630),4);
     }
     #[test]
     fn t_2630_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2630),-5);
+        assert_eq!(test_gohyaku_money_number(2630),-6);
     }
     // 2640
     #[test]
     fn t_2640_ju_test(){
-        assert_eq!(test_ju_money_number(2640),-15);
+        assert_eq!(test_ju_money_number(2640),0);
     }
     #[test]
     fn t_2640_goju_test(){
-        assert_eq!(test_goju_money_number(2640),5);
+        assert_eq!(test_goju_money_number(2640),4);
     }
     #[test]
     fn t_2640_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2640),10);
+        assert_eq!(test_hyaku_money_number(2640),4);
     }
     #[test]
     fn t_2640_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2640),-5);
+        assert_eq!(test_gohyaku_money_number(2640),-6);
     }
     // 2650
     #[test]
@@ -4550,83 +4550,83 @@ mod tests {
     }
     #[test]
     fn t_2650_goju_test(){
-        assert_eq!(test_goju_money_number(2650),0);
+        assert_eq!(test_goju_money_number(2650),4);
     }
     #[test]
     fn t_2650_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2650),10);
+        assert_eq!(test_hyaku_money_number(2650),3);
     }
     #[test]
     fn t_2650_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2650),-5);
+        assert_eq!(test_gohyaku_money_number(2650),-6);
     }
     // 2660
     #[test]
     fn t_2660_ju_test(){
-        assert_eq!(test_ju_money_number(2660),15);
+        assert_eq!(test_ju_money_number(2660),25);
     }
     #[test]
     fn t_2660_goju_test(){
-        assert_eq!(test_goju_money_number(2660),-5);
+        assert_eq!(test_goju_money_number(2660),-3);
     }
     #[test]
     fn t_2660_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2660),10);
+        assert_eq!(test_hyaku_money_number(2660),3);
     }
     #[test]
     fn t_2660_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2660),-5);
+        assert_eq!(test_gohyaku_money_number(2660),-6);
     }
     // 2670
     #[test]
     fn t_2670_ju_test(){
-        assert_eq!(test_ju_money_number(2670),5);
+        assert_eq!(test_ju_money_number(2670),15);
     }
     #[test]
     fn t_2670_goju_test(){
-        assert_eq!(test_goju_money_number(2670),-5);
+        assert_eq!(test_goju_money_number(2670),-3);
     }
     #[test]
     fn t_2670_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2670),10);
+        assert_eq!(test_hyaku_money_number(2670),3);
     }
     #[test]
     fn t_2670_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2670),-5);
+        assert_eq!(test_gohyaku_money_number(2670),-6);
     }
     // 2680
     #[test]
     fn t_2680_ju_test(){
-        assert_eq!(test_ju_money_number(2680),-5);
+        assert_eq!(test_ju_money_number(2680),5);
     }
     #[test]
     fn t_2680_goju_test(){
-        assert_eq!(test_goju_money_number(2680),-5);
+        assert_eq!(test_goju_money_number(2680),-3);
     }
     #[test]
     fn t_2680_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2680),10);
+        assert_eq!(test_hyaku_money_number(2680),3);
     }
     #[test]
     fn t_2680_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2680),-5);
+        assert_eq!(test_gohyaku_money_number(2680),-6);
     }
     // 2690
     #[test]
     fn t_2690_ju_test(){
-        assert_eq!(test_ju_money_number(2690),-15);
+        assert_eq!(test_ju_money_number(2690),-5);
     }
     #[test]
     fn t_2690_goju_test(){
-        assert_eq!(test_goju_money_number(2690),-5);
+        assert_eq!(test_goju_money_number(2690),-3);
     }
     #[test]
     fn t_2690_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2690),10);
+        assert_eq!(test_hyaku_money_number(2690),3);
     }
     #[test]
     fn t_2690_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2690),-5);
+        assert_eq!(test_gohyaku_money_number(2690),-6);
     }
     // 2700
     #[test]
@@ -4648,70 +4648,70 @@ mod tests {
     // 2710
     #[test]
     fn t_2710_ju_test(){
-        assert_eq!(test_ju_money_number(2710),15);
+        assert_eq!(test_ju_money_number(2710),30);
     }
     #[test]
     fn t_2710_goju_test(){
-        assert_eq!(test_goju_money_number(2710),5);
+        assert_eq!(test_goju_money_number(2710),4);
     }
     #[test]
     fn t_2710_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2710),0);
+        assert_eq!(test_hyaku_money_number(2710),-6);
     }
     #[test]
     fn t_2710_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2710),-5);
+        assert_eq!(test_gohyaku_money_number(2710),-6);
     }
     // 2720
     #[test]
     fn t_2720_ju_test(){
-        assert_eq!(test_ju_money_number(2720),5);
+        assert_eq!(test_ju_money_number(2720),20);
     }
     #[test]
     fn t_2720_goju_test(){
-        assert_eq!(test_goju_money_number(2720),5);
+        assert_eq!(test_goju_money_number(2720),4);
     }
     #[test]
     fn t_2720_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2720),0);
+        assert_eq!(test_hyaku_money_number(2720),-6);
     }
     #[test]
     fn t_2720_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2720),-5);
+        assert_eq!(test_gohyaku_money_number(2720),-6);
     }
     // 2730
     #[test]
     fn t_2730_ju_test(){
-        assert_eq!(test_ju_money_number(2730),-5);
+        assert_eq!(test_ju_money_number(2730),10);
     }
     #[test]
     fn t_2730_goju_test(){
-        assert_eq!(test_goju_money_number(2730),5);
+        assert_eq!(test_goju_money_number(2730),4);
     }
     #[test]
     fn t_2730_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2730),0);
+        assert_eq!(test_hyaku_money_number(2730),-6);
     }
     #[test]
     fn t_2730_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2730),-5);
+        assert_eq!(test_gohyaku_money_number(2730),-6);
     }
     // 2740
     #[test]
     fn t_2740_ju_test(){
-        assert_eq!(test_ju_money_number(2740),-15);
+        assert_eq!(test_ju_money_number(2740),0);
     }
     #[test]
     fn t_2740_goju_test(){
-        assert_eq!(test_goju_money_number(2740),5);
+        assert_eq!(test_goju_money_number(2740),4);
     }
     #[test]
     fn t_2740_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2740),0);
+        assert_eq!(test_hyaku_money_number(2740),-6);
     }
     #[test]
     fn t_2740_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2740),-5);
+        assert_eq!(test_gohyaku_money_number(2740),-6);
     }
     // 2750
     #[test]
@@ -4720,83 +4720,83 @@ mod tests {
     }
     #[test]
     fn t_2750_goju_test(){
-        assert_eq!(test_goju_money_number(2750),0);
+        assert_eq!(test_goju_money_number(2750),4);
     }
     #[test]
     fn t_2750_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2750),0);
+        assert_eq!(test_hyaku_money_number(2750),-7);
     }
     #[test]
     fn t_2750_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2750),-5);
+        assert_eq!(test_gohyaku_money_number(2750),-6);
     }
     // 2760
     #[test]
     fn t_2760_ju_test(){
-        assert_eq!(test_ju_money_number(2760),15);
+        assert_eq!(test_ju_money_number(2760),25);
     }
     #[test]
     fn t_2760_goju_test(){
-        assert_eq!(test_goju_money_number(2760),-5);
+        assert_eq!(test_goju_money_number(2760),-3);
     }
     #[test]
     fn t_2760_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2760),0);
+        assert_eq!(test_hyaku_money_number(2760),-7);
     }
     #[test]
     fn t_2760_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2760),-5);
+        assert_eq!(test_gohyaku_money_number(2760),-6);
     }
     // 2770
     #[test]
     fn t_2770_ju_test(){
-        assert_eq!(test_ju_money_number(2770),5);
+        assert_eq!(test_ju_money_number(2770),15);
     }
     #[test]
     fn t_2770_goju_test(){
-        assert_eq!(test_goju_money_number(2770),-5);
+        assert_eq!(test_goju_money_number(2770),-3);
     }
     #[test]
     fn t_2770_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2770),0);
+        assert_eq!(test_hyaku_money_number(2770),-7);
     }
     #[test]
     fn t_2770_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2770),-5);
+        assert_eq!(test_gohyaku_money_number(2770),-6);
     }
     // 2780
     #[test]
     fn t_2780_ju_test(){
-        assert_eq!(test_ju_money_number(2780),-5);
+        assert_eq!(test_ju_money_number(2780),5);
     }
     #[test]
     fn t_2780_goju_test(){
-        assert_eq!(test_goju_money_number(2780),-5);
+        assert_eq!(test_goju_money_number(2780),-3);
     }
     #[test]
     fn t_2780_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2780),0);
+        assert_eq!(test_hyaku_money_number(2780),-7);
     }
     #[test]
     fn t_2780_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2780),-5);
+        assert_eq!(test_gohyaku_money_number(2780),-6);
     }
     // 2790
     #[test]
     fn t_2790_ju_test(){
-        assert_eq!(test_ju_money_number(2790),-15);
+        assert_eq!(test_ju_money_number(2790),-5);
     }
     #[test]
     fn t_2790_goju_test(){
-        assert_eq!(test_goju_money_number(2790),-5);
+        assert_eq!(test_goju_money_number(2790),-3);
     }
     #[test]
     fn t_2790_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2790),0);
+        assert_eq!(test_hyaku_money_number(2790),-7);
     }
     #[test]
     fn t_2790_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2790),-5);
+        assert_eq!(test_gohyaku_money_number(2790),-6);
     }
     // 2800
     #[test]
@@ -4818,70 +4818,70 @@ mod tests {
     // 2810
     #[test]
     fn t_2810_ju_test(){
-        assert_eq!(test_ju_money_number(2810),15);
+        assert_eq!(test_ju_money_number(2810),30);
     }
     #[test]
     fn t_2810_goju_test(){
-        assert_eq!(test_goju_money_number(2810),5);
+        assert_eq!(test_goju_money_number(2810),4);
     }
     #[test]
     fn t_2810_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2810),-10);
+        assert_eq!(test_hyaku_money_number(2810),-16);
     }
     #[test]
     fn t_2810_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2810),-5);
+        assert_eq!(test_gohyaku_money_number(2810),-6);
     }
     // 2820
     #[test]
     fn t_2820_ju_test(){
-        assert_eq!(test_ju_money_number(2820),5);
+        assert_eq!(test_ju_money_number(2820),20);
     }
     #[test]
     fn t_2820_goju_test(){
-        assert_eq!(test_goju_money_number(2820),5);
+        assert_eq!(test_goju_money_number(2820),4);
     }
     #[test]
     fn t_2820_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2820),-10);
+        assert_eq!(test_hyaku_money_number(2820),-16);
     }
     #[test]
     fn t_2820_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2820),-5);
+        assert_eq!(test_gohyaku_money_number(2820),-6);
     }
     // 2830
     #[test]
     fn t_2830_ju_test(){
-        assert_eq!(test_ju_money_number(2830),-5);
+        assert_eq!(test_ju_money_number(2830),10);
     }
     #[test]
     fn t_2830_goju_test(){
-        assert_eq!(test_goju_money_number(2830),5);
+        assert_eq!(test_goju_money_number(2830),4);
     }
     #[test]
     fn t_2830_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2830),-10);
+        assert_eq!(test_hyaku_money_number(2830),-16);
     }
     #[test]
     fn t_2830_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2830),-5);
+        assert_eq!(test_gohyaku_money_number(2830),-6);
     }
     // 2840
     #[test]
     fn t_2840_ju_test(){
-        assert_eq!(test_ju_money_number(2840),-15);
+        assert_eq!(test_ju_money_number(2840),0);
     }
     #[test]
     fn t_2840_goju_test(){
-        assert_eq!(test_goju_money_number(2840),5);
+        assert_eq!(test_goju_money_number(2840),4);
     }
     #[test]
     fn t_2840_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2840),-10);
+        assert_eq!(test_hyaku_money_number(2840),-16);
     }
     #[test]
     fn t_2840_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2840),-5);
+        assert_eq!(test_gohyaku_money_number(2840),-6);
     }
     // 2850
     #[test]
@@ -4890,83 +4890,83 @@ mod tests {
     }
     #[test]
     fn t_2850_goju_test(){
-        assert_eq!(test_goju_money_number(2850),0);
+        assert_eq!(test_goju_money_number(2850),4);
     }
     #[test]
     fn t_2850_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2850),-10);
+        assert_eq!(test_hyaku_money_number(2850),-17);
     }
     #[test]
     fn t_2850_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2850),-5);
+        assert_eq!(test_gohyaku_money_number(2850),-6);
     }
     // 2860
     #[test]
     fn t_2860_ju_test(){
-        assert_eq!(test_ju_money_number(2860),15);
+        assert_eq!(test_ju_money_number(2860),25);
     }
     #[test]
     fn t_2860_goju_test(){
-        assert_eq!(test_goju_money_number(2860),-5);
+        assert_eq!(test_goju_money_number(2860),-3);
     }
     #[test]
     fn t_2860_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2860),-10);
+        assert_eq!(test_hyaku_money_number(2860),-17);
     }
     #[test]
     fn t_2860_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2860),-5);
+        assert_eq!(test_gohyaku_money_number(2860),-6);
     }
     // 2870
     #[test]
     fn t_2870_ju_test(){
-        assert_eq!(test_ju_money_number(2870),5);
+        assert_eq!(test_ju_money_number(2870),15);
     }
     #[test]
     fn t_2870_goju_test(){
-        assert_eq!(test_goju_money_number(2870),-5);
+        assert_eq!(test_goju_money_number(2870),-3);
     }
     #[test]
     fn t_2870_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2870),-10);
+        assert_eq!(test_hyaku_money_number(2870),-17);
     }
     #[test]
     fn t_2870_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2870),-5);
+        assert_eq!(test_gohyaku_money_number(2870),-6);
     }
     // 2880
     #[test]
     fn t_2880_ju_test(){
-        assert_eq!(test_ju_money_number(2880),-5);
+        assert_eq!(test_ju_money_number(2880),5);
     }
     #[test]
     fn t_2880_goju_test(){
-        assert_eq!(test_goju_money_number(2880),-5);
+        assert_eq!(test_goju_money_number(2880),-3);
     }
     #[test]
     fn t_2880_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2880),-10);
+        assert_eq!(test_hyaku_money_number(2880),-17);
     }
     #[test]
     fn t_2880_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2880),-5);
+        assert_eq!(test_gohyaku_money_number(2880),-6);
     }
     // 2890
     #[test]
     fn t_2890_ju_test(){
-        assert_eq!(test_ju_money_number(2890),-15);
+        assert_eq!(test_ju_money_number(2890),-5);
     }
     #[test]
     fn t_2890_goju_test(){
-        assert_eq!(test_goju_money_number(2890),-5);
+        assert_eq!(test_goju_money_number(2890),-3);
     }
     #[test]
     fn t_2890_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2890),-10);
+        assert_eq!(test_hyaku_money_number(2890),-17);
     }
     #[test]
     fn t_2890_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2890),-5);
+        assert_eq!(test_gohyaku_money_number(2890),-6);
     }
     // 2900
     #[test]
@@ -4988,70 +4988,70 @@ mod tests {
     // 2910
     #[test]
     fn t_2910_ju_test(){
-        assert_eq!(test_ju_money_number(2910),15);
+        assert_eq!(test_ju_money_number(2910),25);
     }
     #[test]
     fn t_2910_goju_test(){
-        assert_eq!(test_goju_money_number(2910),5);
+        assert_eq!(test_goju_money_number(2910),1);
     }
     #[test]
     fn t_2910_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2910),-20);
+        assert_eq!(test_hyaku_money_number(2910),-24);
     }
     #[test]
     fn t_2910_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2910),-5);
+        assert_eq!(test_gohyaku_money_number(2910),-6);
     }
     // 2920
     #[test]
     fn t_2920_ju_test(){
-        assert_eq!(test_ju_money_number(2920),5);
+        assert_eq!(test_ju_money_number(2920),15);
     }
     #[test]
     fn t_2920_goju_test(){
-        assert_eq!(test_goju_money_number(2920),5);
+        assert_eq!(test_goju_money_number(2920),1);
     }
     #[test]
     fn t_2920_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2920),-20);
+        assert_eq!(test_hyaku_money_number(2920),-24);
     }
     #[test]
     fn t_2920_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2920),-5);
+        assert_eq!(test_gohyaku_money_number(2920),-6);
     }
     // 2930
     #[test]
     fn t_2930_ju_test(){
-        assert_eq!(test_ju_money_number(2930),-5);
+        assert_eq!(test_ju_money_number(2930),5);
     }
     #[test]
     fn t_2930_goju_test(){
-        assert_eq!(test_goju_money_number(2930),5);
+        assert_eq!(test_goju_money_number(2930),1);
     }
     #[test]
     fn t_2930_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2930),-20);
+        assert_eq!(test_hyaku_money_number(2930),-24);
     }
     #[test]
     fn t_2930_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2930),-5);
+        assert_eq!(test_gohyaku_money_number(2930),-6);
     }
     // 2940
     #[test]
     fn t_2940_ju_test(){
-        assert_eq!(test_ju_money_number(2940),-15);
+        assert_eq!(test_ju_money_number(2940),-5);
     }
     #[test]
     fn t_2940_goju_test(){
-        assert_eq!(test_goju_money_number(2940),5);
+        assert_eq!(test_goju_money_number(2940),1);
     }
     #[test]
     fn t_2940_hyaku_test(){
-        assert_eq!(test_hyaku_money_number(2940),-20);
+        assert_eq!(test_hyaku_money_number(2940),-24);
     }
     #[test]
     fn t_2940_gohyaku_test(){
-        assert_eq!(test_gohyaku_money_number(2940),-5);
+        assert_eq!(test_gohyaku_money_number(2940),-6);
     }
     // 2950
     #[test]
@@ -26516,23 +26516,23 @@ mod tests {
     }
     #[test]
     fn t_comb_ju2_test(){
-        assert_eq!(test_combination_ju2(),145);
+        assert_eq!(test_combination_ju2(),200);
     }
     #[test]
     fn t_comb_goju2_test(){
-        assert_eq!(test_combination_goju2(),23);
+        assert_eq!(test_combination_goju2(),16);
     }
     #[test]
     fn t_comb_hyaku2_test(){
-        assert_eq!(test_combination_hyaku2(),-7);
+        assert_eq!(test_combination_hyaku2(),-69);
     }
-   #[test]
+    #[test]
     fn t_comb_gohyaku2_test(){
-        assert_eq!(test_combination_gohyaku2(),-7);
+        assert_eq!(test_combination_gohyaku2(),-17);
     }
     #[test]
     fn t_comb_sen2_test(){
-        assert_eq!(test_combination_sen2(),-95);
+        assert_eq!(test_combination_sen2(),-84);
     }
     #[test]
     fn t_comb_gosen2_test(){
